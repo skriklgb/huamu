@@ -1,0 +1,1 @@
+var DTPath = "http://localhost/huamu/";var SKPath = "http://localhost/huamu/skin/default/";var MEPath = "http://localhost/huamu/member/";var DTEditor = "fckeditor";var CKDomain = "";var CKPath = "/";var CKPrex = "c7z_";
