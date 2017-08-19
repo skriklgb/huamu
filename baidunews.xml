@@ -1,1 +1,6 @@
- 
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<webSite>http://localhost/huamu/</webSite>
+<webMaster>mail@yourdomain.com</webMaster>
+<updatePeri>60</updatePeri>
+</document>

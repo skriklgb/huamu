@@ -33,14 +33,14 @@ $CFG['editor'] = 'fckeditor';
 $CFG['timezone'] = 'Etc/GMT-8';
 $CFG['timediff'] = '0';
 $CFG['skin'] = 'default';
-$CFG['template'] = 'default';
+$CFG['template'] = 'huamu';
 $CFG['language'] = 'zh-cn';
 $CFG['authadmin'] = 'session';
 $CFG['authkey'] = 'NTMyT5zaDXnXN0oC';
 $CFG['static'] = '';
 $CFG['cloud_uid'] = '';
 $CFG['cloud_key'] = '';
-$CFG['edittpl'] = '0';
+$CFG['edittpl'] = '1';
 $CFG['executesql'] = '0';
 $CFG['founderid'] = '1';
 ?>

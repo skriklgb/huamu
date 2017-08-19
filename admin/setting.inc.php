@@ -32,7 +32,7 @@ switch($action) {
 			$body = '你太棒了！你已成功的从SendCloud发送了一封测试邮件，接下来快登录前台去完善账户信息吧！';
 		} else {
 			$subject = $DT['sitename'].'邮件发送测试';
-			$body = '<b>恭喜！您的站点['.$DT['sitename'].']邮件发送设置成功！</b><br/>------------------------------------<br><a href="http://www.destoon.com/" target="_blank">Send By DESTOON B2B Mail Tester</a>';
+			$body = '<b>恭喜！您的站点['.$DT['sitename'].']邮件发送设置成功！</b><br/>------------------------------------<br><a href="http://www.destoon.com/" target="_blank">Send By WEIFANGHUAMU Mail Tester</a>';
 		}	
 		if(send_mail($testemail, $subject, $body)) dialog('邮件已发送至'.$testemail.'，请注意查收', $mail_sender);
 		dialog('邮件发送失败，请检查设置');

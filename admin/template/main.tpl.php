@@ -56,7 +56,7 @@ show_menu($menus);
 </form>
 </table>
 <?php if($_founder) {?>
-<div id="destoon"></div>
+
 <div class="tt">系统信息</div>
 <table cellpadding="2" cellspacing="1" class="tb">
 

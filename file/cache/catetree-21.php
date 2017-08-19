@@ -1,1 +1,1 @@
-</select>
+<option value="65">行业新闻</option><option value="66">政策法规</option><option value="67">技术创新</option><option value="68">市场行情</option><option value="69">招标信息</option><option value="70">展会信息</option></select>

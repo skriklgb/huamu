@@ -44,454 +44,454 @@
     <schema id="38" parent="1" name="yzmphp"/>
     <schema id="39" parent="1" name="zhenyu"/>
     <schema id="40" parent="1" name="zhigong"/>
-    <table id="41" parent="2" name="destoon_404">
+    <table id="41" parent="2" name="skrik_404">
       <Comment>404日志</Comment>
     </table>
-    <table id="42" parent="2" name="destoon_ad">
+    <table id="42" parent="2" name="skrik_ad">
       <Comment>广告</Comment>
     </table>
-    <table id="43" parent="2" name="destoon_ad_place">
+    <table id="43" parent="2" name="skrik_ad_place">
       <Comment>广告位</Comment>
     </table>
-    <table id="44" parent="2" name="destoon_address">
+    <table id="44" parent="2" name="skrik_address">
       <Comment>收货地址</Comment>
     </table>
-    <table id="45" parent="2" name="destoon_admin">
+    <table id="45" parent="2" name="skrik_admin">
       <Comment>管理员</Comment>
     </table>
-    <table id="46" parent="2" name="destoon_admin_log">
+    <table id="46" parent="2" name="skrik_admin_log">
       <Comment>管理日志</Comment>
     </table>
-    <table id="47" parent="2" name="destoon_admin_online">
+    <table id="47" parent="2" name="skrik_admin_online">
       <Comment>在线管理员</Comment>
     </table>
-    <table id="48" parent="2" name="destoon_alert">
+    <table id="48" parent="2" name="skrik_alert">
       <Comment>贸易提醒</Comment>
     </table>
-    <table id="49" parent="2" name="destoon_announce">
+    <table id="49" parent="2" name="skrik_announce">
       <Comment>公告</Comment>
     </table>
-    <table id="50" parent="2" name="destoon_area">
+    <table id="50" parent="2" name="skrik_area">
       <Comment>地区</Comment>
     </table>
-    <table id="51" parent="2" name="destoon_article_21">
+    <table id="51" parent="2" name="skrik_article_21">
       <Comment>资讯</Comment>
     </table>
-    <table id="52" parent="2" name="destoon_article_data_21">
+    <table id="52" parent="2" name="skrik_article_data_21">
       <Comment>资讯内容</Comment>
     </table>
-    <table id="53" parent="2" name="destoon_ask">
+    <table id="53" parent="2" name="skrik_ask">
       <Comment>客服中心</Comment>
     </table>
-    <table id="54" parent="2" name="destoon_banip">
+    <table id="54" parent="2" name="skrik_banip">
       <Comment>IP禁止</Comment>
     </table>
-    <table id="55" parent="2" name="destoon_banword">
+    <table id="55" parent="2" name="skrik_banword">
       <Comment>词语过滤</Comment>
     </table>
-    <table id="56" parent="2" name="destoon_brand_13">
+    <table id="56" parent="2" name="skrik_brand_13">
       <Comment>品牌</Comment>
     </table>
-    <table id="57" parent="2" name="destoon_brand_data_13">
+    <table id="57" parent="2" name="skrik_brand_data_13">
       <Comment>品牌内容</Comment>
     </table>
-    <table id="58" parent="2" name="destoon_buy_6">
+    <table id="58" parent="2" name="skrik_buy_6">
       <Comment>求购</Comment>
     </table>
-    <table id="59" parent="2" name="destoon_buy_data_6">
+    <table id="59" parent="2" name="skrik_buy_data_6">
       <Comment>求购内容</Comment>
     </table>
-    <table id="60" parent="2" name="destoon_cache">
+    <table id="60" parent="2" name="skrik_cache">
       <Comment>文件缓存</Comment>
     </table>
-    <table id="61" parent="2" name="destoon_category">
+    <table id="61" parent="2" name="skrik_category">
       <Comment>栏目分类</Comment>
     </table>
-    <table id="62" parent="2" name="destoon_category_option">
+    <table id="62" parent="2" name="skrik_category_option">
       <Comment>分类属性</Comment>
     </table>
-    <table id="63" parent="2" name="destoon_category_value">
+    <table id="63" parent="2" name="skrik_category_value">
       <Comment>分类属性值</Comment>
     </table>
-    <table id="64" parent="2" name="destoon_chat">
+    <table id="64" parent="2" name="skrik_chat">
       <Comment>在线聊天</Comment>
     </table>
-    <table id="65" parent="2" name="destoon_city">
+    <table id="65" parent="2" name="skrik_city">
       <Comment>城市分站</Comment>
     </table>
-    <table id="66" parent="2" name="destoon_club">
+    <table id="66" parent="2" name="skrik_club">
       <Comment>商圈帖子</Comment>
     </table>
-    <table id="67" parent="2" name="destoon_club_data">
+    <table id="67" parent="2" name="skrik_club_data">
       <Comment>商圈帖子内容</Comment>
     </table>
-    <table id="68" parent="2" name="destoon_club_fans">
+    <table id="68" parent="2" name="skrik_club_fans">
       <Comment>商圈粉丝</Comment>
     </table>
-    <table id="69" parent="2" name="destoon_club_group">
+    <table id="69" parent="2" name="skrik_club_group">
       <Comment>商圈圈子</Comment>
     </table>
-    <table id="70" parent="2" name="destoon_club_manage">
+    <table id="70" parent="2" name="skrik_club_manage">
       <Comment>商圈管理</Comment>
     </table>
-    <table id="71" parent="2" name="destoon_club_reply">
+    <table id="71" parent="2" name="skrik_club_reply">
       <Comment>商圈回复</Comment>
     </table>
-    <table id="72" parent="2" name="destoon_comment">
+    <table id="72" parent="2" name="skrik_comment">
       <Comment>评论</Comment>
     </table>
-    <table id="73" parent="2" name="destoon_comment_ban">
+    <table id="73" parent="2" name="skrik_comment_ban">
       <Comment>评论禁止</Comment>
     </table>
-    <table id="74" parent="2" name="destoon_comment_stat">
+    <table id="74" parent="2" name="skrik_comment_stat">
       <Comment>评论统计</Comment>
     </table>
-    <table id="75" parent="2" name="destoon_company">
+    <table id="75" parent="2" name="skrik_company">
       <Comment>公司</Comment>
     </table>
-    <table id="76" parent="2" name="destoon_company_data">
+    <table id="76" parent="2" name="skrik_company_data">
       <Comment>公司内容</Comment>
     </table>
-    <table id="77" parent="2" name="destoon_company_setting">
+    <table id="77" parent="2" name="skrik_company_setting">
       <Comment>公司设置</Comment>
     </table>
-    <table id="78" parent="2" name="destoon_cron">
+    <table id="78" parent="2" name="skrik_cron">
       <Comment>计划任务</Comment>
     </table>
-    <table id="79" parent="2" name="destoon_down_15">
+    <table id="79" parent="2" name="skrik_down_15">
       <Comment>下载</Comment>
     </table>
-    <table id="80" parent="2" name="destoon_down_data_15">
+    <table id="80" parent="2" name="skrik_down_data_15">
       <Comment>下载内容</Comment>
     </table>
-    <table id="81" parent="2" name="destoon_exhibit">
+    <table id="81" parent="2" name="skrik_exhibit">
       <Comment>展会</Comment>
     </table>
-    <table id="82" parent="2" name="destoon_exhibit_data">
+    <table id="82" parent="2" name="skrik_exhibit_data">
       <Comment>展会内容</Comment>
     </table>
-    <table id="83" parent="2" name="destoon_exhibit_order">
+    <table id="83" parent="2" name="skrik_exhibit_order">
       <Comment>展会报名</Comment>
     </table>
-    <table id="84" parent="2" name="destoon_favorite">
+    <table id="84" parent="2" name="skrik_favorite">
       <Comment>商机收藏</Comment>
     </table>
-    <table id="85" parent="2" name="destoon_fetch">
+    <table id="85" parent="2" name="skrik_fetch">
       <Comment>单页采编</Comment>
     </table>
-    <table id="86" parent="2" name="destoon_fields">
+    <table id="86" parent="2" name="skrik_fields">
       <Comment>自定义字段</Comment>
     </table>
-    <table id="87" parent="2" name="destoon_finance_card">
+    <table id="87" parent="2" name="skrik_finance_card">
       <Comment>充值卡</Comment>
     </table>
-    <table id="88" parent="2" name="destoon_finance_cash">
+    <table id="88" parent="2" name="skrik_finance_cash">
       <Comment>申请提现</Comment>
     </table>
-    <table id="89" parent="2" name="destoon_finance_charge">
+    <table id="89" parent="2" name="skrik_finance_charge">
       <Comment>在线充值</Comment>
     </table>
-    <table id="90" parent="2" name="destoon_finance_credit">
+    <table id="90" parent="2" name="skrik_finance_credit">
       <Comment>积分流水</Comment>
     </table>
-    <table id="91" parent="2" name="destoon_finance_deposit">
+    <table id="91" parent="2" name="skrik_finance_deposit">
       <Comment>保证金</Comment>
     </table>
-    <table id="92" parent="2" name="destoon_finance_pay">
+    <table id="92" parent="2" name="skrik_finance_pay">
       <Comment>支付记录</Comment>
     </table>
-    <table id="93" parent="2" name="destoon_finance_promo">
+    <table id="93" parent="2" name="skrik_finance_promo">
       <Comment>优惠码</Comment>
     </table>
-    <table id="94" parent="2" name="destoon_finance_record">
+    <table id="94" parent="2" name="skrik_finance_record">
       <Comment>财务流水</Comment>
     </table>
-    <table id="95" parent="2" name="destoon_finance_sms">
+    <table id="95" parent="2" name="skrik_finance_sms">
       <Comment>短信增减</Comment>
     </table>
-    <table id="96" parent="2" name="destoon_form">
+    <table id="96" parent="2" name="skrik_form">
       <Comment>表单</Comment>
     </table>
-    <table id="97" parent="2" name="destoon_form_answer">
+    <table id="97" parent="2" name="skrik_form_answer">
       <Comment>表单回复</Comment>
     </table>
-    <table id="98" parent="2" name="destoon_form_question">
+    <table id="98" parent="2" name="skrik_form_question">
       <Comment>表单选项</Comment>
     </table>
-    <table id="99" parent="2" name="destoon_form_record">
+    <table id="99" parent="2" name="skrik_form_record">
       <Comment>表单回复记录</Comment>
     </table>
-    <table id="100" parent="2" name="destoon_friend">
+    <table id="100" parent="2" name="skrik_friend">
       <Comment>我的商友</Comment>
     </table>
-    <table id="101" parent="2" name="destoon_gift">
+    <table id="101" parent="2" name="skrik_gift">
       <Comment>积分换礼</Comment>
     </table>
-    <table id="102" parent="2" name="destoon_gift_order">
+    <table id="102" parent="2" name="skrik_gift_order">
       <Comment>积分换礼订单</Comment>
     </table>
-    <table id="103" parent="2" name="destoon_group">
+    <table id="103" parent="2" name="skrik_group">
       <Comment>团购</Comment>
     </table>
-    <table id="104" parent="2" name="destoon_group_data">
+    <table id="104" parent="2" name="skrik_group_data">
       <Comment>团购内容</Comment>
     </table>
-    <table id="105" parent="2" name="destoon_group_order">
+    <table id="105" parent="2" name="skrik_group_order">
       <Comment>团购订单</Comment>
     </table>
-    <table id="106" parent="2" name="destoon_guestbook">
+    <table id="106" parent="2" name="skrik_guestbook">
       <Comment>留言本</Comment>
     </table>
-    <table id="107" parent="2" name="destoon_honor">
+    <table id="107" parent="2" name="skrik_honor">
       <Comment>荣誉资质</Comment>
     </table>
-    <table id="108" parent="2" name="destoon_info_22">
+    <table id="108" parent="2" name="skrik_info_22">
       <Comment>招商</Comment>
     </table>
-    <table id="109" parent="2" name="destoon_info_data_22">
+    <table id="109" parent="2" name="skrik_info_data_22">
       <Comment>招商内容</Comment>
     </table>
-    <table id="110" parent="2" name="destoon_job">
+    <table id="110" parent="2" name="skrik_job">
       <Comment>招聘</Comment>
     </table>
-    <table id="111" parent="2" name="destoon_job_apply">
+    <table id="111" parent="2" name="skrik_job_apply">
       <Comment>应聘工作</Comment>
     </table>
-    <table id="112" parent="2" name="destoon_job_data">
+    <table id="112" parent="2" name="skrik_job_data">
       <Comment>招聘内容</Comment>
     </table>
-    <table id="113" parent="2" name="destoon_job_talent">
+    <table id="113" parent="2" name="skrik_job_talent">
       <Comment>人才库</Comment>
     </table>
-    <table id="114" parent="2" name="destoon_keylink">
+    <table id="114" parent="2" name="skrik_keylink">
       <Comment>关联链接</Comment>
     </table>
-    <table id="115" parent="2" name="destoon_keyword">
+    <table id="115" parent="2" name="skrik_keyword">
       <Comment>关键词</Comment>
     </table>
-    <table id="116" parent="2" name="destoon_know">
+    <table id="116" parent="2" name="skrik_know">
       <Comment>知道</Comment>
     </table>
-    <table id="117" parent="2" name="destoon_know_answer">
+    <table id="117" parent="2" name="skrik_know_answer">
       <Comment>知道回答</Comment>
     </table>
-    <table id="118" parent="2" name="destoon_know_data">
+    <table id="118" parent="2" name="skrik_know_data">
       <Comment>知道内容</Comment>
     </table>
-    <table id="119" parent="2" name="destoon_know_expert">
+    <table id="119" parent="2" name="skrik_know_expert">
       <Comment>知道专家</Comment>
     </table>
-    <table id="120" parent="2" name="destoon_know_vote">
+    <table id="120" parent="2" name="skrik_know_vote">
       <Comment>知道投票</Comment>
     </table>
-    <table id="121" parent="2" name="destoon_link">
+    <table id="121" parent="2" name="skrik_link">
       <Comment>友情链接</Comment>
     </table>
-    <table id="122" parent="2" name="destoon_login">
+    <table id="122" parent="2" name="skrik_login">
       <Comment>登录日志</Comment>
     </table>
-    <table id="123" parent="2" name="destoon_mail">
+    <table id="123" parent="2" name="skrik_mail">
       <Comment>邮件订阅</Comment>
     </table>
-    <table id="124" parent="2" name="destoon_mail_list">
+    <table id="124" parent="2" name="skrik_mail_list">
       <Comment>订阅列表</Comment>
     </table>
-    <table id="125" parent="2" name="destoon_mail_log">
+    <table id="125" parent="2" name="skrik_mail_log">
       <Comment>邮件记录</Comment>
     </table>
-    <table id="126" parent="2" name="destoon_mall">
+    <table id="126" parent="2" name="skrik_mall">
       <Comment>商城</Comment>
     </table>
-    <table id="127" parent="2" name="destoon_mall_cart">
+    <table id="127" parent="2" name="skrik_mall_cart">
       <Comment>购物车</Comment>
     </table>
-    <table id="128" parent="2" name="destoon_mall_comment">
+    <table id="128" parent="2" name="skrik_mall_comment">
       <Comment>订单评论</Comment>
     </table>
-    <table id="129" parent="2" name="destoon_mall_data">
+    <table id="129" parent="2" name="skrik_mall_data">
       <Comment>商城内容</Comment>
     </table>
-    <table id="130" parent="2" name="destoon_mall_express">
+    <table id="130" parent="2" name="skrik_mall_express">
       <Comment>运费模板</Comment>
     </table>
-    <table id="131" parent="2" name="destoon_mall_order">
+    <table id="131" parent="2" name="skrik_mall_order">
       <Comment>商城订单</Comment>
     </table>
-    <table id="132" parent="2" name="destoon_mall_stat">
+    <table id="132" parent="2" name="skrik_mall_stat">
       <Comment>评分统计</Comment>
     </table>
-    <table id="133" parent="2" name="destoon_member">
+    <table id="133" parent="2" name="skrik_member">
       <Comment>会员</Comment>
     </table>
-    <table id="134" parent="2" name="destoon_member_check">
+    <table id="134" parent="2" name="skrik_member_check">
       <Comment>会员资料审核</Comment>
     </table>
-    <table id="135" parent="2" name="destoon_member_group">
+    <table id="135" parent="2" name="skrik_member_group">
       <Comment>会员组</Comment>
     </table>
-    <table id="136" parent="2" name="destoon_message">
+    <table id="136" parent="2" name="skrik_message">
       <Comment>站内信件</Comment>
     </table>
-    <table id="137" parent="2" name="destoon_module">
+    <table id="137" parent="2" name="skrik_module">
       <Comment>模型</Comment>
     </table>
-    <table id="138" parent="2" name="destoon_news">
+    <table id="138" parent="2" name="skrik_news">
       <Comment>公司新闻</Comment>
     </table>
-    <table id="139" parent="2" name="destoon_news_data">
+    <table id="139" parent="2" name="skrik_news_data">
       <Comment>公司新闻内容</Comment>
     </table>
-    <table id="140" parent="2" name="destoon_oauth">
+    <table id="140" parent="2" name="skrik_oauth">
       <Comment>一键登录</Comment>
     </table>
-    <table id="141" parent="2" name="destoon_online">
+    <table id="141" parent="2" name="skrik_online">
       <Comment>在线会员</Comment>
     </table>
-    <table id="142" parent="2" name="destoon_page">
+    <table id="142" parent="2" name="skrik_page">
       <Comment>公司单页</Comment>
     </table>
-    <table id="143" parent="2" name="destoon_page_data">
+    <table id="143" parent="2" name="skrik_page_data">
       <Comment>公司单页内容</Comment>
     </table>
-    <table id="144" parent="2" name="destoon_photo_12">
+    <table id="144" parent="2" name="skrik_photo_12">
       <Comment>图库</Comment>
     </table>
-    <table id="145" parent="2" name="destoon_photo_data_12">
+    <table id="145" parent="2" name="skrik_photo_data_12">
       <Comment>图库内容</Comment>
     </table>
-    <table id="146" parent="2" name="destoon_photo_item_12">
+    <table id="146" parent="2" name="skrik_photo_item_12">
       <Comment>图库图片</Comment>
     </table>
-    <table id="147" parent="2" name="destoon_poll">
+    <table id="147" parent="2" name="skrik_poll">
       <Comment>票选</Comment>
     </table>
-    <table id="148" parent="2" name="destoon_poll_item">
+    <table id="148" parent="2" name="skrik_poll_item">
       <Comment>票选选项</Comment>
     </table>
-    <table id="149" parent="2" name="destoon_poll_record">
+    <table id="149" parent="2" name="skrik_poll_record">
       <Comment>票选记录</Comment>
     </table>
-    <table id="150" parent="2" name="destoon_question">
+    <table id="150" parent="2" name="skrik_question">
       <Comment>验证问题</Comment>
     </table>
-    <table id="151" parent="2" name="destoon_quote">
+    <table id="151" parent="2" name="skrik_quote">
       <Comment>行情</Comment>
     </table>
-    <table id="152" parent="2" name="destoon_quote_data">
+    <table id="152" parent="2" name="skrik_quote_data">
       <Comment>行情内容</Comment>
     </table>
-    <table id="153" parent="2" name="destoon_quote_price">
+    <table id="153" parent="2" name="skrik_quote_price">
       <Comment>行情报价</Comment>
     </table>
-    <table id="154" parent="2" name="destoon_quote_product">
+    <table id="154" parent="2" name="skrik_quote_product">
       <Comment>行情产品</Comment>
     </table>
-    <table id="155" parent="2" name="destoon_resume">
+    <table id="155" parent="2" name="skrik_resume">
       <Comment>简历</Comment>
     </table>
-    <table id="156" parent="2" name="destoon_resume_data">
+    <table id="156" parent="2" name="skrik_resume_data">
       <Comment>简历内容</Comment>
     </table>
-    <table id="157" parent="2" name="destoon_sell_5">
+    <table id="157" parent="2" name="skrik_sell_5">
       <Comment>供应</Comment>
     </table>
-    <table id="158" parent="2" name="destoon_sell_data_5">
+    <table id="158" parent="2" name="skrik_sell_data_5">
       <Comment>供应内容</Comment>
     </table>
-    <table id="159" parent="2" name="destoon_sell_search_5">
+    <table id="159" parent="2" name="skrik_sell_search_5">
       <Comment>供应搜索</Comment>
     </table>
-    <table id="160" parent="2" name="destoon_session">
+    <table id="160" parent="2" name="skrik_session">
       <Comment>SESSION</Comment>
     </table>
-    <table id="161" parent="2" name="destoon_setting">
+    <table id="161" parent="2" name="skrik_setting">
       <Comment>网站设置</Comment>
     </table>
-    <table id="162" parent="2" name="destoon_sms">
+    <table id="162" parent="2" name="skrik_sms">
       <Comment>短信记录</Comment>
     </table>
-    <table id="163" parent="2" name="destoon_special">
+    <table id="163" parent="2" name="skrik_special">
       <Comment>专题</Comment>
     </table>
-    <table id="164" parent="2" name="destoon_special_data">
+    <table id="164" parent="2" name="skrik_special_data">
       <Comment>专题内容</Comment>
     </table>
-    <table id="165" parent="2" name="destoon_special_item">
+    <table id="165" parent="2" name="skrik_special_item">
       <Comment>专题信息</Comment>
     </table>
-    <table id="166" parent="2" name="destoon_sphinx">
+    <table id="166" parent="2" name="skrik_sphinx">
       <Comment>Sphinx</Comment>
     </table>
-    <table id="167" parent="2" name="destoon_spread">
+    <table id="167" parent="2" name="skrik_spread">
       <Comment>排名推广</Comment>
     </table>
-    <table id="168" parent="2" name="destoon_spread_price">
+    <table id="168" parent="2" name="skrik_spread_price">
       <Comment>排名起价</Comment>
     </table>
-    <table id="169" parent="2" name="destoon_style">
+    <table id="169" parent="2" name="skrik_style">
       <Comment>公司主页模板</Comment>
     </table>
-    <table id="170" parent="2" name="destoon_type">
+    <table id="170" parent="2" name="skrik_type">
       <Comment>分类</Comment>
     </table>
-    <table id="171" parent="2" name="destoon_upgrade">
+    <table id="171" parent="2" name="skrik_upgrade">
       <Comment>会员升级</Comment>
     </table>
-    <table id="172" parent="2" name="destoon_upload_0">
+    <table id="172" parent="2" name="skrik_upload_0">
       <Comment>上传记录0</Comment>
     </table>
-    <table id="173" parent="2" name="destoon_upload_1">
+    <table id="173" parent="2" name="skrik_upload_1">
       <Comment>上传记录1</Comment>
     </table>
-    <table id="174" parent="2" name="destoon_upload_2">
+    <table id="174" parent="2" name="skrik_upload_2">
       <Comment>上传记录2</Comment>
     </table>
-    <table id="175" parent="2" name="destoon_upload_3">
+    <table id="175" parent="2" name="skrik_upload_3">
       <Comment>上传记录3</Comment>
     </table>
-    <table id="176" parent="2" name="destoon_upload_4">
+    <table id="176" parent="2" name="skrik_upload_4">
       <Comment>上传记录4</Comment>
     </table>
-    <table id="177" parent="2" name="destoon_upload_5">
+    <table id="177" parent="2" name="skrik_upload_5">
       <Comment>上传记录5</Comment>
     </table>
-    <table id="178" parent="2" name="destoon_upload_6">
+    <table id="178" parent="2" name="skrik_upload_6">
       <Comment>上传记录6</Comment>
     </table>
-    <table id="179" parent="2" name="destoon_upload_7">
+    <table id="179" parent="2" name="skrik_upload_7">
       <Comment>上传记录7</Comment>
     </table>
-    <table id="180" parent="2" name="destoon_upload_8">
+    <table id="180" parent="2" name="skrik_upload_8">
       <Comment>上传记录8</Comment>
     </table>
-    <table id="181" parent="2" name="destoon_upload_9">
+    <table id="181" parent="2" name="skrik_upload_9">
       <Comment>上传记录9</Comment>
     </table>
-    <table id="182" parent="2" name="destoon_validate">
+    <table id="182" parent="2" name="skrik_validate">
       <Comment>资料认证</Comment>
     </table>
-    <table id="183" parent="2" name="destoon_video_14">
+    <table id="183" parent="2" name="skrik_video_14">
       <Comment>视频</Comment>
     </table>
-    <table id="184" parent="2" name="destoon_video_data_14">
+    <table id="184" parent="2" name="skrik_video_data_14">
       <Comment>视频内容</Comment>
     </table>
-    <table id="185" parent="2" name="destoon_vote">
+    <table id="185" parent="2" name="skrik_vote">
       <Comment>投票</Comment>
     </table>
-    <table id="186" parent="2" name="destoon_vote_record">
+    <table id="186" parent="2" name="skrik_vote_record">
       <Comment>投票记录</Comment>
     </table>
-    <table id="187" parent="2" name="destoon_webpage">
+    <table id="187" parent="2" name="skrik_webpage">
       <Comment>单网页</Comment>
     </table>
-    <table id="188" parent="2" name="destoon_weixin_bind">
+    <table id="188" parent="2" name="skrik_weixin_bind">
       <Comment>微信扫码绑定</Comment>
     </table>
-    <table id="189" parent="2" name="destoon_weixin_chat">
+    <table id="189" parent="2" name="skrik_weixin_chat">
       <Comment>微信消息</Comment>
     </table>
-    <table id="190" parent="2" name="destoon_weixin_user">
+    <table id="190" parent="2" name="skrik_weixin_user">
       <Comment>微信用户</Comment>
     </table>
     <column id="191" parent="41" name="itemid">
