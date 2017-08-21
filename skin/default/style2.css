@@ -1,0 +1,23 @@
+.m {margin:auto;width:1001px;background:#FFFFFF;clear:both;}
+
+
+
+.logo2{ float:left; width:384px; height:123px; overflow:hidden; background: #fff;}
+.logo2 a{ display:block; width:384px; height:70px; }
+
+.search2{ float:right; width:503px; height:113px; overflow:hidden; padding:25px 0 0 0; margin-right:8px; display:inline;}
+
+.head_search_kw {width:355px;margin:25px 0 0 15px;height:20px;line-height:20px;overflow:hidden;}
+.head_search {float:left;width:502px;height:42px;background:url("images/search1.png") left no-repeat;}
+.head_search_on {float:left;width:502px;height:42px;background:url("images/search1.png") left no-repeat;}
+.head_search div,.head_search_on div {clear:both;padding:0px 0 0 35px;}
+.search_i {width:367px;font-size:14px;height:42px;line-height:42px;padding:0;margin:0;color:#666666;background:#f3f8c9;border:none;}
+.search_i:focus{outline:none;}
+.search_m {width:60px;cursor:default;padding:2px 25px 0 10px;font-size:14px;height:20px;line-height:20px;color:#666666;background:url('image/spacer.gif');border:none;}
+.search_s {width:96px;height:42px;background:url("images/search2.png") right no-repeat;border:none;padding:0;margin:0;cursor:pointer;position: relative;left: -3px;}
+.search_s:hover{
+    background: url("images/search3.png") right no-repeat;
+}
+
+
+.sear-inpt{float:left;width:362px;height:22px;border:none;background:#f3f8c9;line-height:22px;overflow:hidden;padding:10px 5px;}

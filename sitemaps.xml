@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://localhost/huamu/</loc>
-<lastmod>2017-08-19</lastmod>
+<lastmod>2017-08-20</lastmod>
 <changefreq>always</changefreq>
 <priority>1.0</priority>
 <data>
@@ -12,7 +12,7 @@
 </url>
 <url>
 <loc>http://localhost/huamu/mall/</loc>
-<lastmod>2017-08-19</lastmod>
+<lastmod>2017-08-20</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.9</priority>
 <data>
@@ -22,7 +22,7 @@
 </url>
 <url>
 <loc>http://localhost/huamu/buy/</loc>
-<lastmod>2017-08-19</lastmod>
+<lastmod>2017-08-20</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.9</priority>
 <data>
@@ -32,7 +32,7 @@
 </url>
 <url>
 <loc>http://localhost/huamu/company/</loc>
-<lastmod>2017-08-19</lastmod>
+<lastmod>2017-08-20</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.9</priority>
 <data>
@@ -42,7 +42,7 @@
 </url>
 <url>
 <loc>http://localhost/huamu/yunshu/</loc>
-<lastmod>2017-08-19</lastmod>
+<lastmod>2017-08-20</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.9</priority>
 <data>
@@ -52,7 +52,7 @@
 </url>
 <url>
 <loc>http://localhost/huamu/news/</loc>
-<lastmod>2017-08-19</lastmod>
+<lastmod>2017-08-20</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.9</priority>
 <data>
@@ -62,7 +62,7 @@
 </url>
 <url>
 <loc>http://localhost/huamu/invest/</loc>
-<lastmod>2017-08-19</lastmod>
+<lastmod>2017-08-20</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.9</priority>
 <data>
@@ -72,9 +72,19 @@
 </url>
 <url>
 <loc>http://localhost/huamu/huapen/</loc>
-<lastmod>2017-08-19</lastmod>
+<lastmod>2017-08-20</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.9</priority>
+<data>
+<display>
+</display>
+</data>
+</url>
+<url>
+<loc>http://localhost/huamu/index.php?homepage=qiye</loc>
+<lastmod>2017-08-20</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
 <data>
 <display>
 </display>
