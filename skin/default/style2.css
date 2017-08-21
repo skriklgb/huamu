@@ -21,3 +21,31 @@
 
 
 .sear-inpt{float:left;width:362px;height:22px;border:none;background:#f3f8c9;line-height:22px;overflow:hidden;padding:10px 5px;}
+
+
+
+/*===homenav===*/
+.navbg{ width:100%; height:45px; margin: auto;background:#009237;min-width: 1003px;}
+.navbar{ width:1003px;height:45px; margin:0 auto; line-height:45px;}
+.new-data{ background:#292929; width:263px; height:45px; overflow:hidden; color:#fff; float:left;}
+.new-data span{ float:left; width:130px; text-indent:10px;}
+.new-data span i{ color:#eaff00;}
+.navbar-home{ float:left; width:740px; height:45px;position: relative;top: -15px;}
+.navbar-home li{ float:left; width:auto; position:relative; height:45px;margin: 0;padding: 0;}
+.navbar-home li a,.navbar-home li a:visited,.navbar-home li a:hover{ float:left; color:#fff; font-weight:bold; font-size:15px; padding:0 12px; margin-right:10px; text-decoration:none;}
+*html .navbar-home li a{margin-right:9px;}
+*+html .navbar-home li a{margin-right:9px;}
+*html .navbar-home li a:visited{margin-right:9px;}
+*+html .navbar-home li a:visited{margin-right:9px;}
+*html .navbar-home li a:hover{margin-right:9px;}
+*+html .navbar-home li a:hover{margin-right:9px;}
+.navbar-home li a:hover{ color:#eaff00;}
+.navbar-home .current a{ display:block;background:#006a28; }
+.navbar-home .homepage,.navbar-home a:hover.homepage{ padding:0px 22px;}
+.navbar-home a.nav-buy,.navbar-home a:visited.nav-buy,.navbar-home a:hover.nav-buy{ background:url(images/bgs.png) no-repeat -155px -72px; width:93px; height:29px; padding:0; margin:8px 17px 8px 0px; line-height:29px; color:#eaff00; display:inline-block;}
+.navbar-home .nav-buy .icon{ background:url(images/bgs.png) no-repeat -255px -72px; float:left; width:12px; height:16px; margin:7px 5px 0 8px;}
+.navbar-home a.nav-lit,.navbar-home a:visited.nav-lit,.navbar-home a:hover.nav-lit{background:url(images/bgs.png) no-repeat -274px -72px; width:68px; height:25px; padding:0; margin:10px 10px 10px 0; line-height:25px; font-size:12px; font-weight:normal;color:#eaff00; text-align:center; display:inline-block;}
+.navbar-home a.nav-lit2,.navbar-home a:visited.nav-lit2,.navbar-home a:hover.nav-lit2{background:url(images/bgs.png) no-repeat -1px -248px; width:114px; height:25px; padding:0; margin:10px 0px 10px 0px; line-height:25px; font-size:12px; font-weight:normal;color:#eaff00; text-align:center;display:inline-block;}
+.navbar-home .hot{background:url(images/hot_ico1.gif) no-repeat; width:30px; height:36px; position:absolute; left:60px; top:-7px; display:inline-block; z-index:10;}
+.navbar-home a:hover.nav-lit,.navbar-home a:hover.nav-buy,.navbar-home a:hover.nav-lit2{ color:#FFF;}
+.navbar-home a:hover.nav-buy .icon{background:url(images/bgs.png) no-repeat -405px -211px;}

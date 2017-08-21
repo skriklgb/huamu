@@ -144,9 +144,20 @@ document.onselectstart=function(e){return false;};
 
 
 
-<div class="m">
-	<div class="menu">
-		<ul><li{if $moduleid<4} class="menuon"{/if}><a href="{$MODULE[1][linkurl]}"><span>首页</span></a></li>{loop $MODULE $m}{if $m[ismenu]}<li{if $m[moduleid]==$moduleid} class="menuon"{/if}><a href="{$m[linkurl]}"{if $m[isblank]} target="_blank"{/if}><span{if $m[style]} style="color:{$m[style]};"{/if}>{$m[name]}</span></a></li>{/if}{/loop}</ul>
+<div class="navbg">
+	<div class="navbar clear">
+
+		<ul class="navbar-home">
+			<ul><li{if $moduleid<4} class="current"{/if}><a style="padding:0 22px;" href="{$MODULE[1][linkurl]}">花木首页</a></li>{loop $MODULE $m}{if $m[ismenu]}<li{if $m[moduleid]==$moduleid} class="current"{/if}><a href="{$m[linkurl]}"{if $m[isblank]} target="_blank"{/if}>{$m[name]}</a></li>{/if}{/loop}</ul>
+
+
+		</ul>
+		<div style=" width: auto;height: 45px;float: right;position: relative;top: -15px;">
+			<li style="float: left;list-style: none;width: 120px;text-align: center;"><a href="{$MODULE[2][linkurl]}{$DT[file_my]}" style="color: #fff;size: 18px;" target="_blank" title="发布产品" rel="nofollow">发布产品</a></li>
+			<li style="float: left;list-style: none;width: 120px;text-align: center;"><a href="{$MODULE[2][linkurl]}{$DT[file_my]}" style="color: #fff;size: 18px;" target="_blank" title="发布求购" rel="nofollow">发布求购</a></li>
+		</div>
 	</div>
 </div>
+
+
 <div class="m b10">&nbsp;</div>
