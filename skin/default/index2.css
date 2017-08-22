@@ -1,0 +1,1077 @@
+
+
+
+.toparea{ width:1003px; height:390px; overflow:hidden; background:#e4f8c9;  position:relative; z-index:3;}
+.dynamic{ float:left; width:263px; height:390px; overflow:hidden; background:#06A481; padding:0px 0 0 0; position:relative; z-index:2;}
+.dynamic li,.dynamic li a{ width:263px; height:28px; line-height:28px; overflow:hidden; float:left; cursor:pointer; text-decoration:none;}
+.dynamic li a:hover{ color:#fff; text-decoration:none;}
+.dynamic span{ float:left;}
+.dynamic .cate{ width:30px; height:20px; margin:4px 6px 4px 6px; line-height:20px; text-align:center;}
+.dynamic .tit{ width:140px; margin-right:7px; z-index: 9999;}
+.dynamic .date,.dynamic .price{ width:70px; overflow:hidden;}
+.dynamic .price{ color:#f00;}
+.dynamic .gy .cate{ color:#009237;}
+.dynamic .qg .cate{ color:#f47912;}
+.dynamic .urgent .cate{background:url(images/bgs.png) no-repeat -356px -72px; color:#fff; line-height:20px;}
+.dynamic .urgent .tit,.dynamic .urgent .price,.dynamic .urgent .date,.dynamic .new .cate,.dynamic .new .tit{ color:#f00;}
+.dynamic li a:hover .cate,.dynamic li a:hover .price,.dynamic .urgent a:hover .tit,.dynamic .urgent a:hover .price,.dynamic .urgent a:hover .date,.dynamic .new a:hover .tit{ color:#fff;}
+.dynamic .new{ background:#cce9a4; position:relative; color:#f00; z-index:1;}
+.dynamic .new .icon{ background:url(images/bgs.png) no-repeat -397px -72px; position:absolute; right:5px; top:5px; width:30px; height:16px; display:inline-block;}
+
+.banner{ float:left; width:740px; height:390px; overflow:hidden;position:relative;}
+.slides{position:relative;z-index:1;}
+.slides li{height:261px;}
+.slides li a{ display:block; width:493px; height:261px;}
+
+
+
+
+
+.floor-box3 dl:hover{}
+
+.mt20{ margin-top:20px;}
+.graybg{ background:#f5f5f5;}
+
+
+.white{ color:#fff;}
+.grey{color:#8a8a8a;}
+.font14{ font-size: 14px;}
+.orange{ color:#f47912;}
+.FontScroll{ width:70px; height: 64px; float:left;line-height:32px;overflow:hidden;}
+.FontScroll ul{ width:100%; height: 100%; float:left; text-align: center;}
+.FontScroll ul li{ width:100%; height: 32px; float:left;}
+
+
+
+
+#wrapper{ width:1003px; height:auto; zoom:1; overflow:hidden; margin:0 auto;}
+
+.itemcon{
+    width:263px ;height: 80px;margin-top: 6px;padding-top: 10px;padding-left: 15px;
+}
+.itemcon:hover{
+    background: #009237;
+}
+.itemcon h1{
+
+}
+.itemcon h1 a{
+    color: #FFffff;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+.itemcon h1 a:hover{
+    list-style: none;
+}
+.itemcon ul{
+    width: 250px;
+    height: 50px;
+
+}
+.itemcon ul li{
+    float: left;
+    width: 60px;
+    height: 25px;
+}
+
+.itemcon ul li a{
+    color: #ffffff;
+}
+.itemcon ul li a:hover{
+    color: #000000;
+}
+
+
+.w_cate_list {
+    border: 1px solid #b0d2aa;
+    width: 473px;
+    padding-bottom: 3px;
+    margin-left: 15px;
+    margin-top: 10px;
+    min-height: 230px;
+}
+
+.w_cate_list h3 {
+    background: #F7FAF3;
+    border-bottom: 1px solid #ADD0A6;
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.w_cate_list h3 span {
+    float: right;
+    width: 70px;
+}
+
+.w_cate_list span a {
+    color: #2E7622;
+    font-size: 12px;
+    font-weight: 100;
+    font-family: "宋体";
+}
+
+.w_fenlei_div {
+    border-top: none;
+    padding: 7px;
+    float: left;
+}
+/*overflow: auto;*/
+
+.w_subcate_list {
+    width: 457px;
+    height: 66px;
+    float: left;
+    overflow: hidden;
+}
+
+.w_subcate_list a {
+    text-align: left;
+    padding-left: 9px;
+    padding-right: 10px;
+    line-height: 22px;
+    display: block;
+    float: left;
+}
+
+.w_goods_list {
+    width: 457px;
+    height: 120px;
+    float: left;
+}
+
+.w_goods_list li {
+    width: 100px;
+    padding-left: 10px;
+    float: left;
+    text-align: center;
+    margin-top: 8px;
+    position: relative;
+}
+
+.w_goods_list li span.phone-zan{
+    position: absolute;
+    top:0px;
+    right: 0px;
+}
+.w_goods_list li span.phone-zan img{
+    float: right;
+}
+.w_goods_list li div {
+    width: 100px;
+    height: 24px;
+    background: #eef2e8;
+    line-height: 24px;
+    color: #444;
+    text-align: center;
+    list-style: none;
+    border: 0;
+    overflow: hidden;
+}
+.gleft {
+    float: left;
+}
+.shoptop .left a{
+    color: #197B04;
+}
+#qiugouxinxi li{
+    float: left;
+    margin-left: 10px;
+    width: 182px;
+    height: 180px;
+    margin-top: 10px;
+}
+#qiugouxinxi img{
+    width: 182px;
+    height: 150px;
+}
+#qiugouxinxi span{
+    display: block;
+    width: 182px;
+    height: 30px;
+    background: #EEF2E8;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+.bottomcon  span{
+    color: orange;
+}
+.bottomcon  ul{
+    width: 300px;
+    height: 420px;
+    float: left;
+    margin-left: 17px;
+    font-size: 18px;
+    margin-top: 15px;
+
+}
+.bottomcon ul li{
+    height: 35px;
+    line-height: 35px;
+}
+.bottomcon ul li span{
+    padding-right: 15px;
+}
+
+.wrappic{ background:#f8f8f8; padding:0px; width: 1260px;height:250px; }
+#slide{overflow:hidden;width:1250px;margin:10px auto;}
+#slide ul{list-style:none;}
+#slide li{float:left;}
+#slide img{
+    width: 259px;
+    height: 203px;
+
+}
+#slide a{
+    display: block;
+    width: 259px;
+    height: 250px;
+    margin-left: 10px;
+}
+#slide span{
+    display: block;
+    width: 259px;
+    height: 40px;
+    background: #EEF2E8;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 10px;
+}
+#slide .slideul1{width:3999px;}
+
+#huamuyunshu {
+    width: 982px;
+    height: 453px;
+    margin: 0 auto;
+}
+#huamuyunshu a{
+    display: block;
+    width: 150px;
+    height: 93px;
+    margin-left: 10px;
+    float: left;
+    margin-top: 15px;
+    border: 1px solid  #87c77c;
+}
+#huamuyunshu a:hover{
+    text-decoration:none;
+}
+#huamuyunshu li{
+    padding-left: 5px;
+    padding-top: 5px;
+}
+#huamuyunshu .yunshuren{
+    color: #12951b;
+    font-size: 16px;
+    font-weight: bold;
+}
+#huamuyunshu .yunshutel{
+    padding-top: 5px;
+}
+
+#huamuzixun ul{
+    width:450px ;
+    height:550px ;
+    float: left;
+    margin-left: 33px;
+    margin-top: 5px;
+}
+
+#huamuzixun h3{
+    background-color: #F7FAF3;
+    border: 1px solid #ADD0A6;
+    font-size: 15px;
+    line-height: 30px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+#huamuzixun h3 a{
+    color: #444;
+    font-weight: bold;
+}
+#huamuzixun h3 span a{
+    font-weight: normal;
+    float: right;
+    color: #2E7622;
+}
+#huamuzixun .newstop{
+    width: 450px;
+    height: 95px;
+    background: #ffffff;
+    margin-top: 10px;
+}
+#huamuzixun .newstop img{
+    float: left;
+}
+#huamuzixun .newstop dl{
+    width: 315px;
+    height: 95px;
+    float: right;
+}
+#huamuzixun .newstop dt{
+    width: 315px;
+    height: 30px;
+    line-height: 30px;
+
+}
+#huamuzixun .newstop dt a{
+    font-size: 16px;
+    font-weight: bold;
+}
+#huamuzixun .newstop dt a:hover{
+    color:#257104 ;
+}
+#huamuzixun .newstop ul{
+    width:450px ;
+    height: 400px;
+    margin-left: 0px;
+    margin-top: 10px;
+
+}
+#huamuzixun .newstop ul li{
+    width: 450px;
+    height: 33px;
+    line-height: 33px;
+    border-bottom: 1px solid #DEEFE1 ;
+}
+#huamuzixun .newstop ul li a{
+    font-size: 14px;
+}
+
+.doorlist{
+    padding-left: 180px;
+}
+.doorlist li{
+    float: left;height: 43px;line-height:43px;margin-left: 40px;
+}
+.doorlist a{
+    color: #155D07;
+    font-size: 16px;
+
+}
+.doorlist a:hover{
+    color: black;
+}
+.linebox{ width:1003px; height:auto; overflow:hidden; margin-top:15px;}
+.floor-left{ width:205px; float:left;overflow:hidden; }
+.floor-box{ width:594px; float:left;overflow:hidden; }
+.floor-right{ width:204px; float:left;overflow:hidden; }
+
+.huamushop{
+    width: 1001px;height: 830px;border: 1px solid #E2ECD4;overflow: hidden;
+}
+.huamushop .shoptop{
+    width: 1001px;height: 56px;background: url(images/huam_top.jpg);
+}
+.huamushop .shoptop .left{
+    width: 142px;height: 43px;background: url(images/top_floor_bg.jpg);float: left;
+}
+.huamushop .shoptop .left h1{
+    padding-left: 18px;padding-top: 8px; color: #FFffff;font-size: 18px;
+}
+.huamushop .shoptop .left  span{
+    color: black;padding-left: 10px;color: #187D05;font-weight: bold;
+}
+
+.huamushop .shopbottom{
+    width: 1001px;height: 11px; background: url(images/huam_bottom.jpg);overflow: hidden;clear: both;
+}
+.qiugoubottom{
+    width: 1001px;height: 11px; background: url(images/huam_bottom.jpg);overflow: hidden;clear: both;
+}
+
+
+
+/*2f*/
+.index_sr_top {
+    background: url("http://img1.huamu.com/themes/pc/mall/huamu/styles/default/themes/pc/mall/huamu/images/huam_top.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);height: 56px;width: 993px;
+}
+
+.Purchase{width:956px; padding:0px 15px 10px 15px;margin: 0 auto;}
+.Species_Name li{float:left; color:#666666;font-family: "Microsoft Yahei";font-size:14px;line-height: 27px;}
+.Product_size{margin-top: 1px;width:320px;height:27px;text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
+.Product_size li{float:left;font-family: "Microsoft Yahei"; margin:0 3px;}
+.fl{float:left;}
+.fr{float:right;}
+.Product_bg{height:25px;color: #5f5e5e; font-size:14px; text-align:center; line-height:25px; font-family: "Microsoft Yahei";}
+.daojieshi{font-size: 14px;}
+.Product_Price{margin-left:30px;}
+.daojieshi li{float:left; font-family: "Microsoft Yahei"; color:#555353;line-height: 27px;line-height: 27px;}
+.time{width:24px;  padding:1px 0px; border-radius:3px; margin:0 2px;color:#4fb533;line-height: 20px !important;margin-top: 2px;text-align: center;background:#0aad1c;color: #fff !important; margin-top:4px;}
+
+
+.Product_Price li{border:1px solid #55b739;border-radius:3px; padding:2px 13px; font-size:12px; color:#4fb533;font-family: "Microsoft Yahei"; text-align:center; margin-top: 1px;}
+.Purchase_cnt{border-bottom:1px dashed #dddddd; padding:10px 0;line-height: 20px;}
+.font_size{font-size:14px;}
+
+
+.content .c2_right_view{
+    width: 996px;
+}
+.shop_con_list{
+    width: 996px;
+}
+.requirement_info_tab{
+    border-spacing: 0;
+    font-size: 13px;
+    border:1px solid #c3e5be;
+    width: 996px;
+}
+.requirement_info_tab td{
+    border: none;
+    text-align: center;
+}
+
+/*.requirement_info_tab tr:nth-child(2n){
+    background: #f9f9f9;
+}*/
+
+.requirement_info_tab thead td{
+    background: #f2fef2;
+    height: 46px;
+    line-height: 46px;
+}
+.requirement_info_tab tbody td{
+    height: 86px;
+    line-height: 86px;
+}
+.requirement_info_tab tr td:first-child{text-align: left;text-indent: 15px;}
+
+
+.requirement_info_tab tbody td.guoqi{
+    color: red;
+}
+.requirement_info_tab tbody td .grn{
+    font-weight: 500;
+    color: #249f1a;
+}
+
+.requirement_info_tab tbody td .sub_baojia{
+    line-height: 18px;
+    cursor: pointer;
+    font-family: "Microsoft Yahei";
+    font-size: 14px;
+    color: #249f1a;
+    border:1px solid #249f1a;
+    background: #fff;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+.requirement_info_tab tbody td .record_time{
+    display: inline-block;
+    line-height: 20px;
+    background: #f9f9f9;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #a1a0a0;
+    border-radius: 4px;
+    margin: 0 4px;
+}
+
+.requirement_info_pop{
+    display: none;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#55000000,endColorstr=#55000000);
+    position: fixed;
+    top:0;
+    left:0;
+}
+.cofirm_sub_block{
+    display:none;
+    color: #848484;
+    font-size: 14px;
+    width: 508px;
+    height: 360px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    border:8px solid #6b6a6c;
+    margin: 150px auto 0px auto;
+}
+.req_tit{
+    /*    overflow: hidden;*/
+    background: #f5f5f5;
+    height: 40px;
+}
+
+.req_tit h2{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+}
+.pop_bod_requirement{
+    margin: 16px auto;
+    width: 469px;
+    height: 106px;
+    border: 1px solid #e3e3e3;
+}
+
+.pop_bod_requirement p{
+    text-indent: 16px;
+    line-height: 30px;
+}
+
+.fill_info{
+    margin: 16px auto;
+    width: 469px;
+}
+.fill_info label{
+    margin-right: 35px;
+}
+.fill_info label input{
+    margin: 0 4px;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #e3e3e3;
+}
+.fill_info label input[type=radio]{
+    margin:0;
+}
+
+.confirm_btn_requirement{
+    cursor: pointer;
+    border:none;
+    background: #43b413;
+    width: 120px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+    float: right;
+    margin: 8px 18px 0px 0px;
+    font-family: "Microsoft Yahei";
+}
+.close_btn_req{
+    cursor: pointer;
+    position: absolute;
+    top:14px;
+    right: 20px;
+}
+
+
+
+.input_list{
+    overflow: hidden;
+    width: 334px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.input_list p{
+    position: relative;
+    top:0;
+    left: 0;
+}
+
+.input_list p input{
+    padding-left: 32px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #e3e3e3;
+}
+.input_list p .login{
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon_login_requirement.png) 4px 4px no-repeat;
+}
+.input_list p .pass{
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon_login_requirement.png) 5px -40px no-repeat;
+}
+.input_list p .card{
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon_login_requirement.png) 5px -85px no-repeat;
+}
+.login_btn{
+    margin-bottom: 16px;
+    float: none;
+    width: 100%;
+}
+
+.yanzhengma{
+    position: absolute;
+    right: 4px;
+    top:2px;
+}
+
+.attrs_filter {
+    margin-bottom: 10px;
+}
+
+.attr {
+    padding: 4px 0 2px;
+    overflow: hidden;
+    zoom: 1;
+    border-bottom: 1px dotted #ccc;
+}
+
+.attr .a_key {
+    float: left;
+    width: 40px;
+    font-weight: bold;
+    /*        text-align: right;*/
+    text-align: left;
+    line-height: 25px;
+}
+
+.attr .a_values {
+    /*        width: 570px;*/
+    width: 922px;
+    float: right;
+    position: relative;
+    /*        padding-right: 60px;*/
+}
+
+.attr .v_fold {
+    zoom: 1;
+}
+
+.attr .f_list {
+    width: 920px;
+    overflow: hidden;
+}
+
+.attr .v_fold .f_list li {
+    float: left;
+    margin-right: 32px;
+    line-height: 24px;
+    font-size: 12px;
+}
+
+.selected_filters .attr {
+    border-top: none;
+}
+
+.searched_item {
+    line-height: 20px;
+    background: #ffffff;
+    border: 1px solid #cbecc1;
+    padding: 0px 10px 2px 10px;
+    margin-bottom: 5px;
+}
+
+.gsr_recom_hot ul.txt {
+    margin-bottom: 10px;
+}
+
+.gsr_recom_hot ul.txt li {
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+}
+
+.gsr_recom_hot ul.txt li a {
+    display: block;
+    max-width: 170px;
+    height: 24px;
+    overflow: hidden;
+    float: left;
+}
+
+.gsr_recom_hot ul.txt li a.is_vip {
+    color: #fe5504;
+}
+
+.gsr_recom_hot ul.txt li > span {
+    float: right;
+    color: #999;
+}
+
+.gsr_recom_hot ul.txt li b {
+    float: left;
+    color: #999;
+}
+
+.goods_list_vip li {
+    padding: 5px 5px 0px 5px;
+    height: 65px;
+}
+
+.goods_list_vip .thumb {
+    float: left;
+}
+
+.goods_list_vip .info {
+    float: left;
+    margin-left: 7px;
+    width: 140px;
+}
+
+.goods_list_vip .info div {
+    height: 20px;
+    line-height: 20px;
+}
+
+.goods_list_vip .info .t {
+    width: 140px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.goods_list_vip .info .s a {
+    float: left;
+}
+
+.goods_list_vip .info .s a.sn {
+    width: 108px;
+    height: 20px;
+    line-height: 25px;
+    overflow: hidden;
+}
+
+.text_link span.info a {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    max-width: 124px;
+    overflow: hidden;
+    float: left;
+}
+.recomand_plant_pic{
+    width: 130px;
+    height: 88px;
+
+}
+span.ico img {
+    cursor: pointer;
+    padding: 0 0 3px 5px;
+}
+/*        *****************************2015-11-20**************************************/
+
+.white_bg {
+    padding: 10px 15px;
+    background: #fff;
+}
+
+form.choice-items {
+    overflow: hidden;
+    line-height: 20px;
+    font-size: 14px;
+    color: #555;
+    box-sizing: border-box;
+}
+
+form.choice-items em {
+    font-style: normal;
+    color: #6f6f6f;
+}
+
+form.choice-items .classes,
+.area,
+.plants_age,
+.plants_price {
+    border-bottom: 1px dashed #d1ebcd;
+    padding: 8px 0px;
+    overflow: hidden;
+}
+
+form.choice-items label {
+    float: left;
+    width: 38px;
+    margin: 4px 0px;
+}
+
+form.choice-items .search_list {
+    float: left;
+    width: 912px;
+}
+/*    form.choice-items .search_list li {
+    float: left;
+    padding: 0px 12px;
+    color: #636363;
+    margin: 4px 2px;
+    font-size: 12px;
+}*/
+
+form.choice-items .search_list li {
+    margin: 4px 2px;
+    width: 94px;
+    float: left;
+    color: #636363;
+    cursor: pointer;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+form.choice-items .width120 li {
+    width: 120px;
+}
+
+form.choice-items .search_list li a {
+    display: block;
+    line-height: 20px;
+    max-width: 66px !important;
+    /*        margin: 4px 2px;*/
+    padding: 0px 4px 0px 4px;
+}
+
+form.choice-items .search_list>li>ul>li {
+    cursor: pointer;
+}
+
+
+form.choice-items .search_list li a {
+    display: block;
+    line-height: 20px;
+    max-width: 66px !important;
+    /*        margin: 4px 2px;*/
+    padding: 0px 4px 0px 4px;
+}
+
+form.choice-items li.on a {
+    /*        margin: -5px 2px !important;*/
+    /*        display: inline-block;*/
+    float: left;
+    line-height: 18px !important;
+    padding: 0px 6px 0px 6px;
+    border: 1px solid #32c600;
+    line-height: 18px;
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-selected.png) right bottom no-repeat;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sec-classfy {
+    overflow: hidden;
+    padding: 8px 0px 8px 38px;
+}
+
+.thir-classfy {
+    overflow: hidden;
+    padding: 8px 0px;
+    margin-left: 38px;
+    border: 1px dashed #eee;
+}
+
+form.choice-items .thir-classfy .the-more-btn {
+    float: right;
+    border: 1px solid #ddd;
+    padding: 0px 18px 0px 10px;
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon_arr_down.jpg) 37px center no-repeat;
+}
+
+.icon_leval {
+    position: absolute;
+    top: 0px;
+    left: 4px;
+}
+
+p.base_bottom {
+    height: 20px !important;
+
+    line-height: 20px !important;
+    margin-top: 4px;
+}
+
+.h2_wrap {
+    border: none;
+    float: left;
+    overflow: hidden;
+}
+
+.list .list_pic {
+    width: 758px;
+    border: 1px solid #bae1b2;
+    margin-bottom: 10px;
+}
+
+.table_title {
+    height: auto;
+}
+
+.table_title li {
+    float: left;
+    padding-left: 10px;
+    width: 100px;
+    height: 28px;
+    line-height: 30px;
+    border-right: 1px solid #bae1b2;
+    border-top: 1px solid #bae1b2;
+    border-bottom: 1px solid #bae1b2;
+    cursor: pointer;
+}
+
+.table_title li:first-child {
+    border-left: 1px solid #bae1b2;
+}
+
+.squares .list_pic {
+    border-top: 1px solid #bae1b2;
+}
+
+.factor-list {
+    margin-bottom: -1px;
+    overflow: hidden;
+    float: right;
+}
+
+.factor-list li:first-child {
+    border-left: 1px solid #bae1b2;
+}
+
+.factor-list li:last-child {
+    border-right: 1px solid #bae1b2;
+}
+
+.factor-list li:last-child a {
+    border-right: 0px !important;
+}
+
+.factor-list li {
+    cursor: pointer;
+    height: 32px;
+    float: left;
+    border-top: 1px solid #bae1b2;
+    border-bottom: 1px solid #bae1b2;
+}
+
+.factor-list li.chosed {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #89cf7b;
+    border-left: 1px solid #89cf7b;
+    border-right: 1px solid #89cf7b;
+}
+
+.factor-list li.chosed a {
+    border-right-width: 0px !important;
+}
+
+.factor-list li a:hover {
+    text-decoration: none;
+}
+
+.factor-list li.up-down-icon a {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-arr.png) 38px 5px no-repeat;
+}
+
+.factor-list li a {
+    margin-top: 6px;
+    font-size: 12px;
+    display: block;
+    color: #4F4F4F;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 20px;
+    text-align: center;
+    border-right: 1px solid #cacaca;
+}
+
+.factor-list li.only-up-icon a {
+    /*        border-right: none;*/
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-arr.png) 38px -152px no-repeat;
+}
+
+.factor-list li.only-down-icon a {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-arr.png) 38px -252px no-repeat;
+}
+
+.table_title .dm_squares i {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/display_mode.png) no-repeat 0 0;
+}
+
+.table_title .dm_list i {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/display_mode.png) no-repeat -25px 0;
+}
+
+.table_title .dm_map i {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/display_mode.png) no-repeat -50px 0;
+}
+
+.word-list {
+    float: left;
+    margin-left: 10px;
+    overflow: hidden;
+    width: 800px;
+}
+
+.word-list li {
+    text-align: center;
+    padding: 0px !important;
+    width: 24px;
+    border: 1px solid #ddd;
+}
+
+.word-list li.exc {
+    background: #eee;
+}
+
+#more-trd-cates_area {
+    margin-top: 2px;
+    margin-right: 4px;
+    float: right;
+    color: #636363;
+    cursor: pointer;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    padding: 0px 18px 0px 10px;
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon_arr_down.jpg) 37px center no-repeat;
+}
+.invoice{
+    padding:10px 20px;
+    height:40px;
+    line-height:30px;;
+}
+.invoice label{
+    margin-left: 10px;
+}
+
+
+.factor-list {
+    margin-bottom: -1px;
+    overflow: hidden;
+    float: right;
+}
+.factor-list li:first-child {
+    border-left: 1px solid #bae1b2;
+}
+.factor-list li.only-up-icon a {
+    /* border-right: none; */
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-arr.png) 38px -152px no-repeat;
+}
+
+.factor-list li {
+    cursor: pointer;
+    height: 32px;
+    float: left;
+    border-top: 1px solid #bae1b2;
+    border-bottom: 1px solid #bae1b2;
+}
+
+.factor-list li.only-down-icon a {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-arr.png) 38px -252px no-repeat;
+}
+
+
+.factor-list li:last-child {
+    border-right: 1px solid #bae1b2;
+}
+
+
+.my_requir_block{overflow: hidden;border:1px solid #e2ecd4;}
+.distance_you{float: left;width: 130px;color: #5f5e5e;line-height: 25px;font-size: 14px;margin-top: 1px;}
+.distance_you>li{float: left;}
+.distance_you>li>img{margin-top: -3px;}
+
+.Species_Name {width: 100px;overflow: hidden;}
+
+
+
+.public_qiugou_btn{width: 122px;height: 32px;line-height: 32px;color: #fff;text-align: center;cursor: pointer;background: #FE9103;font-size: 16px;margin-right: 10px;margin-top: 6px;border-radius: 4px;}
+
+.grn {
+    font-weight: 500;
+    color: #249f1a;
+}

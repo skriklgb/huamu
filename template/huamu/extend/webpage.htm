@@ -4,7 +4,7 @@
 	<tr>
 	<td valign="top" class="left_menu">
 		<ul>
-		<li class="left_menu_li"><a href="{$MODULE[1][linkurl]}">网站首页</a></li>
+		<li class="left_menu_li"><a href="{$MODULE[1][linkurl]}">花木首页</a></li>
 		<!--{php $tags=tag("table=webpage&condition=item='$_item'&areaid=$cityid&pagesize=99&order=listorder desc,itemid desc&template=null");}-->
 		{loop $tags $k $t}
 		<li class="left_menu_li" id="webpage_{$t[itemid]}"><a href="{if $t[domain]}{$t[domain]}{else}{linkurl($t[linkurl], 1)}{/if}">{$t[title]}</a></li>

@@ -49,3 +49,13 @@
 .navbar-home .hot{background:url(images/hot_ico1.gif) no-repeat; width:30px; height:36px; position:absolute; left:60px; top:-7px; display:inline-block; z-index:10;}
 .navbar-home a:hover.nav-lit,.navbar-home a:hover.nav-buy,.navbar-home a:hover.nav-lit2{ color:#FFF;}
 .navbar-home a:hover.nav-buy .icon{background:url(images/bgs.png) no-repeat -405px -211px;}
+
+
+body {
+    font-size: 12px;
+    font-family: Microsoft YaHei, Arial, Helvetica, sans-serif;
+    background: #fff;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,i,b { padding: 0; margin: 0; }
+body, button, input, select, textarea { font:12px/1.5 tahoma, arial, \5b8b\4f53; color:#3e3e3e; }
+h1,h2,h3,h4,h5,h6 { font-weight: normal; font-size: 100%; }
