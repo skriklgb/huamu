@@ -1307,7 +1307,7 @@
 
 						<div class="newstop">
 
-							<!--{php $tags=tag("moduleid=21&condition=status=3 and addtime>$today_endtime-30*86400&areaid=$cityid&order=addtime desc&pagesize=".$DT[page_rank]."&template=null");}-->
+							<!--{php $tags=tag("moduleid=21&condition=status=3 and addtime>$today_endtime-30*86400&areaid=$cityid&length=36&order=addtime desc&pagesize=".$DT[page_rank]."&template=null");}-->
 							{loop $tags $i $t}
 							{if $i<1}
 							<a href="{$t[linkurl]}"><img src="{$t[thumb]}" alt="" width="125" height="95"></a>
@@ -1343,7 +1343,7 @@
 
 						<div class="newstop">
 
-							<!--{php $tags=tag("moduleid=21&condition=status=3 and addtime>$today_endtime-30*86400&areaid=$cityid&order=hits desc&pagesize=".$DT[page_rank]."&template=null");}-->
+							<!--{php $tags=tag("moduleid=21&condition=status=3 and addtime>$today_endtime-30*86400&areaid=$cityid&length=36&order=hits desc&pagesize=".$DT[page_rank]."&template=null");}-->
 							{loop $tags $i $t}
 							{if $i<1}
 							<a href="{$t[linkurl]}"><img src="{$t[thumb]}" alt="" width="125" height="95"></a>

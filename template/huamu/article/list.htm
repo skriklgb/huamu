@@ -1,3 +1,469 @@
 {template 'header'}
+<style>
 
+    body {
+        font-size: 12px;
+        font-family: Microsoft YaHei, Arial, Helvetica, sans-serif;
+        background: #fff;
+    }
+    a {
+        text-decoration: none;
+    }
+
+    a:link,
+    a:visited {
+        color: #444;
+    }
+
+    a:hover {
+        color: #257104;
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: #CC3300;
+    }
+
+    .article_sum {width:100%; margin-bottom:10px; height:320px}
+
+    #article_sum_left {width:295px; height:320px; float:left;}
+    #article_sum_left .slide_images{width:295px; height:255px; margin-bottom:15px;}
+    #article_sum_left .pub_btn{width:295px; height:70px;}
+    #article_sum_left .ad_cycle { width: 295px; height: 235px; border: 1px solid #E2ECD4; padding: 1px; position: relative; }
+    #article_sum_left .ad_cycle .line { color: #fff; padding-left:10px; width: 295px; height: 27px; padding-top: 7px; position: absolute; bottom: 1px; left: 1px; z-index: 2; border-top: 1px solid #fff;}
+    #article_sum_left .ad_cycle .number { position: absolute; bottom: 8px; right: 0; z-index: 10; }
+    #article_sum_left .ad_cycle ul { float: right; padding-right: 15px; }
+    #article_sum_left .ad_cycle li { float: left; width: 19px; height: 19px; text-align: center; line-height: 19px; font-weight: bold; color: #fff; margin-left: 4px; cursor: pointer; }
+    #article_sum_left .ad_cycle .number_bg { width: 295px; height: 34px; position: absolute; bottom: 1px; left: 1px; z-index: 1; background: #000; -moz-opacity: 0.5; opacity:.50; filter: alpha(opacity=50); }
+
+    #article_sum_left .ad_cycle a { display: block; width: 295px; height: 235px; overflow: hidden; }
+
+    #article_sum_middle{width:425px; height:320px; float:left; margin-left:15px;}
+    #article_sum_right{width:250px; height:320px; float:right;}
+
+    .carticle_content{width:1000px; clear: both;overflow: auto; }
+    .carticle_item{float: left; position: relative; width:324px; height: 330px;}
+    .carticle_item h1,.carticle_item h2{background: #ECF5E0;height:36px;line-height: 36px;width: 310px;color: #035f40;font-size: 14px;border:1px solid #ccddb2;padding-left: 15px;}
+    .carticle_item h1 span, .carticle_item h2 span {font-weight: 100;}
+
+    .carticle_item_info{border:1px solid #ccddb2;border-top: none; padding: 10px; width: 305px; height: 250px; line-height: 25px;text-align: left;}
+    .carticle_item_info span {font-family: Arial;}
+    .carticle_item_info li{height:25px; overflow:hidden;}
+    .mar_l {margin-left: 10px;}
+    .mar_r {margin-right: 10px;}
+
+    /* article list */
+    .newsl_xin{ width:300px; clear:both;}
+    .newsc{ width:425px; margin-left:13px;}
+    .newsc_title ul{ margin-left:20px;}
+    .newsc_title li{ width:90px; float:left; font-size:14px; margin-left:10px;  height:28px; border:#DDE9D1 solid 1px; border-bottom:none; line-height:28px;}
+    .add_bg{width:900px; height:28px;}
+    .newsc_title a:link{ color:#126F50;}
+    .newsc_title a:visited{ color:#126F50;}
+    .newsc_title a:hover{ color:#333333;}
+    .count{ border:1px solid #DDE9D1; clear:both; padding-top:10px!important; padding-top:5px;}
+    #hot{  font-weight:600;  height:28px; position:relative; top:1px; }
+    .tiaomu{ width:395px; padding-left:5px;padding-right:5px; padding-bottom:5px; text-align:left; color:#989A99; line-height:22px; font-size:12px;}
+    .tiaomu h1{ font-size:14px;  margin-top:5px; margin-bottom:5px; color:#3B6E5D;}
+    .tiaomu p img{ margin-top:9px; margin-right:10px;}
+    .newsdiv{ clear:both; width:1002px;padding-bottom:15px; overflow:auto;}
+    .news_div{ float:left;}
+    .news_div h1{ background:#F7FAF3; height:40px; line-height:40px; width:310px; color:#444444; font-size:14px; border:1px #E3EDD4 solid;margin-top:15px; text-align:left; padding-left:15px;}
+
+    .news_div h1 span{ font-weight:100;}
+    .new_neirong{ border:1px solid #E2ECD4; border-top:none; padding:10px; width:305px; line-height:25px; text-align:left;}
+    .new_neirong span{ font-family:Arial;}
+    .new_neirong a:link{ color:#555;}
+    .new_neirong a:visited{ color:#555;}
+    .new_neirong a:hover{ color:#990000;}
+    .mar_l{ margin-left:10px;}
+    .hd{ width:300px; overflow:hidden; height:267px;}
+
+
+    .wrap_child_two LI{
+        width: 250px; margin:7px 0 5px 0px; line-height:24px; height:27px; padding-left:40px;}
+
+    .main_new_right{ width:250px; border:#CCDDB2 solid 1px; border-right:0px;}
+    .main_left_top{ height:30px;}
+    .main_left_top li{ font-size:14px; float:left; width:124px; height:30px; line-height:30px; border-right:#CCDDB2 solid 1px;border-bottom:#CCDDB2 solid 1px; }
+    .no_on a:link{ color:#333;}
+    .no_on a:visited{ color:#333;}
+    .no_on a:hover{ color:#333;}
+    .on_mous{ color:#4A7203; font-weight:bold; background:#E7F1E7;}
+    .on_mous a:link{ color:#4A7203;}
+    .on_mous a:visited{ color:#4A7203;}
+    .on_mous a:hover{ color:#4A7203;}
+    .main_left_middle{ height:235px; padding-left:5px; padding-top:8px; border-right:#CCDDB2 solid 1px;}
+    .main_left_bottom{ width:239px; height:79px; border-right:#CCDDB2 solid 1px;}
+    .main_cen{ margin-left:12px; width:502px;}
+    .main_left_middle a:link{ color:#333333;}
+    .main_left_middle a:visited{ color:#333333;}
+    .main_left_middle a:hover{ color:#FF0000;}
+    .main_left_middle td{ padding-left:3px;}
+    .shuanganniu{ border:1px solid #E6E6E6; padding-top:15px; padding-bottom:15px; height:35px; margin-top:15px;}
+    .shuanganniu li{ background:#FF7701; border:1px solid #EF6500; width:125px; height:35px; line-height:35px; float:left; margin-left:15px; font-size:14px; font-weight:bold;}
+    .shuanganniu li a:link{ color:#FFFFFF;}
+    .shuanganniu li a:visited{ color:#FFFFFF;}
+    .shuanganniu li a:hover{ color:#FFFF99;}
+    .weizhi{ background:#F7FBF8; border:1px solid #DCE8E2; height:32px; line-height:32px; width:970px; padding-left:15px; padding-right:15px; color:#333; text-align:left; margin-top:10px;}
+    .weizhi a{ margin-left:4px; margin-right:4px; text-decoration:none;}
+    .newlist_left{ width:240px; float:right; }
+    .newlist_right{ float:left; width:708px; border:#DBE8E1 1px solid; padding:15px; padding-top:0px; margin-bottom:10px;}
+    .new_s_main{ width:1002px; margin-top:10px;}
+    .paihang{ border:#D3E0C2 solid 1px;margin-bottom:10px;} /*width:248px;*/
+    .paihang_tit{ background:#fff repeat-x; height:38px; text-align:left; line-height:38px; border-bottom:1px solid #D3E0C2; padding-left:8px; font-size:16px; color: #035f40; font-weight: bold;}
+    .paihang_main{ background:#FCFEFD; padding:0 8px 8px 8px; text-align:left;}
+    .paihang_main li{border-bottom: 1px dotted #DCDCDC; height:26px; padding:5px 0px; overflow: hidden; line-height:26px;}
+    .paihang_main li > span.ts{float:right; color:#666;}
+    .paihang_main li a.title{max-width:186px;overflow:hidden;}
+    .paihang_main ul.txtlist > li a{float:left;}
+    .paihang_main ul.txtlist a.sg_item span{margin-left:0px;}
+    .sw-mod-keywordHotTop-num1 {
+        background:#5AB382;
+        width:16px; height:16px;
+        display: inline-block;
+        line-height:16px;
+        text-align:center;
+        font-style: normal;
+        color:#FFFFFF;
+        vertical-align: middle;
+    }
+    .sw-mod-keywordHotTop-num2
+    {
+        background:#949795;
+        width:16px; height:16px;
+        display: inline-block;
+        line-height:16px;
+        text-align:center;
+        font-style: normal;
+        color:#FFFFFF;
+        vertical-align: middle;
+    }
+    .list_nei { text-align:left; margin-top:15px; padding-bottom:15px; border-bottom:1px dashed #ddd;clear: both;overflow: auto;}
+    .list_nei h1{ font-size:16px; font-weight: bold;}
+    .list_nei img{ margin-right:10px; width:135px; height:90px;}
+    .list_nei p{ line-height:23px; margin-top:10px; color:#777;font-size: 12px;}
+    .list_nei h1 a{
+        color:#035f40 ;
+    }
+    .content a:link{
+        color:#035f40 ;
+    }
+    .list_nei a:hover{
+        color: black;
+        text-decoration: underline;
+    }
+
+    .aboutus {height:200px; width:970px; margin-top: 8px; }
+    .compan { width:970px; background: margin:0 auto; border-bottom:10px #F7FAF9 solid;}
+    .companl { width:178px; background:#F7FAF9;}
+    .companl .curr {background:#E96C00;}
+    .companl .curr a{color:#FFFFFF;}
+    .companl h4{ width:178px; height:36px; }
+    .companl ul li{ height:42px; line-height:42px; color:#014931; font-size:14px; background:#E6F4F2; margin-top:1px; text-align: center;}
+    .companl ul li a:link{ color:#014931;}
+    .companl ul li a:hover{ color:#014931;}
+    .companl ul li a:visited{ color:#014931;}
+
+    .companr {width: 726px; line-height:22px; padding-left:18px; padding-top:13px; padding-right:28px; padding-bottom:15px; text-align:left;}
+    .companr h3 {height: 22px; padding-bottom: 5px; border-bottom: 1px solid #ccc; text-align: left;padding-left: 23px;line-height: 22px;color: #015034;}
+
+    .cc_summary {height:220px; width:970px; margin-top:8px; }
+    .w_div {width:970px;}
+    .w_div td {font-size: 15px;color: #FFFFFF;line-height: 25px;}
+
+
+
+    .tishi_com {background: #FEFCD5; border: 1px solid #F9DABE; padding: 15px; font-size: 14px; line-height: 27px; text-align: left; width: 940px; margin-top: 12px;}
+
+    .blocktitle.title {
+        border-bottom: 1px solid #c6e2b4;
+        padding-bottom: 10px;
+    }
+    .title_baike {
+        padding: 0;
+        height: 31px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height:31px;
+        overflow: hidden;
+    }
+    #main_baike_cate_list li{ font-size:14px;}
+    .article_list{height:auto; overflow:hidden}
+
+    h1 a:link{ color:#035f40}
+    h1 a:visited{ color:#035f40}
+    h1 a:hover{ color:#333}
+    .article_con .default p{ font-size:13px; line-height:24px;}
+    .classify_list li {
+        height: 32px;
+        line-height: 35px;
+        font-size:13px;
+        padding-left:8px;
+        list-style-type: none;
+        margin-left:0;
+
+        border-bottom: 1px dotted #DCDCDC;
+    }
+    .side_textlist li {
+        height: 32px;
+        line-height: 32px;
+        overflow: hidden;
+        padding-left:8px;
+        background: none;
+        font-size:13px;
+        border-bottom: 1px dotted #DCDCDC;
+    }
+    .classify_list ul {
+        padding-bottom: 10px;
+    }
+    .side_textlist ul {
+        padding-bottom: 10px;
+    }
+    .subnav {
+        margin: 0 auto;
+        background: #fff;
+        border: none;
+        border-bottom: 1px solid #eee;
+        width: 994px;
+        height: 36px;
+        line-height: 36px;
+        text-align: left;
+        padding-left: 0;
+        color: #555;
+        font-family: "Microsoft Yahei";
+        margin-top:15px;
+    }
+
+    .gleft {
+        float: left;
+    }
+
+    .gright {
+        float: right;
+    }
+
+    .content {
+        width: 995px;
+        margin: 10px auto 0;
+        clear: both;
+    }
+
+    .content .left {
+        width: 178px;
+    }
+
+    .page {
+        float: right;
+        margin: 10px 10px 10px 0px;
+    }
+
+    .down,
+    .down_no,
+    .former,
+    .former_no,
+    .page_link,
+    .page_hover,
+    .nonce {
+        margin-left: 5px;
+    }
+
+    .former {
+        border: 1px solid #ff7a32;
+        display: block;
+        float: left;
+        width: 15px;
+        height: 17px;
+
+    }
+
+    .former:hover {
+        border: 1px solid #a53a00;
+    }
+
+    .down {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 2px 15px 0 8px;
+        float: left;
+        border: 1px solid #ff7a32;
+
+    }
+
+    .down:hover {
+        border: 1px solid #a53a00;
+    }
+
+    .page_link {
+        color: #666;
+    }
+
+    .page_hover {
+        color: #ff6000 !important;
+    }
+
+    .page_link,
+    .page_hover {
+        font-weight: bold;
+        display: block;
+        float: left;
+        text-decoration: none;
+        padding: 2px 5px 0;
+        font-size: 14px;
+    }
+
+    .page_link:hover,
+    .page_hover:hover {
+        text-decoration: underline;
+    }
+
+    .former_no {
+        border: 1px solid #ddd;
+        display: block;
+        float: left;
+        width: 15px;
+        height: 17px;
+
+    }
+
+    .down_no {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 2px 15px 0 8px;
+        float: left;
+        border: 1px solid #c7c7c7;
+
+    }
+
+    .page .nonce {
+        border: 1px solid #ddd;
+        display: block;
+        float: left;
+        height: 17px;
+        text-decoration: none;
+        color: #a3a3a3;
+        line-height: 17px;
+        padding: 0 5px;
+    }
+
+    .stat {
+        float: left;
+        height: 20px;
+        line-height: 20px;
+        color: #a3a3a3;
+        text-decoration: none;
+    }
+
+    .top_page {
+        float: right;
+        padding-right: 10px;
+    }
+
+    .top_page p {
+        float: left;
+        line-height: 23px;
+    }
+
+    .down {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 0px 15px 0 8px;
+        float: left;
+        border: 1px solid #479207;
+
+    }
+
+    a.down {
+        color: #FFF;
+    }
+
+    a.down:hover {
+        color: #FFF;
+        border: 1px solid #479207;
+
+    }
+
+    .former {
+        border: 1px solid #479207;
+        display: block;
+        float: left;
+        width: 60px;
+        color: #fff !important;
+        text-align: center;
+        height: 17px;
+
+    }
+
+    a.page_link:link {
+        color: #444
+    }
+
+    a.page_link:visited {
+        color: #444
+    }
+
+    a.page_link:hover {
+        color: #444
+    }
+
+    a.page_hover:link {
+        color: #479207
+    }
+
+    a.page_hover:visited {
+        color: #479207
+    }
+
+    a.page_hover:hover {
+        color: #479207
+    }
+    .paihang_main a:hover{
+        color: #444;
+    }
+
+    .content a:link,.content a:visited,.content a:active {color:#035f40;text-decoration:none;}
+</style>
+<div class="subnav">
+    <div class="keyword1"></div>
+    <div class="keyword2"></div>
+    当前位置:
+    <a href="{$MODULE[1][linkurl]}">花木首页</a> &gt;
+    <a href="{$MOD[linkurl]}">{$MOD[name]}</a>  &gt; {cat_pos($CAT, ' &raquo; ')}</div>
+
+<div class="content">
+    <div class="newlist_left">
+        <div class="paihang">
+            <div class="paihang_tit">新闻排行</div>
+            <div class="paihang_main">
+                <ul>
+
+                    <!--{tag("moduleid=$moduleid&condition=status=3 &catid=$catid&order=hits desc&pagesize=10&target=_blank")}-->
+
+
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="paihang">
+            <div class="paihang_tit">推荐新闻</div>
+            <div class="paihang_main">
+                <ul>
+                    <!--{tag("moduleid=$moduleid&condition=status=3 and level=1&catid=$catid&order=".$MOD[order]."&pagesize=10&target=_blank")}-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="newlist_right">
+
+        {if $tags}{template 'list-cat', 'tag'}{/if}
+
+
+    </div>
+</div>
 {template 'footer'}

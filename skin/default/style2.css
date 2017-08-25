@@ -59,3 +59,16 @@ body {
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,i,b { padding: 0; margin: 0; }
 body, button, input, select, textarea { font:12px/1.5 tahoma, arial, \5b8b\4f53; color:#3e3e3e; }
 h1,h2,h3,h4,h5,h6 { font-weight: normal; font-size: 100%; }
+
+
+/* pages */
+.pages {padding:20px 0 20px 0;text-align:center;font-size:12px;color:#666666;}
+.pages a:link,.pages a:visited,.pages a:active {background:#FFFFFF;border:#DDDDDD 1px solid;padding:3px;text-decoration:none;}
+.pages a:hover {background:#52A50B;border:#52A50B 1px solid;color:#FFFFFF;padding:3px;text-decoration:none;}
+.pages strong {background:#52A50B;padding:3px;border:#52A50B 1px solid;color:#FFFFFF;}
+.pages_inp {width:30px;border:#DDDDDD 1px solid;color:#666666;padding:2px;text-align:center;}
+.pages_btn {width:26px;border:#52A50B 1px solid;color:#FFFFFF;padding:1px;background:#52A50B;font-weight:bold;font-size:11px;}
+.pages label {background:#FFFFFF;border:#DDDDDD 1px solid;color:#666666;padding:3px 5px 3px 5px;}
+.pages label em {color:red;font-weight:bold;font-style:normal;}
+.pages label span {font-weight:bold;}
+.pages cite {font-style:normal;}
