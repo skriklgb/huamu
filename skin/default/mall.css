@@ -161,3 +161,990 @@ body {
 #wrapper2 .linebox .mallpic a:hover{
     color:#268C0C ;
 }
+
+
+
+body {
+    font-size: 12px;
+    font-family: Microsoft YaHei, Arial, Helvetica, sans-serif;
+    background: #fff;
+}
+.subnav {
+    margin: 0 auto;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #eee;
+    width: 994px;
+    height: 36px;
+    line-height: 36px;
+    text-align: left;
+    padding-left: 0;
+    color: #555;
+    font-family: "Microsoft Yahei";
+    margin-top: 10px;
+}
+
+.content2{
+    width:995px ;
+    margin: 0 auto;
+    height: auto;
+    margin-top: 10px;
+    padding: 0;
+}
+.shortcut_menu {
+    float: right;
+}
+.shortcut_menu > li {
+    float: left;
+    position: relative;
+}
+.showzinav {
+    position: absolute;
+    width: 100px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    background: #418c04;
+    top: 40px;
+    left: 0px;
+    overflow: auto;
+    z-index: 100;
+    line-height: 28px;
+}
+.showzinav li {
+    height: 28px;
+    width: 90px;
+    margin: 0;
+    padding-left: 5px;
+    font-size: 12px;
+    text-align: left;
+    border-bottom: 1px dotted #c0f1b6;
+}
+.showzinav li a {
+    color: #fff;
+}
+.showzinav li a:link {
+    color: #fff;
+}
+.showzinav li a:visited {
+    color: #fff;
+}
+/*新添加*/
+.shortcut_menu li .title {
+    width: 90px;
+    height: 41px;
+    line-height: 41px;
+    color: #222;
+    padding-left: 15px;
+    background: url( http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/xiaimgs_white.png) no-repeat 66px 17px;
+    cursor: pointer;
+}
+#nav {
+    background: url( {
+    res file=images/gcs.png
+    }
+) repeat-x;
+    height: 44px;
+}
+
+.nav a{
+    float: left;
+    padding-left: 25px;
+    color: #919191;
+    background: url( http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/ico.gif) no-repeat 11px -535px !important;
+}
+
+
+
+.shortcut_menu li.want_buy {
+    margin-right: 0px !important;
+}
+
+.user_center {
+    height: 36px;
+    font: 14px/36px "Microsoft YaHei";
+    padding-left: 42px;
+    border-bottom: 1px solid #dbdcda;
+    font-weight: 400;
+    color: #666;
+    background: url( http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/user.png) 8px 6px no-repeat;
+}
+a.pic_cart {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 30px;
+    background: url( {
+    res file=images/user.png
+    }
+) 0px -28px no-repeat;
+    float: right;
+    margin: 0px 16px 0px 0px;
+}
+ul.user_center_list li.fir a.one {
+    background: url( http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/user.png) 0px -69px no-repeat;
+}
+ul.user_center_list li.fir a.two {
+    background: url( http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/user.png) 0px -104px no-repeat;
+}
+ul.user_center_list li.sec a.one {
+    background: url( http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/user.png) 0px -144px no-repeat;
+}
+ul.user_center_list li.sec a.two {
+    background: url( http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/user.png) 0px -175px no-repeat;
+}
+
+/*
+.buy {
+    float: left;
+    padding-left: 25px;
+    color: #919191;
+ background: url( http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/ico.gif) no-repeat 10px -2149px;
+}
+*/
+.guanfang_tel {
+    float: left;
+    padding-left: 25px;
+    color: #919191;
+    background: url( http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/ico.gif) no-repeat 11px -570px;
+}
+
+
+.main_catelist li {
+    float: left;
+    line-height: 30px;
+}
+
+.main_catelist li.gcate_list_default a {
+    width: 75px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    float: left;
+}
+
+.h_line1 {
+    height: 30px;
+}
+
+.h_line2 {
+    height: 60px;
+}
+
+.h_line3 {
+    height: 90px;
+}
+
+.squares {
+    margin-bottom: 10px;
+}
+
+.gcate_list_default {
+    list-style-type: none;
+    width: 630px;
+    margin-left: 30px;
+    overflow: hidden;
+}
+
+.gcate_list_expand {
+    list-style-type: none;
+    width: 630px;
+    margin-left: 30px;
+    height: auto;
+}
+
+.ext_btn {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/show.jpg) repeat 0;
+    width: 58px;
+    height: 21px;
+    display: block;
+    float: right;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.gc_list_hide {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/hidden.jpg) repeat 0;
+}
+
+.gsr_recom_hot ul.txt {
+    margin-bottom: 10px;
+}
+
+.gsr_recom_hot ul.txt li {
+    padding: 0 8px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+}
+
+.gsr_recom_hot ul.txt li a {
+    display: block;
+    max-width: 170px;
+    height: 24px;
+    overflow: hidden;
+    float: left;
+}
+
+.gsr_recom_hot ul.txt li a.is_vip {
+    color: #fe5504;
+}
+
+.gsr_recom_hot ul.txt li > span {
+    float: right;
+    color: #999;
+}
+
+.gsr_recom_hot ul.txt li b {
+    float: left;
+    color: #999;
+}
+
+.goods_list_vip li {
+    padding: 5px 5px 0px 5px;
+    height: 65px;
+}
+
+.goods_list_vip .thumb {
+    float: left;
+}
+
+.goods_list_vip .info {
+    float: left;
+    margin-left: 7px;
+    width: 140px;
+}
+
+.goods_list_vip .info div {
+    height: 20px;
+    line-height: 20px;
+}
+
+.goods_list_vip .info .t {
+    width: 140px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.goods_list_vip .info .s a {
+    float: left;
+}
+
+.goods_list_vip .info .s a.sn {
+    width: 108px;
+    height: 20px;
+    line-height: 25px;
+    overflow: hidden;
+}
+
+.text_link span.info a {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    max-width: 124px;
+    overflow: hidden;
+    float: left;
+}
+
+.recomand_plant_pic{
+    width: 130px;
+    height: 88px;
+
+}
+
+
+/*        *****************************2015-11-20**************************************/
+
+.white_bg {
+    padding: 10px 15px;
+    background: #fff;
+}
+
+form.choice-items {
+    overflow: hidden;
+    line-height: 20px;
+    font-size: 14px;
+    color: #555;
+    box-sizing: border-box;
+}
+
+form.choice-items em {
+    font-style: normal;
+    color: #6f6f6f;
+}
+
+form.choice-items .classes,
+.area,
+.plants_age,
+.plants_price {
+    border-bottom: 1px dashed #d1ebcd;
+    padding: 8px 0px;
+    overflow: hidden;
+}
+
+form.choice-items label {
+    float: left;
+    width: 38px;
+    margin: 4px 0px;
+}
+
+form.choice-items .search_list {
+    float: left;
+    width: 900px;
+}
+
+form.choice-items .search_list li {
+    margin: 4px 2px;
+    width: 78px;
+    float: left;
+    color: #636363;
+    cursor: pointer;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+form.choice-items .search_list li a {
+    display: block;
+    line-height: 20px;
+    max-width: 66px !important;
+    /*        margin: 4px 2px;*/
+    padding: 0px 4px 0px 4px;
+}
+
+form.choice-items .on {
+    /*        margin: -5px 2px !important;*/
+    /*        display: inline-block;*/
+    float: left;
+    line-height: 18px !important;
+    padding: 0px 3px 0px 3px;
+    border: 1px solid #32c600;
+    line-height: 18px;
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-selected.png) right bottom no-repeat;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sec-classfy {
+    overflow: hidden;
+    padding: 8px 0px 8px 38px;
+}
+
+.thir-classfy {
+    overflow: hidden;
+    padding: 8px 0px;
+    margin-left: 19px;
+    border: 1px dashed #eee;
+
+    margin-top: 10px;
+}
+
+form.choice-items .thir-classfy .the-more-btn {
+    float: right;
+    border: 1px solid #ddd;
+    padding: 0px 18px 0px 10px;
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon_arr_down.jpg) 37px center no-repeat;
+
+}
+
+.recomand_store {
+    margin: 15px 0px;
+    overflow: hidden;
+    padding: 8px 15px;
+    border: 1px solid #bde2b6;
+    margin-top: 0;
+}
+
+.recomand_store .recomand_list a {
+    color: #636363;
+}
+
+.recomand_store .recomand_list a:hover {
+    text-decoration: none;
+}
+
+.recomand_store .recomand_list a .block_pic {
+    /*        border: 1px solid #ddd;*/
+    float: left;
+    position: relative;
+}
+
+/*    .recomand_store .recomand_list a .block_pic img{
+        width: 160px;
+        height: 160px;
+    }*/
+
+.recomand_store .recomand_list li {
+    width: 350px;
+    overflow: hidden;
+    padding: 8px 0px 12px 0px;
+    float: left;
+}
+
+.recomand_store .recomand_list a .recomand_text {
+    float: left;
+    width: 204px;
+    margin-left: 14px;
+}
+
+.recomand_store .recomand_list a .recomand_text h3 {
+    color: #44b700;
+    line-height: 24px;
+}
+
+.recomand_store .recomand_list a .recomand_text p {
+    height: 40px;
+    line-height: 20px;
+}
+
+.recomand_store .recomand_list a .recomand_text p .recom_price {
+    color: #fe5f13;
+    float: left;
+    color: #636363;
+    font-weight: 500;
+    width: 116px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.recomand_store .recomand_list a .recomand_text p .recom_distance {
+    display: inline-block;
+    padding-left: 18px;
+    float: right;
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-distance.jpg) no-repeat;
+}
+
+.icon_leval {
+    position: absolute;
+    top: 0px;
+    left: 4px;
+}
+
+
+p.base_bottom {
+    line-height: 20px !important;
+    height: 20px !important;
+    margin-top: 4px;
+}
+
+.h2_wrap {
+    border: none;
+    float: right;
+    overflow: hidden;
+}
+
+.list .list_pic {
+    width: 758px;
+    border: 1px solid #bae1b2;
+    margin-bottom: 10px;
+}
+
+.table_title {
+    height: auto;
+}
+
+.table_title li {
+    float: left;
+    padding-left: 10px;
+    width: 100px;
+    height: 28px;
+    line-height: 30px;
+    border-right: 1px solid #bae1b2;
+    border-top: 1px solid #bae1b2;
+    border-bottom: 1px solid #bae1b2;
+    cursor: pointer;
+}
+
+.table_title li:first-child {
+    border-left: 1px solid #bae1b2;
+}
+
+.squares .list_pic {
+    border-top: 1px solid #bae1b2;
+}
+
+.factor-list {
+    margin-bottom: -1px;
+    overflow: hidden;
+    float: left;
+}
+
+.factor-list li:first-child {
+    border-left: 1px solid #bae1b2;
+}
+
+.factor-list li:last-child {
+    border-right: 1px solid #bae1b2;
+}
+
+.factor-list li:last-child a {
+    border-right: 0px !important;
+}
+
+.factor-list li {
+    cursor: pointer;
+    height: 32px;
+    float: left;
+    border-top: 1px solid #bae1b2;
+    border-bottom: 1px solid #bae1b2;
+}
+
+.factor-list li.chosed {
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #89cf7b;
+    border-left: 1px solid #89cf7b;
+    border-right: 1px solid #89cf7b;
+}
+
+.factor-list li.chosed a {
+    border-right-width: 0px !important;
+}
+
+.factor-list li a:hover {
+    text-decoration: none;
+}
+
+.factor-list li.up-down-icon a {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-arr.png) 38px 5px no-repeat;
+}
+
+.factor-list li a {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #4F4F4F;
+    display: block;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 20px;
+    text-align: center;
+    border-right: 1px solid #cacaca;
+}
+
+.factor-list li.only-up-icon a {
+    /*        border-right: none;*/
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-arr.png) 38px -152px no-repeat;
+}
+
+.factor-list li.only-down-icon a {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-arr.png) 38px -252px no-repeat;
+}
+
+.table_title .dm_squares i {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/display_mode.png) no-repeat 0 0;
+}
+
+.table_title .dm_list i {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/display_mode.png) no-repeat -25px 0;
+}
+
+.table_title .dm_map i {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/display_mode.png) no-repeat -50px 0;
+}
+
+.word-list {
+    float: left;
+    margin-left: 10px;
+    overflow: hidden;
+    width: 800px;
+}
+
+.word-list li {
+    text-align: center;
+    padding: 0px !important;
+    width: 24px;
+    border: 1px solid #ddd;
+}
+
+.word-list li.exc {
+    background: #eee;
+}
+
+ul.trval {
+    overflow: hidden;
+    padding-left: 16px;
+}
+/*    ul.trval li{padding: 0 !important; width: 78px;padding-left: 4px;}*/
+
+form.choice-items .control_width li {
+    width: 100px;
+}
+
+form.choice-items .price_list li {
+    /*        width: 100px;*/
+    padding: 0px 8px;
+    width: auto !important;
+}
+
+form.choice-items .price_list li a {
+    max-width: 105px !important;
+}
+
+#more-trd-cates_area {
+    margin-top: 2px;
+    margin-right: 4px;
+    float: right;
+    color: #636363;
+    cursor: pointer;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    padding: 0px 18px 0px 10px;
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon_arr_down.jpg) 37px center no-repeat;
+}
+/*
+form.choice-items .area_list li {
+    width: 78px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+*/
+
+.depict> a{display:inline-block;
+    width: 110px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;}
+.depict>img{float: right;margin-top: 3px;}
+
+
+.module_filter {
+    border: 1px solid #bae1b2;
+    background: #f9fef7;
+    margin-bottom: 8px;
+    padding: 10px;
+}
+.white_bg {
+    padding: 10px 15px;
+    background: #fff;
+}
+
+.squares{
+
+}
+
+.squares .list_pic {
+    width: 993px;
+    border: 1px solid #bae1b2;
+    border-top: none;
+    overflow: auto;
+
+}
+
+.squares .list_pic li {
+    float: left;
+    width: 189px;
+    height: 265px;
+    padding-top: 15px;
+    margin-left: 8px;
+}
+
+.squares .list_pic p {
+    width: 162px;
+    height: 162px;
+    margin: 0 auto;
+    background: #fff;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.squares .list_pic p img {
+    width: 160px;
+    height: 160px;
+    margin-top: 1px;
+}
+
+.squares .list_pic h3 {
+    width: 160px;
+    margin: 0 auto;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.squares .list_pic h3 .text_link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    overflow: hidden;
+    line-height: 18px;
+}
+
+.squares .list_pic h3 .text_link a {
+    font-size: 12px;
+    font-family: "宋体";
+    font-weight: normal;
+    text-decoration: none;
+    color: #646464;
+}
+
+.squares .list_pic h3 .info {}
+
+.squares .list_pic h3 .price {
+    width: 150px;
+    text-align: left;
+    color: #fe5504;
+}
+
+.squares .list_pic h3 a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.squares .list_pic h3 span {
+    display: block;
+    padding: 1px 0;
+    text-align: left;
+}
+.content2 .c2_right_view {
+    width: 995px;
+    margin-bottom: 20px;
+    height: auto;
+
+}
+.shop_con_list {
+    width: 995px;
+}
+
+.shop_con_list h2 {
+    height: 30px;
+    font-size: 12px;
+    position: relative;
+    font-weight: normal;
+    background: #f9fef7;
+    border: 1px solid #bae1b2;
+}
+
+.shop_con_list .ornament1 {
+    width: 2px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.shop_con_list .ornament2 {
+    width: 2px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.table_title {
+    line-height: 30px;
+    height: 30px;
+    width: 100%;
+}
+
+
+.table_title .dm_squares i {
+    background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/display_mode.png) no-repeat 0 0;
+}
+
+.table_title li > i {
+    float: left;
+    width: 25px;
+    height: 22px;
+    line-height: 30px;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+
+.content2 p{
+    text-indent: 0em;
+}
+
+.info {
+    margin: 0;
+    padding: 0;
+    border-top: none;
+    border-bottom: none;
+}
+.squares .list_pic h3 .price {
+    width: 150px;
+    text-align: left;
+    color: #fe5504;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.squares .list_pic h3 a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.squares .list_pic h3 span {
+    display: block;
+    padding: 1px 0;
+    text-align: left;
+}
+.page {
+    float: right;
+    margin: 10px 10px 10px 0px;
+}
+
+.down,
+.down_no,
+.former,
+.former_no,
+.page_link,
+.page_hover,
+.nonce {
+    margin-left: 5px;
+}
+
+.former {
+    border: 1px solid #ff7a32;
+    display: block;
+    float: left;
+    width: 15px;
+    height: 17px;
+
+}
+
+.former:hover {
+    border: 1px solid #a53a00;
+}
+
+.down {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 2px 15px 0 8px;
+    float: left;
+    border: 1px solid #ff7a32;
+
+}
+
+.down:hover {
+    border: 1px solid #a53a00;
+}
+
+.page_link {
+    color: #666;
+}
+
+.page_hover {
+    color: #ff6000 !important;
+}
+
+.page_link,
+.page_hover {
+    font-weight: bold;
+    display: block;
+    float: left;
+    text-decoration: none;
+    padding: 2px 5px 0;
+    font-size: 14px;
+}
+
+.page_link:hover,
+.page_hover:hover {
+    text-decoration: underline;
+}
+
+.former_no {
+    border: 1px solid #ddd;
+    display: block;
+    float: left;
+    width: 15px;
+    height: 17px;
+
+}
+
+.down_no {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 2px 15px 0 8px;
+    float: left;
+    border: 1px solid #c7c7c7;
+
+}
+
+.page .nonce {
+    border: 1px solid #ddd;
+    display: block;
+    float: left;
+    height: 17px;
+    text-decoration: none;
+    color: #a3a3a3;
+    line-height: 17px;
+    padding: 0 5px;
+}
+
+.stat {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    color: #a3a3a3;
+    text-decoration: none;
+    padding: 0;
+}
+
+.top_page {
+    float: right;
+    padding-right: 10px;
+}
+
+.top_page p {
+    float: left;
+    line-height: 23px;
+}
+
+.down {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 0px 15px 0 8px;
+    float: left;
+    border: 1px solid #479207;
+
+}
+
+a.down {
+    color: #FFF;
+}
+
+a.down:hover {
+    color: #FFF;
+    border: 1px solid #479207;
+
+}
+
+.former {
+    border: 1px solid #479207;
+    display: block;
+    float: left;
+    width: 60px;
+    color: #fff !important;
+    text-align: center;
+    height: 17px;
+
+}
+
+a.page_link:link {
+    color: #444
+}
+
+a.page_link:visited {
+    color: #444
+}
+
+a.page_link:hover {
+    color: #444
+}
+
+a.page_hover:link {
+    color: #479207
+}
+
+a.page_hover:visited {
+    color: #479207
+}
+
+a.page_hover:hover {
+    color: #479207
+}

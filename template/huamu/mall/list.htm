@@ -1,120 +1,376 @@
 {template 'header'}
-<script type="text/javascript">var sh = '{$MOD[linkurl]}search.php?catid={$catid}';</script>
-<div class="m">
-<div class="m_l_1 f_l">
-	<div class="left_box">		
-		<div class="pos">当前位置: <a href="{$MODULE[1][linkurl]}">首页</a> &raquo; <a href="{$MOD[linkurl]}">{$MOD[name]}</a> &raquo; {cat_pos($CAT, ' &raquo; ')}</div>
-		<div class="category">
-			<p><img src="{DT_SKIN}image/arrow.gif" width="17" height="12" alt=""/> <strong>按行业浏览</strong></p>
-			<div>
-			<table width="100%" cellpadding="3">
-			{loop $maincat $k $v}
-			{if $k%$MOD[page_subcat]==0}<tr>{/if}
-			<td{if $v[catid]==$catid} class="f_b"{/if}><a href="{$MOD[linkurl]}{$v[linkurl]}">{set_style($v[catname],$v[style])}</a>{if !$cityid} <span class="f_gray px10">({$v[item]})</span>{/if}</td>
-			{if $k%$MOD[page_subcat]==($MOD[page_subcat]-1)}</tr>{/if}
-			{/loop}
-			</table>
+
+
+
+<div class="subnav" style="margin-top: 15px;">
+	<div class="keyword1"></div>
+	<div class="keyword2"></div>
+	当前位置:
+	<a href="{$MODULE[1][linkurl]}">花木首页</a> &gt;
+	<a href="{$MOD[linkurl]}">{$MOD[name]}</a>  &gt; {cat_pos($CAT, ' &raquo; ')}</div>
+
+
+<div class="content2">
+	<div class="module_filter white_bg">
+		<form class="choice-items">
+			<div class="classes">
+				<label>分类:</label>
+				<ul class="classes_list search_list">
+
+					{php $sub = get_maincat(0, 16, 1);}
+					{loop $sub $j $s}{if $j < 7}
+					<li><a href="{cat_url($s[catid])}" target="_blank">{$s[catname]}</a></li>{/if}
+					{/loop}
+
+
+
+				</ul>
 			</div>
-		</div>
-		{if $CP}
-		{loop $PPT $p}
-		<div class="ppt">
-			<table cellpadding="0" cellspacing="0" width="100%">
-			<tr>
-			<td class="ppt_l" valign="top">按{$p[name]}</td>
-			<td class="ppt_r" valign="top">
-			{loop $p[options] $o}
-			<a href="###" onclick="Go(sh+'&ppt_{$p[oid]}={urlencode($o)}');">{$o}</a>&nbsp;|&nbsp;
-			{/loop}
-			</td>
-			</tr>
-			</table>
-		</div>
-		{/loop}
-		{/if}
-		<div class="b10">&nbsp;</div>
-		<form method="post">
-		<div class="sell_tip" id="sell_tip" style="display:none;" title="双击关闭" ondblclick="Dh(this.id);">
-			<div>
-				<p>您可以</p>
-				<input type="submit" value="对比选中" onclick="this.form.action='{$MOD[linkurl]}compare.php';" class="btn_1" onmouseover="this.className='btn_2'" onmouseout="this.className='btn_1'"/> 或 
-				<input type="submit" value="批量购买" onclick="this.form.action='{$MOD[linkurl]}cart.php';" class="btn_1" onmouseover="this.className='btn_2'" onmouseout="this.className='btn_1'"/>
+			<div style="clear:both"></div>
+			<div class="thir-classfy">
+				<ul class="classes_list search_list" style="width:940px;">
+					<!--<li id="more-trd-cates" class="the-more-btn" style="width: 30px;">更多</li>-->
+					<li id="trd-cates" style="width: 870px; height: 60px;">
+						<ul class="trval">
+
+
+							{loop $maincat $k $v}
+
+							<li{if $v[catid]==$catid} class="f_b"{/if}><a href="{$MOD[linkurl]}{$v[linkurl]}">{set_style($v[catname],$v[style])}</a></li>
+
+							{/loop}
+
+						</ul>
+					</li>
+				</ul>
 			</div>
-		</div>
-		<div class="img_tip" id="img_tip" style="display:none;">&nbsp;</div>
-		<div class="tool">
-			<table>
-			<tr height="30">
-			<td width="25" align="center"><input type="checkbox" onclick="checkall(this.form);"/></td>
-			<td>
-				<input type="submit" value="对比选中" onclick="this.form.action='{$MOD[linkurl]}compare.php';" class="btn_1" onmouseover="this.className='btn_2'" onmouseout="this.className='btn_1'"/>&nbsp;
-				<input type="submit" value="批量购买" onclick="this.form.action='{$MOD[linkurl]}cart.php';" class="btn_1" onmouseover="this.className='btn_2'" onmouseout="this.className='btn_1'"/>
-			</td>
-			<td align="right">
-			<script type="text/javascript">var sh = '{$MOD[linkurl]}search.php?catid={$catid}';</script>
-			<input type="checkbox" onclick="Go(sh+'&vip=1');"/>{VIP}&nbsp;
-			<select onchange="Go(sh+'&day='+this.value)">
-			<option value="0">更新时间</option>
-			<option value="1">1天内</option>
-			<option value="3">3天内</option>
-			<option value="7">7天内</option>
-			<option value="15">15天内</option>
-			<option value="30">30天内</option>
-			</select>&nbsp;
-			<select onchange="Go(sh+'&order='+this.value)">
-			<option value="0">显示顺序</option>
-			<option value="2">价格由高到低</option>
-			<option value="3">价格由低到高</option>
-			<option value="4">{VIP}级别由高到低</option>
-			<option value="5">{VIP}级别由低到高</option>
-			<option value="6">供货量由高到低</option>
-			<option value="7">供货量由低到高</option>
-			<option value="8">起订量由高到低</option>
-			<option value="9">起订量由低到高</option>
-			</select>&nbsp;
-			</td>
-			</tr>
-			</table>
-		</div>
-		{if $page == 1}{ad($moduleid,$catid,$kw,6)}{/if}
-		{if $tags}{template 'list-'.$module, 'tag'}{/if}
-		<div class="tool">
-			<table>
-			<tr height="30">
-			<td width="25" align="center">&nbsp;</td>
-			<td>
-				<input type="submit" value="对比选中" onclick="this.form.action='{$MOD[linkurl]}compare.php';" class="btn_1" onmouseover="this.className='btn_2'" onmouseout="this.className='btn_1'"/>&nbsp;
-				<input type="submit" value="批量购买" onclick="this.form.action='{$MOD[linkurl]}cart.php';" class="btn_1" onmouseover="this.className='btn_2'" onmouseout="this.className='btn_1'"/>
-			</td>
-			<td>&nbsp;</td>
-			</tr>
-			</table>
-		</div>
+			<div style="clear:both"></div>
+
+
+
+			<div class="area">
+
+				<label>地区:</label>
+				<!--<div id="more-trd-cates_area" class="the-more-btn" style="width: 30px; float: right;">更多</div>-->
+
+				<ul class="area_list search_list" id="area_list" style="width: 856px; float: left; overflow: hidden; height: 26px;">
+
+
+					{php $mainarea = get_mainarea(0)}
+					{loop $mainarea $k $v}
+
+					<li><a href="{$MOD[linkurl]}search.php?areaid={$v[areaid]}&catid={$catid}" rel="nofollow">{$v[areaname]}</a></li>
+
+					{/loop}
+				</ul>
+			</div>
+			<div style="clear:both"></div>
+
+
+			<div class="plants_age">
+				<label>高度:</label>
+				<ul class="age_list search_list control_width">
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_9:46_1_changlvqiaomu_.html" rel="nofollow">
+							50厘米以下<em>(251)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_9:47_1_changlvqiaomu_.html" rel="nofollow">
+							50厘米至1米<em>(446)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_9:48_1_changlvqiaomu_.html" rel="nofollow">
+							1米至2米<em>(530)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_9:49_1_changlvqiaomu_.html" rel="nofollow">
+							2米至3米<em>(482)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_9:50_1_changlvqiaomu_.html" rel="nofollow">
+							3米至5米<em>(349)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_9:51_1_changlvqiaomu_.html" rel="nofollow">
+							5米以上<em>(234)</em></a>
+					</li>
+				</ul>
+			</div>
+			<div class="plants_age">
+				<label>米径:</label>
+				<ul class="age_list search_list control_width">
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_29:175_1_changlvqiaomu_.html" rel="nofollow">
+							5厘米以下<em>(366)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_29:176_1_changlvqiaomu_.html" rel="nofollow">
+							5至10厘米<em>(415)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_29:177_1_changlvqiaomu_.html" rel="nofollow">
+							10至15厘米<em>(379)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_29:178_1_changlvqiaomu_.html" rel="nofollow">
+							15至20厘米<em>(186)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_29:179_1_changlvqiaomu_.html" rel="nofollow">
+							20至30厘米<em>(80)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_29:180_1_changlvqiaomu_.html" rel="nofollow">
+							30至50厘米<em>(48)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_29:181_1_changlvqiaomu_.html" rel="nofollow">
+							50厘米以上<em>(11)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_29:275_1_changlvqiaomu_.html" rel="nofollow">
+							<em>(2)</em></a>
+					</li>
+				</ul>
+			</div>
+			<div class="plants_age">
+				<label>地径:</label>
+				<ul class="age_list search_list control_width">
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_31:189_1_changlvqiaomu_.html" rel="nofollow">
+							5厘米以下<em>(187)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_31:190_1_changlvqiaomu_.html" rel="nofollow">
+							5至10厘米<em>(142)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_31:191_1_changlvqiaomu_.html" rel="nofollow">
+							10至15厘米<em>(80)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_31:192_1_changlvqiaomu_.html" rel="nofollow">
+							15至20厘米<em>(22)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_31:193_1_changlvqiaomu_.html" rel="nofollow">
+							20至30厘米<em>(19)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_31:194_1_changlvqiaomu_.html" rel="nofollow">
+							30至50厘米<em>(7)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_31:195_1_changlvqiaomu_.html" rel="nofollow">
+							50厘米以上<em>(10)</em></a>
+					</li>
+				</ul>
+			</div>
+			<div class="plants_age">
+				<label>冠幅:</label>
+				<ul class="age_list search_list control_width">
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_51:288_1_changlvqiaomu_.html" rel="nofollow">
+							50厘米以下<em>(81)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_51:289_1_changlvqiaomu_.html" rel="nofollow">
+							50厘米至1米<em>(54)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_51:290_1_changlvqiaomu_.html" rel="nofollow">
+							1米至2米<em>(88)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0_51:291_1_changlvqiaomu_.html" rel="nofollow">
+							2米以上<em>(124)</em></a>
+					</li>
+				</ul>
+			</div>
+			<div style="clear:both"></div>
+
+
+			<div class="plants_price">
+				<label>价格:</label>
+				<ul class="price_list search_list">
+					<li>
+						<a class="on">
+							全部价格</a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_0:10__1_changlvqiaomu_.html" fkey=":" fpos="3" rel="nofollow">
+							0~10<em>(744)</em></a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_10:100__1_changlvqiaomu_.html" fkey=":" fpos="3" rel="nofollow">
+							10~100(450)</a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_100:500__1_changlvqiaomu_.html" fkey=":" fpos="3" rel="nofollow">
+							100~500(343)</a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_500:1000__1_changlvqiaomu_.html" fkey=":" fpos="3" rel="nofollow">
+							500~1000(126)</a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_1000:10000__1_changlvqiaomu_.html" fkey=":" fpos="3" rel="nofollow">
+							1000~10000(113)</a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_10000:50000__1_changlvqiaomu_.html" fkey=":" fpos="3" rel="nofollow">
+							10000~50000(30)</a>
+					</li>
+
+					<li>
+
+						<a href="http://www.huamu.com/fenlei/9_1000_50000:__1_changlvqiaomu_.html" fkey=":" fpos="3" rel="nofollow">
+							50000以上(17)</a>
+					</li>
+
+				</ul>
+			</div>
+			<div style="clear:both"></div>
+
 		</form>
-		<br/>
+	</div>
+
+
+	<div class="c2_right_view gleft">
+
+		<div class="shop_con_list">
+			<ul class="factor-list">
+
+				<li class="order-by only-down-icon" data-type="goods~grade" data-order="asc">
+					<a>综合排序</a>
+				</li>
+
+				<!--                <li class="order-by only-up-icon " data-type="distance" data-order="desc">
+                    <a>距离</a>
+                </li>
+                -->
+				<li class="order-by only-down-icon" data-type="sales" data-order="asc">
+					<a>销量</a>
+				</li>
+
+				<li class="order-by only-updown-icon" data-type="price" data-order="desc">
+					<a style="background: url(http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-arr.png) 38px 4px no-repeat;">价格</a>
+				</li>
+
+				<li class="order-by only-down-icon" data-type="credit~value" data-order="asc">
+					<a>人气</a>
+				</li>
+
+			</ul>
+			<div class="h2_wrap">
+				<div class="table_title">
+					<ul>
+						<li class="dm_squares selected" hmtype="display_mode" hmvalue="squares"><i></i>方格显示</li>
+						<li class="dm_list" hmtype="display_mode" hmvalue="list"><i></i>列表显示</li>
+					</ul>
+
+				</div>
+			</div>
+
+			<div style="clear:both;"></div>
+			<div class="squares" hmtype="current_display_mode">
+				<ul class="list_pic" style="border: 1px solid #bae1b2;">
+
+					{if $tags}
+
+					{loop $tags $i $t}
+
+					<li lat="34.1608" lon="118.7572" sg="8">
+						<p>
+							<a href="{$t[linkurl]}" target="_blank">
+								<img src="{$t[thumb]}" alt="{$t[title]}">
+							</a>
+						</p>
+						<h3>
+                            <span class="text_link">
+                                <span class="depict">
+                                    <a href="{$t[linkurl]}" target="_blank">{$t[title]}</a>                                </span>
+                                <span class="info" style="background:none;">
+                                    <a href="http://suqian.huamu.com/" title="{$t[company]}" rel="nofollow">{$t[company]}</a>                                </span>
+                            </span>
+							<span class="price">¥{$t[price]}</span>
+						</h3>
+					</li>
+					{/loop}
+					{if $showpage && $pages}<div class="pages">{$pages}</div>{/if}
+
+					{/if}
+
+
+				</ul>
+				<!--<div id="allmap" style="display:block;"></div>-->
+
+			</div>
+		</div>
+
 	</div>
 </div>
-<div class="m_n f_l">&nbsp;</div>
-<div class="m_r_1 f_l">
-	<div class="sponsor">{ad($moduleid,$catid,$kw,7)}</div>
-	<div class="box_head"><div><strong>本周搜索排行</strong></div></div>
-	<div class="box_body">
-		<div class="rank_list">
-			<!--{tag("moduleid=$moduleid&table=keyword&condition=moduleid=$moduleid and status=3 and updatetime>$today_endtime-86400*7&areaid=$cityid&pagesize=10&order=week_search desc&key=week_search&template=list-search_rank")}-->
-		</div>		
-	</div>
-	<div class="b10">&nbsp;</div>
-	<div class="box_head"><div><strong>按地区浏览</strong></div></div>
-	<div class="box_body">
-		<table width="100%" cellpadding="3">
-		{php $mainarea = get_mainarea(0)}
-		{loop $mainarea $k $v}
-		{if $k%2==0}<tr>{/if}
-		<td><a href="{$MOD[linkurl]}search.php?areaid={$v[areaid]}&catid={$catid}" rel="nofollow">{$v[areaname]}</a></td>
-		{if $k%2==1}</tr>{/if}
-		{/loop}
-		</table>
-	</div>
-</div>
-</div>
+
 {template 'footer'}
