@@ -1,266 +1,555 @@
 {template 'header'}
-<script type="text/javascript">var module_id= {$moduleid},item_id={$itemid},content_id='content',img_max_width={$MOD[max_width]};</script>
-<div class="m">
-<div class="left_box">		
-		<div class="pos">当前位置: <a href="{$MODULE[1][linkurl]}">首页</a> &raquo; <a href="{$MOD[linkurl]}">{$MOD[name]}</a> &raquo; {cat_pos($CAT, ' &raquo; ')} &raquo;</div>
-		<div class="b10 c_b"></div>
-		<table width="100%">
-		<tr>
-		<td width="10"> </td>
-		<td>
-			<table width="100%">
-			<tr>
-			<td colspan="3"><h1 class="title_trade" id="title">{$title}</h1></td>
-			</tr>
-			<tr>
-			<td width="250" valign="top">
-				<div id="mid_pos"></div>
-				<div id="mid_div" onmouseover="SAlbum();" onmouseout="HAlbum();" onclick="PAlbum(Dd('mid_pic'));">
-				<img src="{$albums[0]}" width="240" height="180" id="mid_pic"/><span id="zoomer"></span>
+
+<style>
+
+</style>
+<div class="subnav" style="margin-top: 15px;">
+	<div class="keyword1"></div>
+	<div class="keyword2"></div>
+	当前位置:
+	<a href="{$MODULE[1][linkurl]}">花木首页</a> &gt;
+	<a href="{$MOD[linkurl]}">{$MOD[name]}</a>  &gt; {cat_pos($CAT, ' &raquo; ')}</div>
+
+<div class="transition_page">
+
+	<div class="goods_detail fl">
+		<div class="proc_to right_main">
+			<div class="ware_info">
+				<div id="preview" class="ware_pic">
+					<div id="spec-n1" class="big_pic">
+						<div class="jqzoom goods_img fl">
+
+							<img src="http://img.huamu.com/data/upload/goods/201608/15/169/201608150929297797.jpg?x-oss-process=image/resize,m_fill,h_300,w_300" width="300" height="300" jqimg="http://img.huamu.com/data/upload/goods/201608/15/169/201608150929297797.jpg?x-oss-process=image/resize,w_2000,/watermark,image_ZGF0YS91cGxvYWQvY29tbW9uL3dhdGVybWFyay93bV9jb2xvci5wbmc_eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsUF8zMA==" alt="">
+						</div>
+					</div>
+					<div id="spec-n5" class="bottom_btn">
+						<div id="spec_left" class="left_btn"></div>
+						<div id="spec-list" class="ware_box">
+							<ul class="list-h" style="overflow: hidden; width: 9999px;">
+								<li bigimg="http://img.huamu.com/data/upload/goods/201608/15/169/201608150929297797.jpg?x-oss-process=image/resize,w_2000,/watermark,image_ZGF0YS91cGxvYWQvY29tbW9uL3dhdGVybWFyay93bV9jb2xvci5wbmc_eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsUF8zMA==" class="ware_pic_hover"><img src="http://img.huamu.com/data/upload/goods/201608/15/169/201608150929297797.jpg?x-oss-process=image/resize,m_fill,h_300,w_300" width="55" height="55" alt="云杉"></li>
+								<li bigimg="http://img.huamu.com/data/upload/goods/201608/15/174/201608150929343940.jpg?x-oss-process=image/resize,w_2000,/watermark,image_ZGF0YS91cGxvYWQvY29tbW9uL3dhdGVybWFyay93bV9jb2xvci5wbmc_eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsUF8zMA=="><img src="http://img.huamu.com/data/upload/goods/201608/15/174/201608150929343940.jpg?x-oss-process=image/resize,m_fill,h_300,w_300" width="55" height="55" alt="云杉"></li>
+								<li bigimg="http://img.huamu.com/data/upload/goods/201608/15/179/201608150929392397.jpg?x-oss-process=image/resize,w_2000,/watermark,image_ZGF0YS91cGxvYWQvY29tbW9uL3dhdGVybWFyay93bV9jb2xvci5wbmc_eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsUF8zMA=="><img src="http://img.huamu.com/data/upload/goods/201608/15/179/201608150929392397.jpg?x-oss-process=image/resize,m_fill,h_300,w_300" width="55" height="55" alt="云杉"></li>
+							</ul>
+						</div>
+						<div id="spec_right" class="right_btn"></div>
+					</div>
+					<div class="ware_notice"><span>该商品共被查看：16079次</span></div>
 				</div>
-				<div class="b5"></div>
-				<div>
-				{loop $thumbs $k $v}<img src="{$v}" width="60" height="60" onmouseover="if(this.src.indexOf('nopic60.gif')==-1)Album({$k}, '{$albums[$k]}');" class="{if $k}ab_im{else}ab_on{/if}" id="t_{$k}"/>{/loop}
+				<div class="ware_text">
+
+					<ul class="rate">
+						<li class="clear">
+							<span class="property_name sp">商品：</span>
+							<h1>云杉</h1>
+						</li>
+
+						<li class="clear hm_promo_price">
+							<span class="property_name">价格：</span>
+							<span class="fontColor3" ectype="goods_price">¥150.00</span>
+						</li>
+
+						<li class="clear">
+							<span class="property_name">地区：</span>江苏	&nbsp;&nbsp;宿迁	&nbsp;&nbsp;	沭阳	&nbsp;&nbsp;	扎下镇									</li>
+						<li class="clear"><span class="property_name">分类：</span>绿化苗木&nbsp;&nbsp;常绿乔木&nbsp;<a class="seo_cate_url" href="/fenlei/10726_yunshan.html">云杉</a></li>
+						<!--<li class="clear"><span class="property_name">等级：</span><img src="/data/system/goods_grade_2.png"></li>-->
+						<li class="clear"><span class="property_name">时间：</span>2017-08-01</li>
+
+						<li class="clear"><span class="property_name">截止:</span>2018-08-11 [ 还剩362天 ]</li>
+						<li class="clear"></li>
+					</ul>
+					<ul class="rate">
+						<li class="clearfix">
+							<ul class="goods_specification_list">
+								<li><a style="color:red;" "="">高度:200厘米 </a></li>
+								<li><a href="http://www.huamu.com/goods/1_9_10726_47621.html">高度:250厘米 </a></li>
+								<li><a href="http://www.huamu.com/goods/1_9_10726_47623.html">高度:300厘米 </a></li>
+							</ul>
+						</li>
+					</ul>
+					<div class="sep_line"></div>
+					<div id="gdetail_sku" class="hm_key hm_key_sku">
+						<div class="goods_info hm_skin">
+							<dl class="hm_prop clear" style="display: none;">
+								<dt class="property_name">高度:</dt>
+								<dd>
+									<ul id="opts_spec_1" data_attr="高度" dunit="厘米"><li class="selectable" spec_col_id="1" spec_col_value="200">200厘米</li></ul>
+								</dd>
+							</dl>
+							<dl class="hm_prop hm_amount clear goods_num">
+								<dt class="property_name">数量:</dt>
+								<dd>
+	        		 <span class="hm_stock">
+	        		    <a href="javascript:void(0);" class="hm_reduce hm_iconfont hm_disable_reduce">-</a>
+	                    <input type="text" class="text width1" name="" id="quantity" maxlength="8" value="100">
+	                    <a href="javascript:void(0);" class="hm_increase hm_iconfont">+</a>
+	                 </span>
+									<div class="rest_stock">棵</div>
+								</dd>
+								<dt class="property_name">库存 :</dt>
+
+								<dd>        （库存
+									<span class="stock" ectype="goods_stock">29.65万</span>
+									棵，<span ectype="goods_minimum">100</span>
+									棵起售）
+
+								</dd>
+							</dl>
+
+							<dl class="hm_prop selected_options" style="display: none;">
+								<dt class="property_name">已选:</dt>
+								<dd>
+									<div class="aggregate" ectype="current_spec"></div>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="ware_cen">
+						<div class="ware_center">
+							<h3>
+								<span class="dialog_title">商品已成功添加到购物车</span>
+								<span class="close_link" title="关闭" onmouseover="this.className = 'close_hover'" onmouseout="this.className = 'close_link'" onclick="slideUp_fn();"></span>
+							</h3>
+							<div class="ware_cen_btn">
+								<p class="ware_text_p">购物车内共有 <span class="bold_num">3</span> 种商品 共计 <span class="bold_mly">658.00</span></p>
+								<p class="ware_text_btn">
+									<input type="submit" class="btn1" name="" value="查看购物车" onclick="location.href='http://www.huamu.com/index.php?app=cart'">
+									<input type="submit" class="btn2" name="" value="继续挑选商品" onclick="$('.ware_cen').css({'display':'none'});">
+								</p>
+							</div>
+						</div>
+						<div class="ware_cen_bottom"></div>
+					</div>
+					<ul class="ware_btn clear">
+						<li class="btn_c3 buy_add_btn" title="加入购物车"><a onclick="javascript:buy();">加入购物车</a></li>
+						<li class="btn_c2 buy_add_btn" title="立刻购买"><a onclick="javascript:buy_now();">立即购买</a></li>
+					</ul>
 				</div>
-				<div class="b5"></div>
-				<div onclick="PAlbum(Dd('mid_pic'));" class="c_b t_c c_p"><img src="{DT_SKIN}image/ico_zoom.gif" width="16" height="16" align="absmiddle"/> 点击图片查看原图</div>
-			</td>
-			<td width="15"> </td>
-			<td valign="top">
-				<div id="big_div" style="display:none;"><img src="" id="big_pic"/></div>
-				{if $a2}
-				<div class="step_price">
-				<table width="100%" cellpadding="6" cellspacing="0">
-				<tr>
-				<td>起批</td>
-				<td>{$a1}-{$a2}{$unit}</td>
-				{if $a3}
-				<td>{$a2+1}-{$a3}{$unit}</td>
-				<td>{$a3}{$unit}以上</td>
-				{else}
-				<td>{$a2+1}{$unit}以上</td>
-				{/if}
-				</tr>
-				<tr>
-				<td>价格</td>
-				<td class="f_price">{$DT[money_sign]}<span class="px13">{$p1}</span></td>
-				{if $a3}
-				<td class="f_price">{$DT[money_sign]}<span class="px13">{$p2}</span></td>
-				<td class="f_price">{$DT[money_sign]}<span class="px13">{$p3}</span></td>
-				{else}
-				<td class="f_price">{$DT[money_sign]}<span class="px13">{$p2}</span></td>
-				{/if}
-				</tr>
-				</table>
-				</div>
-				{/if}
-				<table width="100%" cellpadding="5" cellspacing="5">
-				{if !$a2}
-				<tr>
-				<td>单价：</td>
-				<td class="f_price">{$DT[money_sign]}<span class="px16">{$price}</span></td>
-				</tr>
-				{/if}
-				{if $express_name_1 == '包邮'}
-				<tr>
-				<td>物流：</td>
-				<td>
-				{if $fee_start_1>0}
-				{if $fee_start_2>0} {$express_name_2}:{$fee_start_2}&nbsp;&nbsp;{/if}
-				{if $fee_start_3>0} {$express_name_3}:{$fee_start_3}&nbsp;&nbsp;{/if}
-				满{$fee_start_1}包邮
-				{else}
-				包邮
-				{/if}</td>
-				</tr>
-				{elseif $fee_start_1>0 || $fee_start_2>0 || $fee_start_3>0}
-				<tr>
-				<td>物流：</td>
-				<td class="f_gray">
-				{if $fee_start_1>0} {$express_name_1}:{$fee_start_1}&nbsp;&nbsp;{/if}
-				{if $fee_start_2>0} {$express_name_2}:{$fee_start_2}&nbsp;&nbsp;{/if}
-				{if $fee_start_3>0} {$express_name_3}:{$fee_start_3}&nbsp;&nbsp;{/if}
-				</td>
-				</tr>
-				{/if}
-				{if $cod}
-				<tr>
-				<td>到付：</td>
-				<td>支持货到付款</td>
-				</tr>
-				{/if}
-				<tr>
-				<td>品牌：</td>
-				<td>{if $brand}<a href="{$MOD[linkurl]}search.php?fields=4&kw={urlencode($brand)}" target="_blank" class="b" rel="nofollow">{$brand}</a>{else}未填写{/if}</td>
-				</tr>
-				<tr>
-				<td>销量：</td>
-				<td><a href="#order" onclick="Mshow('order');" class="b">累计出售 <span class="f_orange">{$sales}</span> {$unit}</a></td>
-				</tr>
-				<tr>
-				<td>评价：</td>
-				<td><a href="#comment" onclick="Mshow('comment');" class="b">已有 <span class="f_orange">{$comments}</span> 条评价</a></td>
-				</tr>
-				<tr>
-				<td>人气：</td>
-				<td>已有 <span class="f_orange"><span id="hits">{$hits}</span></span> 人关注</td>
-				</tr>
-				<tr>
-				<td width="50">更新：</td>
-				<td>{$editdate}</td>
-				</tr>
-				{if $RL}
-				<tr>
-				<td>{$relate_name}：</td>
-				<td>
-				{loop $RL $v}
-				<div class="relate_{if $itemid==$v[itemid]}2{else}1{/if}">{if $itemid==$v[itemid]}<em></em>{/if}<a href="{$v[linkurl]}"><img src="{$v[thumb]}" alt="" title="{$v[relate_title]}"/></a></div>
-				{/loop}				
-				</td>
-				</tr>
-				{/if}
-				{if $P1}
-				<tr>
-				<td>{$n1}：</td>
-				<td id="p1">
-				<ul>
-				{loop $P1 $i $v}
-				<li class="nv_{if $i==0}2{else}1{/if}">{$v}</li>
-				{/loop}
-				</ul>
-				</td>
-				</tr>
-				{/if}
-				{if $P2}
-				<tr>
-				<td>{$n2}：</td>
-				<td id="p2">
-				<ul>
-				{loop $P2 $i $v}
-				<li class="nv_{if $i==0}2{else}1{/if}">{$v}</li>
-				{/loop}
-				</ul>
-				</td>
-				</tr>
-				{/if}
-				{if $P3}
-				<tr>
-				<td>{$n3}：</td>
-				<td id="p3">
-				<ul>
-				{loop $P3 $i $v}
-				<li class="nv_{if $i==0}2{else}1{/if}">{$v}</li>
-				{/loop}
-				</ul>
-				</td>
-				</tr>
-				{/if}
-				{if $amount}
-				{if $status == 3}
-				<tr>
-				<td>数量：</td>
-				<td class="f_gray"><img src="{DT_SKIN}image/arrow_l.gif" width="16" height="8" alt="减少" class="c_p" onclick="Malter('-', {$a1}, {$amount});"/> <input type="text" value="{$a1}" size="4" class="cc_inp" id="amount" onkeyup="Malter('', {$a1}, {$amount});"/> <img src="{DT_SKIN}image/arrow_r.gif" width="16" height="8" alt="增加" class="c_p" onclick="Malter('+', {$a1}, {$amount});"/>{$unit} 库存{$amount}{$unit}</td>
-				</tr>
-				<tr>
-				<td colspan="2">
-				<img src="{DT_SKIN}image/btn_tobuy.gif" alt="立即购买" class="c_p" onclick="BuyNow();"/>
-				&nbsp;
-				<img src="{DT_SKIN}image/btn_addcart.gif" alt="加入购物车" class="c_p" onclick="AddCart();"/>
-				</td>
-				</tr>
-				{else}
-				<tr>
-				<td></td>
-				<td><strong class="f_red px14">该商品已下架</strong></td>
-				</tr>				
-				{/if}
-				{else}
-				<tr>
-				<td></td>
-				<td><strong class="f_red px14">该商品库存不足</strong></td>
-				</tr>
-				{/if}
-				</table>
-			</td>
-			</tr>
-		</table>
-		</td>
-		<td width="10"> </td>
-		<td width="300" valign="top">		
-			<div class="contact_head">公司基本资料信息</div>
-			<div class="contact_body" id="contact">{template 'contact', 'chip'}</div>
-			{if !$username}
-			<br/>
-			&nbsp;<strong class="f_red">注意</strong>:发布人未在本站注册，建议优先选择<a href="{$MODULE[2][linkurl]}grade.php"><strong>{VIP}会员</strong></a>
-			{/if}
+
+				<div class="clear"></div>
 			</div>
-		</td>
-		<td width="10"> </td>
-		</tr>
-		</table>
-		<div class="b10">&nbsp;</div>
-</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://img1.huamu.com/includes/libraries/javascript/goodsinfo.js" charset="utf-8"></script>
+	<script type="text/javascript">
+
+
+        //<!CDATA[
+		/* buy */
+        function buy()
+        {
+            if (goodsspec.getSpec() == null)
+            {
+                alert(lang.select_specs);
+                return;
+            }
+            var spec_id = goodsspec.getSpec().id;
+
+            var quantity = $("#quantity").val();
+            if (quantity == '')
+            {
+                alert(lang.input_quantity);
+                return;
+            }
+            if (parseInt(quantity) < 1)
+            {
+                alert(lang.invalid_quantity);
+                return;
+            }
+            add_to_cart(spec_id, quantity);
+        }
+
+		/* add cart */
+        function add_to_cart(spec_id, quantity)
+        {
+            var url = get_location_root() + '/index.php?app=cart&act=add'; //SITE_URL
+            $.getJSON(url, {'spec_id':spec_id, 'quantity':quantity}, function(data){
+                if (data.done)
+                {
+                    $('.bold_num').text(data.retval.cart.kinds);
+                    $('.bold_mly').html(price_format(data.retval.cart.amount));
+                    $('.ware_cen').slideDown('slow');
+                    setTimeout(slideUp_fn, 5000);
+                }
+                else
+                {
+                    alert(data.msg);
+                }
+            });
+        }
+
+		/* buy now */
+        function buy_now(){
+            if (goodsspec.getSpec() == null)
+            {
+                alert(lang.select_specs);
+                return;
+            }
+            var spec_id = goodsspec.getSpec().id;
+
+            var quantity = $("#quantity").val();
+            if (quantity == '')
+            {
+                alert(lang.input_quantity);
+                return;
+            }
+            if (parseInt(quantity) < 1)
+            {
+                alert(lang.invalid_quantity);
+                return;
+            }
+
+            var url = get_location_root() + '/index.php?app=cart&act=add';
+            $.getJSON(url, {'spec_id':spec_id, 'quantity':quantity}, function(data){
+                if (data.done)
+                {
+                    $('.bold_num').text(data.retval.cart.kinds);
+                    $('.bold_mly').html(price_format(data.retval.cart.amount));
+                    location.href=SITE_URL+'/index.php?app=cart';
+                }else if(data.msg=="该商品已经在购物车中了"){
+                    location.href=SITE_URL+'/index.php?app=cart';
+                }
+                else
+                {
+                    alert(data.msg);
+                }
+            });
+        }
+
+        var specs = new Array();
+        specs.push(new spec(47846, '200', '', '','','', '', '', 150.00, '296470', '29.65万', '100'));
+        var specQty = 0;
+        var specAttrQty = 1;
+        var defSpec = 47846;
+        var goodsspec = new goodsspec(specs, specAttrQty, specQty, defSpec);
+
+        $(function(){
+            $('.goods_desc_img').each(function() {
+                $(this).attr("alt","云杉图片").removeAttr("title");
+            });
+            $(".jqzoom").jqueryzoom({
+                xzoom:430,
+                yzoom:300,
+                offset:10,
+                position:"right",
+                preload:1,
+                lens:1
+            });
+
+            $("#spec-list").children('ul.list-h').css({
+                overflow:'hidden',
+                width:'9999px'
+            });
+            $('#spec-list ul.list-h li:first').addClass('ware_pic_hover');
+            $(document).on('click','#spec_left',function(){
+                $('#spec-list>ul.list-h li:last').clone(true).prependTo('#spec-list>ul.list-h');
+                $('#spec-list>ul.list-h li:last').remove();
+            });
+            $(document).on('click','#spec_right',function(){
+                $('#spec-list>ul.list-h li:first').clone(true).appendTo('#spec-list>ul.list-h');
+                $('#spec-list>ul.list-h li:first').remove();
+            });
+
+            $("#spec-list img").on("mouseover",function(){
+                var src=$(this).attr("src");
+                $("#spec-n1 img").eq(0).attr({
+                    src:src.replace("\/n5\/","\/n1\/"),
+                    jqimg:src.replace("\/n5\/","\/n0\/")
+                });
+            }).bind("mouseout",function(){
+                $(this).css({
+
+                });
+            });
+        });
+        //]]>
+	</script>
+
+
+	<div class="shangjia_info fr"> <img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/shangjia_info_8.jpg" alt="商家信息">    <div class="shangjia_info_list">
+		<h4><a rel="nofollow" href="http://suqian.huamu.com/">江苏汇功园林工程有限公司 <img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/dianpu_icon.jpg" alt="店铺"></a></h4>
+
+		<dl>
+			<dt>公司:</dt>
+			<dd>江苏汇功园林工程有限公司</dd>
+		</dl>
+		<dl>
+			<dt>店主:</dt>
+			<dd>汇功园林</dd>
+		</dl>
+		<dl>
+			<dt>联系:</dt>
+			<dd>
+				<a rel="nofollow" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3451756237&amp;site=江苏汇功园林工程有限公司&amp;menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:3451756237:4"></a>
+			</dd>
+		</dl>
+		<dl>
+			<dt>手机:</dt>
+			<dd><b class="color_red">18451873993</b></dd>
+		</dl>
+
+		<dl>
+			<dt>信用:</dt>
+			<dd>					<img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/xinyong.png" alt="23" title="23">
+				<img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/xinyong.png" alt="23" title="23">
+				<img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/xinyong.png" alt="23" title="23">
+				<img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/xinyong.png" alt="23" title="23">
+				<img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/xinyong.png" alt="23" title="23">
+			</dd>
+		</dl>
+		<dl>
+			<dt>等级:</dt>
+			<dd>旗舰会员</dd>
+		</dl>
+		<dl>
+			<dt>商品:</dt>
+			<dd>408</dd>
+		</dl>
+		<dl>
+			<dt>地区:</dt>
+			<dd>江苏&nbsp;&nbsp;	宿迁&nbsp;&nbsp;	沭阳	&nbsp;&nbsp;扎下镇</dd>
+		</dl>
+		<dl>
+			<dt>创店:</dt>
+			<dd>2016-07-28</dd>
+		</dl>
+
+	</div>
+	</div>
+	<div class="clear"></div>
+
+
+
+
+	<div class="clear"></div>
+
+
+	<div class="goods_main">
+		<div class="goods_info_tit">
+			<div class="tit_instru current">商品详情</div>
+			<div class="tit_eval">商品评论</div>
+			<div class="tit_record">销售记录</div>
+			<div class="clear"></div>
+		</div>
+		<div class="goods_info_main">
+			<div class="instru_main" style="display: block;">
+				<b><a href="http://www.huamu.com" target="_blank"></a></b><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><span style="color: rgb(255, 0, 0); font-family: Verdana, Arial; line-height: 23.4px; font-size: 16px;"><strong style="padding: 0px; margin: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 18px;"><strong style="padding: 0px; margin: 0px; font-size: 20px;">&nbsp; &nbsp; &nbsp;买家须知：规格齐全，更多规格！联系客服人员！</strong></strong></span></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);">&nbsp; &nbsp;&nbsp;<span style="color: rgb(255, 0, 0); font-size: 20px; font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="padding: 0px; margin: 0px;">因 苗木价格属于动态性实时更新工作量巨大，最新价格。请联系客服！</strong></span></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; background-color: rgb(255, 255, 255);"><strong style="padding: 0px; margin: 0px;"><span style="color: rgb(255, 0, 0); font-family: Verdana, Arial; line-height: 23.4px; font-size: 18px;">【产品简介】</span></strong></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="color:#ff0000;font-family:Verdana, Arial"><span style="font-size: 18px; line-height: 23.3999996185303px;"><strong>&nbsp;&nbsp;</strong></span></span><span style="color: rgb(0, 176, 80);"><strong><span style="font-family: sans-serif; font-size: 16px;">云杉，别名茂县云杉、茂县杉等。为乔木。高达45米，胸径达1米；树皮淡灰褐色或淡褐灰色，裂成不规则鳞片或稍厚的块片脱落。</span></strong></span></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="color: rgb(0, 176, 80);"><strong><span style="font-family: sans-serif; font-size: 16px;"><strong style="padding: 0px; margin: 0px; outline: none; color: rgb(0, 176, 80); font-family: 微软雅黑, Arial; font-size: 14px; line-height: 48px; white-space: normal;">江苏汇功园林拥有20余年苗木种植经验，专业为企业，个人，政府机构提供专业的苗木种植等服务。</strong></span></strong></span></p><p><span style="color: rgb(0, 176, 80);"><strong>云杉为中国特有树种，产于陕西西南部（凤县）、甘肃东部（两当）及白龙江流域等地，稍耐荫，能耐干燥及寒冷的环境条件，生长在海拔2400-3600米地带，云杉树干高大通直，节少，材质略轻柔，纹理直、均匀，结构细致，易加工，具有良好的共鸣性能。可供建筑、飞机、乐器（钢琴、提琴）、舟车、家具、器具、箱盒、刨制胶合板与薄木以及木纤维工业原料等用材。</strong></span></p><p><span style="color: rgb(0, 176, 80);"><strong>2014年2月，瑞典科学家在一座山脉上发现了一株9500岁云杉，堪称为“世界上最古老”的树，而且它还在继续生长</strong></span></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; background-color: rgb(255, 255, 255);"><strong style="padding: 0px; margin: 0px;"><span style="color: rgb(255, 0, 0); font-family: Verdana, Arial; line-height: 23.4px; font-size: 18px;"><br></span></strong><br></p><p style="text-align: center"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201608/15/157/201608150932379308.jpg" style="" alt="云杉图片"></p><p style="text-align: center"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201608/15/158/201608150932382983.jpg" style="" alt="云杉图片"></p><p style="text-align: center"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201608/15/159/201608150932391087.jpg" style="" alt="云杉图片"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/92/201607291504525606.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/93/201607291504536804.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/93/201607291504531716.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/93/201607291504534898.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/94/201607291504547824.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-size: 18px; color: rgb(147, 137, 83);"><strong style="padding: 0px; margin: 0px;">江苏汇功园林工程有限公司由上海汇功集团控股，江苏省苗木商会会员单位。是一家集苗木销售、园林景观设计、施工、养护和咨询于一体的专业化园林景观公司。公司位于苏北平原花木之乡-沭阳县，拥有为房地产项目、市政基建项目、休闲旅游项目、城市规划项目提供景观设计、施工、养护全方位服务的能力，现有在册正式职工25人，临时职工248人，其中：高级工程师3人，工程师27人，会计师2人；各部门人员紧密团结，分工合作。业绩蒸蒸日上。</strong></span></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-size: 18px; color: rgb(147, 137, 83);"><strong style="padding: 0px; margin: 0px;">　<span style="font-size: 16px;">　公司拥有千余亩苗木种植基地，常年低价出售300多种绿化苗木。主要产品有各种规格的绿化乔木，兼有各种环境树木及各种花卉产品，远销北京、天津、山东、廊坊、东北、山西、内蒙、新疆、河南、陕西、四川等20多个省市。主要出售：垂柳、雪松、望都塔桧、松柏、蜀桧、罗汉松、龙柏、月季花、红叶小檗、<b><a href="http://www.huamu.com/fenlei/10887_hongyeshi.html" target="_blank">红叶石楠</a></b>、<b><a href="http://www.huamu.com/fenlei/19689_hongyebitao.html" target="_blank">红叶碧桃</a></b>、<b><a href="http://www.huamu.com/fenlei/10950_hongwangzijin.html" target="_blank">红王子锦</a></b>带、高杆女贞、银杏、香花槐，水杉、栾树、龙爪槐、黄金槐、国槐、法桐、白蜡、蔷薇等，本基地追求信誉第一、质量保证、服务至上、友谊长存，送货快捷、代开检疫、苗木价格透明、外地客户到达专车接送，苗木保证高成活率。</span></strong></span></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/170/201607291506108474.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/170/201607291506102679.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/171/201607291506111680.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/172/201607291506123929.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/173/201607291506131806.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/173/201607291506131294.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/174/201607291506142490.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/174/201607291506147004.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/174/201607291506149505.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/175/201607291506158342.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/176/201607291506168744.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/178/201607291506189608.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/179/201607291506196075.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif; font-size: 12px; white-space: normal; text-align: center; background-color: rgb(255, 255, 255);"><img class="goods_desc_img" src="http://img.huamu.com/data/upload/article/201607/29/179/201607291506194321.jpg" alt="云杉图片" style="padding: 0px; margin: 0px; border: 0px; vertical-align: middle; outline: none;"></p><p><br></p>
+			</div>
+			<div class="eval_main" style="display: none;">
+				<div class="comments">
+					<dl class="comments_text">
+						<dt>
+							<span>汇* (2017-07-23 14:07:07)</span>
+						</dt>
+						<dd></dd>
+						<div class="beat">
+							评价:<img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/bit.gif">								<img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/bit.gif">								<img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/bit.gif">								<br>
+						</div>
+					</dl>
+					<dl class="comments_text">
+						<dt>
+							<span>老**景 (2017-07-23 14:07:53)</span>
+						</dt>
+						<dd></dd>
+						<div class="beat">
+							评价:<img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/bit.gif">								<img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/bit.gif">								<img src="http://www.huamu.com/themes/pc/mall/huamu/styles/default/goods/image/bit.gif">								<br>
+						</div>
+					</dl>
+					<dl class="comments_text">
+						<dt>
+							<span>中**枫 </span>
+						</dt>
+						<dd></dd>
+						<div class="beat">
+							评价:																								<br>
+						</div>
+					</dl>
+					<dl class="comments_text">
+						<dt>
+							<span>袁**立 </span>
+						</dt>
+						<dd></dd>
+						<div class="beat">
+							评价:																								<br>
+						</div>
+					</dl>
+					<dl class="comments_text">
+						<dt>
+							<span>安* </span>
+						</dt>
+						<dd></dd>
+						<div class="beat">
+							评价:																								<br>
+						</div>
+					</dl>
+					<dl class="comments_text">
+						<dt>
+							<span>丰**木 </span>
+						</dt>
+						<dd></dd>
+						<div class="beat">
+							评价:																								<br>
+						</div>
+					</dl>
+					<dl class="comments_text">
+						<dt>
+							<span>张**文 </span>
+						</dt>
+						<dd></dd>
+						<div class="beat">
+							评价:																								<br>
+						</div>
+					</dl>
+					<dl class="comments_text">
+						<dt>
+							<span>中**枫 </span>
+						</dt>
+						<dd></dd>
+						<div class="beat">
+							评价:																								<br>
+						</div>
+					</dl>
+					<dl class="comments_text">
+						<dt>
+							<span>中**枫 </span>
+						</dt>
+						<dd></dd>
+						<div class="beat">
+							评价:																								<br>
+						</div>
+					</dl>
+					<dl class="comments_text">
+						<dt>
+							<span>安* </span>
+						</dt>
+						<dd></dd>
+						<div class="beat">
+							评价:																								<br>
+						</div>
+					</dl>
+
+					<div class="shop_list_page">
+						<div class="page">
+							<a class="stat">共 14 个项目</a>
+							<span class="former_no"></span>
+							<span class="page_hover" data-href="http://www.huamu.com/goods/1_9_10726_27917.html#module">1</span>
+							<a class="get_data page_link" data-href="http://www.huamu.com/index.php?app=goods&amp;c1=1&amp;c2=9&amp;cate_id=10726&amp;id=27917&amp;page=2#module" data-page="2" style="cursor: pointer;">2</a>
+
+							<a class="get_data down" data-href="http://www.huamu.com/index.php?app=goods&amp;c1=1&amp;c2=9&amp;cate_id=10726&amp;id=27917&amp;page=2#module" data-page="2" style="cursor: pointer;">下一页</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="record_main" style="display: none;">
+				<div class="saleslog">
+					<table class="table_common" width="100%">
+						<tbody><tr class="bg2">
+							<th>买家</th>
+							<th>购买价</th>
+							<th>购买数量</th>
+							<th>购买时间</th>
+							<th>评价</th>
+						</tr>
+						<tr>
+							<td>安*</td>
+							<td>¥150.00</td>
+							<td>296 <span class="fontColor5">（高度:200厘米）</span></td>
+							<td>2017-07-12</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>安*</td>
+							<td>¥150.00</td>
+							<td>296 <span class="fontColor5">（高度:200厘米）</span></td>
+							<td>2017-07-12</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>安*</td>
+							<td>¥150.00</td>
+							<td>296 <span class="fontColor5">（高度:200厘米）</span></td>
+							<td>2017-07-12</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>中**枫</td>
+							<td>¥150.00</td>
+							<td>296 <span class="fontColor5">（高度:200厘米）</span></td>
+							<td>2017-07-12</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>中**枫</td>
+							<td>¥150.00</td>
+							<td>296 <span class="fontColor5">（高度:200厘米）</span></td>
+							<td>2017-07-12</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>张**文</td>
+							<td>¥150.00</td>
+							<td>286 <span class="fontColor5">（高度:200厘米）</span></td>
+							<td>2017-07-12</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>丰**木</td>
+							<td>¥150.00</td>
+							<td>296 <span class="fontColor5">（高度:200厘米）</span></td>
+							<td>2017-07-12</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>安*</td>
+							<td>¥150.00</td>
+							<td>296 <span class="fontColor5">（高度:200厘米）</span></td>
+							<td>2017-07-06</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>袁**立</td>
+							<td>¥150.00</td>
+							<td>296 <span class="fontColor5">（高度:200厘米）</span></td>
+							<td>2017-07-06</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>中**枫</td>
+							<td>¥150.00</td>
+							<td>296 <span class="fontColor5">（高度:200厘米）</span></td>
+							<td>2017-07-06</td>
+							<td>
+							</td>
+						</tr>
+						</tbody></table>
+
+					<div class="shop_list_page">
+						<div class="page">
+							<a class="stat">共 14 个项目</a>
+							<span class="former_no"></span>
+							<span class="page_hover" data-href="http://www.huamu.com/goods/1_9_10726_27917.html#module">1</span>
+							<a class="get_data page_link" data-href="http://www.huamu.com/index.php?app=goods&amp;c1=1&amp;c2=9&amp;cate_id=10726&amp;id=27917&amp;page=2#module" data-page="2" style="cursor: pointer;">2</a>
+
+							<a class="get_data down" data-href="http://www.huamu.com/index.php?app=goods&amp;c1=1&amp;c2=9&amp;cate_id=10726&amp;id=27917&amp;page=2#module" data-page="2" style="cursor: pointer;">下一页</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="clear"></div>
 </div>
 
-<div class="m">
-	<div class="b10">&nbsp;</div>
-	<div class="mall_tab">
-		<ul>
-		<li class="mall_tab_2" id="t_detail"><a href="#detail" onclick="Mshow('detail');">商品详情</a></li>
-		<li class="mall_tab_1" id="t_comment"><a href="#comment" onclick="Mshow('comment');">评价详情({$comments})</a></li>
-		<li class="mall_tab_1" id="t_order"><a href="#order" onclick="Mshow('order');">交易记录({$orders})</a></li>
-		</ul>
-	</div>
-	<div class="mall_c" style="display:;" id="c_detail">
-		{if $CP}{template 'property', 'chip'}{/if}
-		<div class="content c_b" id="content">{$content}</div>
-	</div>
-	<div class="mall_c" style="display:none;" id="c_comment">
-		<center>正在载入评论详细...</center>
-	</div>
-	<div class="mall_c" style="display:none;" id="c_order">
-		<center>正在载入交易记录...</center>
-	</div>
-</div>
 
-<div class="m">
-	<br/>
-	<center>
-	[ <a href="{$MOD[linkurl]}search.php">商品搜索</a> ]&nbsp;
-	[ <a href="javascript:SendFav();">加入收藏</a> ]&nbsp;
-	[ <a href="javascript:SendPage();">告诉好友</a> ]&nbsp;
-	[ <a href="javascript:Print();">打印本文</a> ]&nbsp;
-	[ <a href="javascript:SendReport();">违规举报</a> ]&nbsp;
-	[ <a href="javascript:window.close()">关闭窗口</a> ]
-	</center>
-	<br/>
-</div>
-<script type="text/javascript" src="{DT_STATIC}file/script/album.js"></script>
-{if $content}<script type="text/javascript" src="{DT_STATIC}file/script/content.js"></script>{/if}
-<script type="text/javascript">
-var mallurl = '{$MOD[linkurl]}';
-var mallid = {$itemid};
-var n_c = {$comments};
-var n_o = {$orders};
-var c_c = Dd('c_comment').innerHTML;
-var c_o = Dd('c_order').innerHTML;
-var s_s = {'1':0,'2':0,'3':0};
-var m_l = {
-	no_comment:'暂无评论',
-	no_order:'暂无交易',
-	no_goods:'商品不存在或已下架',
-	no_self:'不能添加自己的商品',
-	lastone:''
-};
-</script>
-<script type="text/javascript" src="{DT_STATIC}file/script/mall.js"></script>
-<script type="text/javascript">
-{if $P1}addE(1);{/if}
-{if $P2}addE(2);{/if}
-{if $P3}addE(3);{/if}
-if(window.location.href.indexOf('#') != -1) {
-	var t = window.location.href.split('#');
-	try {Mshow(t[1]);} catch(e) {}
-}
-</script>
 {template 'footer'}
