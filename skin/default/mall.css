@@ -1649,3 +1649,6 @@ h4 a{
     font-weight: bold;
     font-size: 16px;
 }
+form.choice-items .search_list li .f_b a{
+    color: #0aad1c;
+}

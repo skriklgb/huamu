@@ -18,8 +18,9 @@
 				<ul class="classes_list search_list">
 
 					{php $sub = get_maincat(0, 16, 1);}
+
 					{loop $sub $j $s}{if $j < 7}
-					<li><a href="{cat_url($s[catid])}" target="_blank">{$s[catname]}</a></li>{/if}
+					<li><a href="{cat_url($s[catid])}" {if $s[catid]==$catid} class="on"{/if} >{$s[catname]}</a></li>{/if}
 					{/loop}
 
 
