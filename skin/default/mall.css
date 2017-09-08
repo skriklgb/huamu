@@ -661,7 +661,7 @@ p.base_bottom {
     border-left: 1px solid #bae1b2;
 }
 
-.squares .list_pic {
+.listcontent {
     border-top: 1px solid #bae1b2;
 }
 
@@ -824,7 +824,7 @@ form.choice-items .area_list li {
 
 }
 
-.squares .list_pic {
+.listcontent {
     width: 993px;
     border: 1px solid #bae1b2;
     border-top: none;
@@ -832,7 +832,7 @@ form.choice-items .area_list li {
 
 }
 
-.squares .list_pic li {
+.listcontent li {
     float: left;
     width: 189px;
     height: 265px;
@@ -840,7 +840,7 @@ form.choice-items .area_list li {
     margin-left: 8px;
 }
 
-.squares .list_pic p {
+.listcontent p {
     width: 162px;
     height: 162px;
     margin: 0 auto;
@@ -849,20 +849,20 @@ form.choice-items .area_list li {
     border: 1px solid #ddd;
 }
 
-.squares .list_pic p img {
+.listcontent p img {
     width: 160px;
     height: 160px;
     margin-top: 1px;
 }
 
-.squares .list_pic h3 {
+.listcontent h3 {
     width: 160px;
     margin: 0 auto;
     word-break: break-all;
     word-wrap: break-word;
 }
 
-.squares .list_pic h3 .text_link {
+.listcontent h3 .text_link {
     display: block;
     text-align: center;
     margin-top: 10px;
@@ -870,7 +870,7 @@ form.choice-items .area_list li {
     line-height: 18px;
 }
 
-.squares .list_pic h3 .text_link a {
+.listcontent h3 .text_link a {
     font-size: 12px;
     font-family: "宋体";
     font-weight: normal;
@@ -878,20 +878,20 @@ form.choice-items .area_list li {
     color: #646464;
 }
 
-.squares .list_pic h3 .info {}
+.listcontent h3 .info {}
 
-.squares .list_pic h3 .price {
+.listcontent h3 .price {
     width: 150px;
     text-align: left;
     color: #fe5504;
 }
 
-.squares .list_pic h3 a:hover {
+.listcontent h3 a:hover {
     color: red;
     text-decoration: underline;
 }
 
-.squares .list_pic h3 span {
+.listcontent h3 span {
     display: block;
     padding: 1px 0;
     text-align: left;
@@ -962,7 +962,7 @@ form.choice-items .area_list li {
     border-top: none;
     border-bottom: none;
 }
-.squares .list_pic h3 .price {
+.listcontent h3 .price {
     width: 150px;
     text-align: left;
     color: #fe5504;
@@ -970,12 +970,12 @@ form.choice-items .area_list li {
     font-weight: bold;
 }
 
-.squares .list_pic h3 a:hover {
+.listcontent h3 a:hover {
     color: red;
     text-decoration: underline;
 }
 
-.squares .list_pic h3 span {
+.listcontent h3 span {
     display: block;
     padding: 1px 0;
     text-align: left;
@@ -1652,3 +1652,130 @@ h4 a{
 form.choice-items .search_list li .f_b a{
     color: #0aad1c;
 }
+
+.left_box{
+    border: none;
+}
+
+.pos {padding:0 10px 0 10px;line-height:31px;background:none;border-bottom: 1px solid #eee;}
+
+.category{
+    padding:10px 20px 5px 15px;
+    border: 1px solid #bae1b2;
+    margin-top: 10px;
+}
+.f_b a{
+    color: #0aad1c;
+}
+
+
+.box_head {
+    border: #D3E0C2 1px solid;
+    border-bottom: none;
+    height: 31px;
+    line-height: 31px;
+    overflow: hidden;
+    padding: 0 10px 0 10px;
+    background:none;
+    color: #035f40;
+    margin-top: 10px;
+}
+
+.box_body {
+
+    border: #D3E0C2 1px solid;
+    padding: 6px 8px 6px 8px;
+}
+
+.m_r_1 {
+    width: 195px;
+}
+
+.malllist li{
+
+}
+
+.listcontent{
+    height: auto;
+    border-top: 1px solid #bae1b2;
+    width: 787px;
+    border: 1px solid #bae1b2;
+    overflow: auto;
+
+}
+.listcontent li{
+    float: left;
+    width: 185px;
+    height: 265px;
+    padding-top: 15px;
+}
+.listcontent p{
+    width: 162px;
+    height: 162px;
+    margin: 0 auto;
+    background: #fff;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.listcontent img{
+    width: 160px;
+    height: 160px;
+    margin-top: 1px;
+}
+
+.listcontent h3 {
+    width: 160px;
+    margin: 0 auto;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.listcontent h3 .text_link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    overflow: hidden;
+    line-height: 18px;
+}
+
+.listcontent h3 .text_link a {
+    font-size: 12px;
+    font-family: "宋体";
+    font-weight: normal;
+    text-decoration: none;
+    color: #646464;
+}
+
+.listcontent h3 .info {}
+
+.listcontent h3 .price {
+    width: 150px;
+    text-align: left;
+    color: #fe5504;
+}
+
+.listcontent h3 a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.listcontent h3 span {
+    display: block;
+    padding: 1px 0;
+    text-align: left;
+}
+
+.left_box{
+    margin-top: 10px;
+}
+
+.fsearch {
+    padding: 5px 0 10px 15px;
+    margin: 1px 1px 0 1px;
+    background: none;
+    margin-bottom: 10px;
+    border: 1px solid #bae1b2;
+}
+
+
+
