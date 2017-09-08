@@ -2,7 +2,7 @@
 	[Destoon B2B System] Copyright (c) 2008-2015 www.destoon.com
 	This is NOT a freeware, use is subject to license.txt
 */
-a.konw_a:link,a.konw_a:active,a.konw_a:visited {color:#225588;text-decoration:none;}
+a.konw_a:link,a.konw_a:active,a.konw_a:visited {color:#009237;text-decoration:none;}
 a.konw_a:hover {color:#FF6600;text-decoration:none;}
 .know_sch {line-height:180%;}
 .know_sch_inp {width:260px;padding:3px;margin:5px;font-size:14px;}
@@ -14,7 +14,7 @@ a.konw_a:hover {color:#FF6600;text-decoration:none;}
 .know_list li {height:26px;line-height:26px;overflow:hidden;}
 .know_catalog p {margin:5px;}
 .know_catalog div {padding:0 6px 10px 6px;line-height:20px;}
-.know_catalog strong {color:#225588}
+.know_catalog strong {color:#009237}
 .know_expert {height:96px;overflow:hidden;color:#666666;}
 .know_expert img {float:left;border:#CCCCCC 1px solid;padding:2px;margin:2px 10px 0 5px;}
 .know_expert div {line-height:20px;}

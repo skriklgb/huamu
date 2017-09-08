@@ -52,7 +52,7 @@ a.b:hover {color:#FF6600;}
 .pages {padding:10px 0 10px 0;text-align:center;font-size:12px;}
 .pages a:link,.pages a:visited,.pages a:active  {background:#FFFFFF;border:#E6E6E6 1px solid;padding:1px;text-decoration:none;}
 .pages a:hover  {background:#FFFFFF;border:#CCCCCC 1px solid;color:#FF6600;padding:1px;text-decoration:none;}
-.pages strong {background:#2E6AB1;padding:1px;border:#CCCCCC 1px solid;color:#FFFFFF;}
+.pages strong {background:#009237;padding:1px;border:#CCCCCC 1px solid;color:#FFFFFF;}
 .pages_inp {border:#CCCCCC 1px solid;padding:1px;width:30px;text-align:center;color:#666666;}
 .pages_btn {width:26px;background:#F6F6F6;border:#CCCCCC 1px solid;font-weight:bold;font-size:11px;}
 .pages label {background:#FFFFFF;border:#CCCCCC 1px solid;padding:1px 5px 1px 5px;}

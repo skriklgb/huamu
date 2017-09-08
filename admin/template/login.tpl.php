@@ -67,7 +67,7 @@ $edition = edition(1);
 		</div>
 	</div>
 	<?php if(strpos(get_env('self'), '/admin.php') !== false) { ?>
-	<div style="margin:10px 40px 0 40px;border:#FF8D21 1px solid;background:#FFFFDD;padding:8px;display:none;" id="tips"><img src="admin/image/notice.gif" align="absmiddle"/> 提示：为了系统安全，请尽快修改后台地址 &nbsp;<a href="http://www.destoon.com/doc/use/34.html" target="_blank" style="color:#006699;">帮助&#187;</a></div>
+	<div style="margin:10px 40px 0 40px;border:#FF8D21 1px solid;background:#FFFFDD;padding:8px;display:none;" id="tips"><img src="admin/image/notice.gif" align="absmiddle"/> 提示：为了系统安全，请尽快修改后台地址 &nbsp;<a href="http://www.destoon.com/doc/use/34.html" target="_blank" style="color:#009237;">帮助&#187;</a></div>
 	<script type="text/javascript">$(function(){$('#tips').slideDown(300);});</script>
 	<?php } ?>
 </td>

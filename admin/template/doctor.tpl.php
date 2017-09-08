@@ -4,7 +4,7 @@ include tpl('header');
 show_menu($menus);
 ?>
 <style type="text/css">
-.t1 {width:200px;padding:3px 10px 3px 10px;color:#006699;}
+.t1 {width:200px;padding:3px 10px 3px 10px;color:#009237;}
 .t2 {width:100px;padding:3px 10px 3px 10px;color:green;text-align:center;}
 .t2 span {color:red;}
 .t3 {padding:5px 10px 5px 10px;line-height:180%;}
