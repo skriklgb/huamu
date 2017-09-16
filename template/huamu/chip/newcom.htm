@@ -1,0 +1,67 @@
+ <div class="shangjia_info_list">
+      <h4>
+          <a href="{$member[linkurl]}" target="_blank" title="{$member[company]}&#10;{$member[mode]}">{$member[company]}</a>
+          <img src="{DT_SKIN}images/dianpu_icon.jpg" alt="店铺"></a>
+      </h4>
+      <dl>
+        <dt>公司:</dt>
+        <dd>{$member[company]}</dd>
+      </dl>
+      <dl>
+        <dt>联系人:</dt>
+        <dd>{$member[truename]}({gender($member[gender])})&nbsp;{$member[career]}</dd>
+      </dl>
+      <dl>
+        <dt>联系:</dt>
+        <dd> 
+    {if $member[username] && $DT[im_web]}{im_web($member[username].'&mid='.$moduleid.'&itemid='.$itemid)}&nbsp;&nbsp;{/if}
+    {if $member[qq] && $DT[im_qq]}{im_qq($member[qq])}&nbsp;&nbsp;{/if}
+    {if $member[ali] && $DT[im_ali]}{im_ali($member[ali])}&nbsp;&nbsp;{/if}
+    {if $member[msn] && $DT[im_msn]}{im_msn($member[msn])}&nbsp;&nbsp;{/if}
+    {if $member[skype] && $DT[im_skype]}{im_skype($member[skype])}&nbsp;&nbsp;{/if} </dd>
+      </dl>
+      {if $member[mobile]}
+      <dl>
+        <dt>手机:</dt>
+        <dd><b class="color_red">{$member[mobile]}</b></dd>
+      </dl>
+      {/if}
+      {if $member[validated] || $member[vcompany] || $member[vtruename] || $member[vbank] || $member[vmobile] || $member[vemail]}
+       	 <dl>
+        <dt>认证:</dt>
+        <dd>
+            {if $member[vcompany]}&nbsp;<img src="{$MODULE[2][linkurl]}image/v_company.gif" width="16" height="16" align="absmiddle" title="通过工商认证"/>{/if}
+            {if $member[vtruename]}&nbsp;<img src="{$MODULE[2][linkurl]}image/v_truename.gif" width="16" height="16" align="absmiddle" title="通过实名认证"/>{/if}
+            {if $member[vbank]}&nbsp;<img src="{$MODULE[2][linkurl]}image/v_bank.gif" width="16" height="16" align="absmiddle" title="通过银行帐号认证"/>{/if}
+            {if $member[vmobile]}&nbsp;<img src="{$MODULE[2][linkurl]}image/v_mobile.gif" width="16" height="16" align="absmiddle" title="通过手机认证"/>{/if}
+            {if $member[vemail]}&nbsp;<img src="{$MODULE[2][linkurl]}image/v_email.gif" width="16" height="16" align="absmiddle" title="通过邮件认证"/>{/if}
+            {if $member[validated]}&nbsp;<img src="{DT_SKIN}image/check_right.gif" align="absmiddle"/> 通过{$member[validator]}认证{/if}
+            &nbsp;<a href="{userurl($member[username], 'file=credit')}">[诚信档案]</a>
+        </dd>
+        </dl>
+     {/if}
+      {if $member[vip]}
+      <dl>
+        <dt>等级:</dt>
+        <dd><img src="{DT_SKIN}image/vip_{$member[vip]}.gif" /></dd>
+      </dl>
+      {/if}
+      <dl>
+        <dt>商品:</dt>
+        <dd>{cuntsp($member[username])}件</dd>
+      </dl>
+      <dl>
+        <dt>地区:</dt>
+        <dd>{area_pos($member[areaid], '-')}</dd>
+      </dl>
+       {if $member[address]}
+       <dl>
+        <dt>地址:</dt>
+        <dd>{$member[address]}</dd>
+      </dl>
+      {/if}
+      <dl>
+        <dt>创店:</dt>
+        <dd>{date("Y-m-d",$member[regtime])}</dd>
+      </dl>
+    </div>
