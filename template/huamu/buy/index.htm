@@ -1,710 +1,269 @@
 {template 'header'}
-
 <div id="wrapper" style="margin-top: 10px;">
-	<div class="subnav">
-		<div class="keyword1"></div>
-		<div class="keyword2"></div>
-		当前位置:
-		<a href="http://www.huamu.com/">花木首页</a> &gt;
-		<a href="qiugou/">求购</a> &gt;
-		地区:                <a href="qiugou/list_0_0_.html">所有地区</a> &gt;
-		<a href="qiugou/">求购信息</a> &gt;
-		<a href="qiugou/diqu_1079.html">山东</a> &gt;
-		<a href="qiugou/diqu_1081.html">青岛</a> &gt;
-	</div>
+  <div class="subnav">
+    <div class="keyword1"></div>
+    <div class="keyword2"></div>
+    当前位置:<a href="{$MODULE[1][linkurl]}">花木首页</a> &gt; <a href="{$MOD[linkurl]}">{$MOD[name]}</a>&gt; </div>
+  <div class="module_filter white_bg">
+    <form class="choice-items">
+      <div class="classes">
+        <label>分类:</label>
+       <div id="more-trd-cates_catid" class="the-more-btn" style="width: 30px; float: right;">更多</div>
+        <ul class="area_list search_list wid" id="cat_list" style="width: 856px; float:left;overflow:hidden;height:30px;">
+       <li {if !$catid}class="on"{/if}><a href="?areaid={$areaid}&kw={$kw}&order={$order}"> 全部分类 </a> </li>
+          {php $sub = get_maincat(0, $moduleid, 1);}
+           {loop $sub $j $s}
+             <li  {if $s[catid]==$catid ||$s[catid]==$jibie||$s[catid]==$erji} class="on"{/if}>
+             <a href="?catid={$s[catid]}&areaid={$areaid}&kw={$kw}&order={$order}">{$s[catname]}</a></li>
+           {/loop}
+        </ul>
+      </div>
+      <div style="clear:both"></div>
+      {if $maincat2}
+       <div class="classes">
+        <label>&nbsp;</label>
+       <div id="more-trd-cates_catid1" class="the-more-btn" style="width: 30px; float: right;"></div>
+        <ul class="area_list search_list wid" id="cat_list1" style="width: 856px; float:left;overflow:hidden;height:30px;">
+           {loop $maincat2 $j $s}
+              <li {if $s[catid]==$catid ||$s[catid]==$jibie} class="on"{/if} ><a href="?catid={$s[catid]}&areaid={$areaid}&kw={$kw}&order={$order}">{$s[catname]}</a></li>
+           {/loop}
+       </ul>
+      </div>
+      {/if}
+      <div style="clear:both"></div>
+       {if $maincat3}
+       <div class="classes">
+        <label>&nbsp;</label>
+       <div id="more-trd-cates_catid1" class="the-more-btn" style="width: 30px; float: right;"></div>
+        <ul class="area_list search_list wid" id="cat_list1" style="width: 856px; float:left;overflow:hidden;height:30px;">
+           {loop $maincat3 $j $s}
+              <li {if $catid==$s[catid]}class="on"{/if}><a href="?catid={$s[catid]}&areaid={$areaid}&kw={$kw}&order={$order}">{$s[catname]}</a></li>
+           {/loop}
+       </ul>
+      </div>
+      {/if}
+      <div style="clear:both"></div>
+      <div class="area">
+        <label>地区:</label>
+        <div id="more-trd-cates_area" class="the-more-btn" style="width: 30px; float: right;">更多</div>
+        <ul class="area_list search_list wid" id="area_list" style="width: 856px; float:left;overflow:hidden;height:60px;">
+          <li {if !$areaid}class="on"{/if}> <a href="?catid={$catid}&kw={$kw}&order={$order}"> 全部地区 </a> </li>
+          {php $mainarea = get_mainarea(0)}
+          {loop $mainarea $k $v}
+          <li {if $areaid==$v[areaid]} class="on"{/if}> <a href="?catid={$catid}&areaid={$v[areaid]}&kw={$kw}&order={$order}" rel="nofollow">{$v[areaname]}</a> </li>
+          {/loop}
+        </ul>
+      </div>
+      <div style="clear:both"></div>
+    </form>
+  </div>
+  <div class="nav_area">
+    <form action="?" method="get" >
+      <div class="srcate_filter search_box">
+        <h3 style="line-height:30px;width:78px;">关键词搜索:</h3>
+        <div class="gleft" style="margin-right:15px;">
+          <input style="height:29px;" type="text" id="gjc" name="kw" value="{$kw}" class="text">
+          <input type="hidden" id="catid" name="catid" value="{$catid}">
+          <input type="hidden" id="areaid" name="areaid" value="{$areaid}">
+           <input type="hidden" id="order" name="order" value="{$order}">
+          <input type="button" id="btn_search" name="submit" value="搜索" class="go_submit">
+        </div>
+        <div style="line-height:30px;margin-left:10px;">
+        <a href="?catid={$catid}&areaid={$areaid}&kw=五角枫&order={$order}">五角枫</a>&nbsp;&nbsp;
+        <a href="?catid={$catid}&areaid={$areaid}&kw=朴树&order={$order}">朴树</a> &nbsp;&nbsp;
+        <a href="?catid={$catid}&areaid={$areaid}&kw=紫丁香&order={$order}">紫丁香</a>&nbsp;&nbsp; 
+        <a href="?catid={$catid}&areaid={$areaid}&kw=核桃&order={$order}">核桃</a>&nbsp;&nbsp;
+        <a href="?catid={$catid}&areaid={$areaid}&kw=巨紫荆&order={$order}">巨紫荆</a>&nbsp;&nbsp; 
+        <a href="?catid={$catid}&areaid={$areaid}&kw=广玉兰&order={$order}">广玉兰</a> 
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="c2_right_view gleft">
+    <div class="shop_con_list">
+      <div class="public_qiugou_btn gleft" onclick="javascript:window.location.assign('{$CFG[url]}member/my.php?mid={$moduleid}&action=add');"> + 发布求购信息 </div>
+      <ul class="factor-list">
+        
+        <li class="order-by only-down-icon " data-type="add~time" data-order="desc"> 
+       {if $order!=1&& $order!=2}
 
+         <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=2" style="background: url({DT_SKIN}image/icon-arr.png) 65px 4px no-repeat;">发布时间</a>
 
-	<div class="module_filter white_bg">
-		<form class="choice-items">
-			<div class="classes">
-				<label>分类:</label>
-				<ul class="classes_list search_list">
-					<li class="on">
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;region_id=1081&amp;keyword_sr=">
-							全部分类
-						</a>
-					</li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=1&amp;region_id=1081&amp;keyword_sr=">绿化苗木&nbsp;
-						</a></li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=2&amp;region_id=1081&amp;keyword_sr=">盆景绿植&nbsp;
-						</a></li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=19678&amp;region_id=1081&amp;keyword_sr=">其它苗木&nbsp;
-						</a></li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=22746&amp;region_id=1081&amp;keyword_sr=">鲜花配花&nbsp;
-						</a></li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=3&amp;region_id=1081&amp;keyword_sr=">资材配套&nbsp;
-						</a></li>
-				</ul>
-			</div>
-			<div style="clear:both"></div>
-			<div class="area">
-				<label>地区:</label>
+        {/if}
 
-				<div id="more-trd-cates_area" class="the-more-btn" style="width: 30px; float: right;">更多</div>
-				<ul class="area_list search_list wid" id="area_list" style="width: 856px; float:left;overflow:hidden;height:60px;">
-					<li class="">
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;keyword_sr=">
-							全部地区
-						</a>
-					</li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=370214&amp;keyword_sr=" rel="nofollow">城阳</a>
-					</li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=370211&amp;keyword_sr=" rel="nofollow">黄岛</a>
-					</li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=370281&amp;keyword_sr=" rel="nofollow">胶州</a>
-					</li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=370282&amp;keyword_sr=" rel="nofollow">即墨</a>
-					</li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=370285&amp;keyword_sr=" rel="nofollow">莱西</a>
-					</li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=370212&amp;keyword_sr=" rel="nofollow">崂山</a>
-					</li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=370213&amp;keyword_sr=" rel="nofollow">李沧</a>
-					</li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=370283&amp;keyword_sr=" rel="nofollow">平度</a>
-					</li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=370203&amp;keyword_sr=" rel="nofollow">市北</a>
-					</li>
-					<li>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=370202&amp;keyword_sr=" rel="nofollow">市南</a>
-					</li>
-				</ul>
-			</div>
-			<div style="clear:both"></div>
-		</form>
-	</div>
+        {if $order==1}
 
+        <!--升序-->
 
-	<div class="nav_area">
-		<form id="frm_requirement_list" method="get" onsubmit="return false">
-			<div class="srcate_filter search_box">
-				<h3 style="line-height:30px;width:78px;">关键词搜索:</h3>
+        <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=2" style="background: url({DT_SKIN}image/icon-arr.png) 65px -106px no-repeat;">发布时间</a>
 
-				<div class="gleft" style="margin-right:15px;">
-					<input style="height:29px;" type="text" id="keyword_sr" name="keyword_sr" value="" class="text">
-					<input type="hidden" id="cate_id" name="cate_id" value="0">
-					<input type="hidden" id="region_id" name="region_id" value="1081">
-					<input type="button" id="btn_search" name="submit" value="搜索" class="go_submit">
-				</div>
+        {/if}
 
-				<div style="line-height:30px;margin-left:10px;">
-					<a href="http://www.huamu.com/qiugou/list_0_1081_五角枫.html">五角枫</a>
-					<a href="http://www.huamu.com/qiugou/list_0_1081_朴树.html">朴树</a>
-					<a href="http://www.huamu.com/qiugou/list_0_1081_紫丁香.html">紫丁香</a>
-					<a href="http://www.huamu.com/qiugou/list_0_1081_核桃.html">核桃</a>
-					<a href="http://www.huamu.com/qiugou/list_0_1081_巨紫荆.html">巨紫荆</a>
-					<a href="http://www.huamu.com/qiugou/list_0_1081_广玉兰.html">广玉兰</a>
-					<a href="http://www.huamu.com/qiugou/list_0_1081_秋枫.html">秋枫</a>
-					<a href="http://www.huamu.com/qiugou/list_0_1081_复叶槭.html">复叶槭</a>
-				</div>
-			</div>
-		</form>
-	</div>
+        {if $order==2}
 
+        <!--降序-->
 
-	<div class="c2_right_view gleft">
-		<div class="shop_con_list">
-			<div class="public_qiugou_btn gleft" onclick="javascript:window.location.assign('http://www.huamu.com/index.php?app=my_requirement&amp;act=add');">
-				+ 发布求购信息
-			</div>
+        <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=1" style="background: url({DT_SKIN}image/icon-arr.png) 65px -54px no-repeat;">发布时间</a>
 
+        {/if}
+        </li>
+        <li class="order-by only-down-icon " data-type="expire" data-order="desc" style="border-right: 1px solid #bae1b2;"> 
+         {if $order!=3&&$order!=4}
 
-			<ul class="factor-list">
-				<li class="order-by only-up-icon " data-type="distance" data-order="asc">
-					<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;order=distance asc">距离</a>
-				</li>
-				<li class="order-by only-down-icon " data-type="add~time" data-order="desc">
-					<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;order=add~time desc">发布时间</a>
-				</li>
-				<li class="order-by only-down-icon " data-type="expire" data-order="desc" style="border-right: 1px solid #bae1b2;">
-					<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;order=expire">过期时间</a>
-				</li>
-			</ul>
+        <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=4" style="background: url({DT_SKIN}image/icon-arr.png) 65px 4px no-repeat;">过期时间</a>
 
-			<div style="clear:both;"></div>
+        {/if}
 
-		</div>
-
-		<div class="squares" hmtype="current_display_mode">
-			<table class="requirement_info_tab">
-				<thead>
-				<tr style="background: rgb(249, 249, 249);">
-					<td>产品名称</td>
-					<td>规格</td>
-					<td>采购量</td>
-					<td>报价数</td>
-					<td>需求地</td>
-					<td>联系方式</td>
-					<td>距离</td>
-					<td>结束时间</td>
-					<td>报价</td>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="朴树" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170512_11347_7102.html">朴树</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">600</b>&nbsp;厘米                                                米径&nbsp;<b class="grn">12</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">66</b> 棵</td>
-					<td><b class="grn">
-						0
-					</b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=4125&amp;order=" title="点击查看同一手机号发布的所有求购">159****3230</a>
-					</td>
-					<td>
-						305.51KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="11347" data-spec-id="7102">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr style="background: rgb(249, 249, 249);">
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="大量求购8公分国槐" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170430_11197_6897.html">国槐</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">400</b>&nbsp;厘米                                                米径&nbsp;<b class="grn">8</b>&nbsp;厘米                                                地径&nbsp;<b class="grn">10</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">200</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">400</b> 棵</td>
-					<td><b class="grn">
-						8                                            </b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=4035&amp;order=" title="点击查看同一手机号发布的所有求购">138****0875</a>
-					</td>
-					<td>
-						305.51KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="11197" data-spec-id="6897">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr>
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="要小冠幅苗木自己养着" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170427_11149_6844.html">五针松</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">40</b>&nbsp;厘米                                                米径&nbsp;<b class="grn">3</b>&nbsp;厘米                                                地径&nbsp;<b class="grn">3</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">50</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">1000</b> 棵</td>
-					<td><b class="grn">
-						0
-					</b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=4017&amp;order=" title="点击查看同一手机号发布的所有求购">151****8750</a>
-					</td>
-					<td>
-						305.51KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="11149" data-spec-id="6844">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr style="background: rgb(249, 249, 249);">
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="大规格红枫 鸡抓槭" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170331_10751_6184.html">鸡爪槭</a>
-					</td>
-					<td>
-						地径&nbsp;<b class="grn">14</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">100</b> 棵</td>
-					<td><b class="grn">
-						3                                            </b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3805&amp;order=" title="点击查看同一手机号发布的所有求购">152****6669</a>
-					</td>
-					<td>
-						305.51KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10751" data-spec-id="6184">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr>
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="红叶石楠" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170321_10541_5880.html">红叶石楠</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">60</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">20</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">5750</b> 棵</td>
-					<td><b class="grn">
-						2                                            </b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3639&amp;order=" title="点击查看同一手机号发布的所有求购">186****2204</a>
-					</td>
-					<td>
-						311.25KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10541" data-spec-id="5880">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr style="background: rgb(249, 249, 249);">
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="大叶黄杨" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170321_10540_5879.html">大叶黄杨</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">80</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">40</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">7542</b> 棵</td>
-					<td><b class="grn">
-						3                                            </b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3639&amp;order=" title="点击查看同一手机号发布的所有求购">186****2204</a>
-					</td>
-					<td>
-						311.25KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10540" data-spec-id="5879">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr>
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="小龙柏" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170321_10539_5878.html">小龙柏</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">50</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">15</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">5040</b> 棵</td>
-					<td><b class="grn">
-						0
-					</b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3639&amp;order=" title="点击查看同一手机号发布的所有求购">186****2204</a>
-					</td>
-					<td>
-						311.25KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10539" data-spec-id="5878">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr style="background: rgb(249, 249, 249);">
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="龙柏球" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170321_10538_5875.html">龙柏球</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">150</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">150</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">36</b> 棵</td>
-					<td><b class="grn">
-						0
-					</b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3639&amp;order=" title="点击查看同一手机号发布的所有求购">186****2204</a>
-					</td>
-					<td>
-						311.25KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10538" data-spec-id="5875">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr>
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="重瓣棣棠" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170321_10536_5873.html">栗棠</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">80</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">50</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">259</b> 棵</td>
-					<td><b class="grn">
-						0
-					</b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3639&amp;order=" title="点击查看同一手机号发布的所有求购">186****2204</a>
-					</td>
-					<td>
-						311.25KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10536" data-spec-id="5873">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr style="background: rgb(249, 249, 249);">
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="紫荆" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170321_10535_5872.html">紫荆</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">180</b>&nbsp;厘米                                                地径&nbsp;<b class="grn">10</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">200</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">36</b> 棵</td>
-					<td><b class="grn">
-						1                                            </b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3639&amp;order=" title="点击查看同一手机号发布的所有求购">186****2204</a>
-					</td>
-					<td>
-						311.25KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10535" data-spec-id="5872">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr>
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="紫叶李" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170321_10534_5871.html">紫叶李</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">2500</b>&nbsp;厘米                                                米径&nbsp;<b class="grn">10</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">250</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">8</b> 棵</td>
-					<td><b class="grn">
-						0
-					</b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3639&amp;order=" title="点击查看同一手机号发布的所有求购">186****2204</a>
-					</td>
-					<td>
-						311.25KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10534" data-spec-id="5871">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr style="background: rgb(249, 249, 249);">
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="西府海棠" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170321_10533_5870.html">西府海棠</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">2500</b>&nbsp;厘米                                                米径&nbsp;<b class="grn">10</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">200</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">32</b> 棵</td>
-					<td><b class="grn">
-						0
-					</b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3639&amp;order=" title="点击查看同一手机号发布的所有求购">186****2204</a>
-					</td>
-					<td>
-						311.25KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10533" data-spec-id="5870">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr>
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="日本红枫" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170321_10532_5869.html">日本红枫</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">1600</b>&nbsp;厘米                                                米径&nbsp;<b class="grn">8</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">180</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">11</b> 棵</td>
-					<td><b class="grn">
-						0
-					</b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3639&amp;order=" title="点击查看同一手机号发布的所有求购">186****2204</a>
-					</td>
-					<td>
-						311.25KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10532" data-spec-id="5869">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr style="background: rgb(249, 249, 249);">
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="鹅掌楸" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170321_10531_5868.html">马褂木</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">1500</b>&nbsp;厘米                                                米径&nbsp;<b class="grn">14</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">47</b> 棵</td>
-					<td><b class="grn">
-						0
-					</b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3639&amp;order=" title="点击查看同一手机号发布的所有求购">186****2204</a>
-					</td>
-					<td>
-						311.25KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10531" data-spec-id="5868">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr>
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="雪松等苗木询价" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170313_10307_5595.html">雪松</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">600</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">300</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">13</b> 棵</td>
-					<td><b class="grn">
-						1                                            </b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3639&amp;order=" title="点击查看同一手机号发布的所有求购">186****2204</a>
-					</td>
-					<td>
-						311.25KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10307" data-spec-id="5595">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr style="background: rgb(249, 249, 249);">
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="一级树。单樱" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170304_10151_5387.html">樱花树</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">180</b>&nbsp;厘米                                                米径&nbsp;<b class="grn">18</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">10</b> 棵</td>
-					<td><b class="grn">
-						1                                            </b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3540&amp;order=" title="点击查看同一手机号发布的所有求购">159****3030</a>
-					</td>
-					<td>
-						305.51KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10151" data-spec-id="5387">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr>
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="即墨绿化公司  求购红叶石楠" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170225_10031_5223.html">红叶石楠球</a>
-					</td>
-					<td>
-						冠幅&nbsp;<b class="grn">180</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">18</b> 棵</td>
-					<td><b class="grn">
-						6                                            </b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=1453&amp;order=" title="点击查看同一手机号发布的所有求购">151****6785</a>
-					</td>
-					<td>
-						305.51KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10031" data-spec-id="5223">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr style="background: rgb(249, 249, 249);">
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="绿化公司，求购油松" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170225_10030_5222.html">油松</a>
-					</td>
-					<td>
-						高度&nbsp;<b class="grn">450</b>&nbsp;厘米                                                冠幅&nbsp;<b class="grn">450</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">3</b> 棵</td>
-					<td><b class="grn">
-						1                                            </b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=1453&amp;order=" title="点击查看同一手机号发布的所有求购">151****6785</a>
-					</td>
-					<td>
-						305.51KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10030" data-spec-id="5222">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr>
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="绿化公司，求购紫叶李" data-rowspan="1" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170225_10029_5221.html">紫叶李</a>
-					</td>
-					<td>
-						胸径&nbsp;<b class="grn">12</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">19</b> 棵</td>
-					<td><b class="grn">
-						1                                            </b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=3132&amp;order=" title="点击查看同一手机号发布的所有求购">151****6785</a>
-					</td>
-					<td>
-						305.51KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10029" data-spec-id="5221">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				<tr style="background: rgb(249, 249, 249);">
-					<!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
-					<td title="绿化公司，求购大叶女贞" data-rowspan="2" style="cursor:pointer;">
-						<a href="http://www.huamu.com/qiugou/20170225_10028_5220.html">大叶女贞</a>
-					</td>
-					<td>
-						胸径&nbsp;<b class="grn">10</b>&nbsp;厘米                                            </td>
-					<td><b class="grn">185</b> 棵</td>
-					<td><b class="grn">
-						3                                            </b> 条
-					</td>
-					<td>山东</td>
-					<td>
-						<a href="http://www.huamu.com/index.php?app=requirement&amp;act=index&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;addr_id=1453&amp;order=" title="点击查看同一手机号发布的所有求购">151****6785</a>
-					</td>
-					<td>
-						305.51KM
-					</td>
-					<td class="guoqi">已过期</td>
-					<td>
-						<button class="sub_baojia" data-id="10028" data-spec-id="5220">
-							报价
-						</button>
-					</td>
-
-				</tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="page">
-
-
-
-
-			<a class="stat">共 73 个项目</a>
-			<span class="former_no"></span>
-			<a class="page_hover">1</a>
-			<a class="page_link" href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;page=2">2</a>
-			<a class="page_link" href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;page=3">3</a>
-			<a class="page_link" href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;page=4">4</a>
-			<a class="nonce">1 / 4</a>
-			<a class="down" href="http://www.huamu.com/index.php?app=requirement&amp;cate_id=0&amp;region_id=1081&amp;keyword_sr=&amp;page=2">下一页</a>
-		</div>
-	</div>
-
+        {if $order==3}
+           <!--升序-->
+         <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=4" style="background: url({DT_SKIN}image/icon-arr.png) 65px -106px no-repeat;">过期时间</a>
+         {/if}
+         {if $order==4}
+         <!--降序-->
+           <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=3" style="background: url({DT_SKIN}image/icon-arr.png) 65px -54px no-repeat;">过期时间</a>
+        {/if}
+        </li>
+        </ul>
+      <div style="clear:both;"></div>
+    </div>
+    <div class="squares" hmtype="current_display_mode">
+      <table class="requirement_info_tab">
+        <thead>
+          <tr style="background: rgb(249, 249, 249);">
+            <td>产品名称</td>
+            <td>规格</td>
+            <td>采购量</td>
+            <td>报价数</td>
+            <td>需求地</td>
+            <td>联系方式</td>
+            <td>结束时间</td>
+            <td>报价</td>
+          </tr>
+        </thead>
+        <tbody>
+        <!--{php $qiugou=tag("moduleid=$moduleid&condition=".$condition."$dtype&pagesize=".$MOD[pagesize]."&page=$page&showpage=1&datetype=5&order=".$px."&lazy=$lazy&template=null&debug=0")}-->
+          {loop $qiugou $a $b}
+          <tr {if $a%2==0} style="background: rgb(249, 249, 249);"{/if}> 
+            <!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
+            <td title="{$b[title]}" data-rowspan="1" style="cursor:pointer;">
+            <a href="{$b[linkurl]}">{$b[title]}</a></td>
+            <td> 
+                 {if $b[gaodu]}
+                   {php $range_gaodu=getbox_name('gaodu','buy_6')}
+                     {loop $range_gaodu $key $v}
+                         {if $key==$b[gaodu]}
+                         高度:{$v}
+                         {/if}
+                     {/loop}
+                 {/if}    
+                 {if $b[mijing]}  &nbsp;
+                   {php $range_mijing=getbox_name('mijing','buy_6')}
+                     {loop $range_mijing $key $v}
+                         {if $key==$b[mijing]}
+                        米颈:{$v}
+                         {/if}
+                     {/loop}
+                 {/if}
+                <!-- {if $b[dijing]}  &nbsp;
+                  {php $range_dijing=getbox_name('dijing','buy_6')}
+                     {loop $range_dijing $key $v}
+                         {if $key==$b[dijing]}
+                         地颈:{$v}
+                         {/if}
+                     {/loop}
+                {/if}
+                 {if $b[guanfu]}  &nbsp;
+                  {php $range_guanfu=getbox_name('guanfu','buy_6')}
+                     {loop $range_guanfu $key $v}
+                         {if $key==$b[guanfu]}
+                       冠幅:{$v}
+                         {/if}
+                     {/loop}
+                {/if}
+                {if $b[shuxing]}&nbsp;
+                   {php $range_shuxing=getbox_name('shuxing','mall')}
+                     {loop $range_shuxing $key $v}
+                         {if $key==$b[shuxing]}
+                        树形:{$v}
+                         {/if}
+                     {/loop}
+               {/if}-->
+            
+            <td><b class="grn">{$b[amount]}</b> 棵</td>
+            <td><b class="grn"> 0 </b> 条 </td>
+            <td>{area_pos($b[areaid], '')}</td>
+            <td>{php echo substr_replace($b[mobile],'****',3,4);}</td>
+            {if $b[totime]}
+            {if $b[totime]<time()}
+            <td class="guoqi">已过期</td>
+            {else}
+            <td class="expire">
+               <span class="record_time day">{php echo ceil(($b[totime]-time())/(24*60*60))-1;}</span>天
+            </td>
+            {/if}
+            {else}
+            <td class="guoqi" style="color:#0aad1c; font-weight:bolder">长期有效</td>
+            {/if}
+           <td> 
+           {if $b[totime]>time()||!$b[totime]}
+           <button class="sub_baojia" data-id="11347" data-spec-id="7102"> 报价 </button>
+           {/if}
+           </td>
+          </tr>
+          {/loop}
+      </tbody>
+      </table>
+    </div>
+    <div class="page">{$pages}</div>
+  </div>
 </div>
 <div class="b10"></div>
+
+<script type="text/javascript">
+    $(function () {
+		 
+        $('.close_btn_req').click(function () {
+            $('.requirement_info_pop').hide();
+            $('.requirement_info_pop .cofirm_sub_block').hide();
+        });
+
+        $('.factor-list>li').each(function () {
+            if ($(this).hasClass('chosed')) {
+                $(this).prev('li').find('a').css({
+                    border: '0'
+                });
+            }
+        });
+
+    });
+
+   
+
+     $("#more-trd-cates_area").click(function () {
+		if ($(this).text() == "更多") {
+            $("#area_list ").height("auto");
+            $(this).text("收起");
+        }
+        else if ($(this).text() == "收起") {
+            $("#area_list ").height(60);
+            $(this).text("更多");
+
+        }
+    });
+    $("#more-trd-cates_catid").click(function () {
+		if ($(this).text() == "更多") {
+            $("#cat_list").height("auto");
+            $(this).text("收起");
+        }
+        else if ($(this).text() == "收起") {
+            $("#cat_list ").height(30);
+            $(this).text("更多");
+
+        }
+    });
+
+
+</script>
 
 
 {template 'footer'}

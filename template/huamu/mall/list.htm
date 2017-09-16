@@ -1,117 +1,658 @@
 {template 'header'}
-<script type="text/javascript">var sh = '{$MOD[linkurl]}search.php?catid={$catid}';</script>
+
 <div class="subnav" style="margin-top: 15px;">
-	<div class="keyword1"></div>
-	<div class="keyword2"></div>
-	当前位置:
-	<a href="{$MODULE[1][linkurl]}">花木首页</a> &gt;
-	<a href="{$MOD[linkurl]}">{$MOD[name]}</a>  &gt; {cat_pos($CAT, ' &raquo; ')}</div>
-<div class="m">
-	<div class="m_l_1 f_l">
-		<div class="left_box">
 
-			<div class="category">
-				<p> <strong>分类：</strong></p>
-				<div>
-					<table width="100%" cellpadding="3">
-						{loop $maincat $k $v}
-						{if $k%$MOD[page_subcat]==0}<tr>{/if}
-						<td{if $v[catid]==$catid} class="f_b"{/if}><a href="{$MOD[linkurl]}{$v[linkurl]}">{set_style($v[catname],$v[style])}</a>{if !$cityid} <span class="f_gray px10">({$v[item]})</span>{/if}</td>
-						{if $k%$MOD[page_subcat]==($MOD[page_subcat]-1)}</tr>{/if}
-						{/loop}
-					</table>
-				</div>
-			</div>
-			{if $CP}
-			{loop $PPT $p}
-			<div class="ppt">
-				<table cellpadding="0" cellspacing="0" width="100%">
-					<tr>
-						<td class="ppt_l" valign="top">按{$p[name]}</td>
-						<td class="ppt_r" valign="top">
-							{loop $p[options] $o}
-							<a href="###" onclick="Go(sh+'&ppt_{$p[oid]}={urlencode($o)}');">{$o}</a>&nbsp;|&nbsp;
-							{/loop}
-						</td>
-					</tr>
-				</table>
-			</div>
-			{/loop}
-			{/if}
-			<div class="b10">&nbsp;</div>
+  <div class="keyword1"></div>
+
+  <div class="keyword2"></div>
+
+  当前位置: <a href="{$MODULE[1][linkurl]}">花木首页</a> &gt; <a href="{$MOD[linkurl]}">{$MOD[name]}</a> &gt; {cat_pos($CAT, ' &raquo; ')}</div>
+
+<div class="content2">
+
+  <div class="module_filter white_bg">
+
+    <form class="choice-items">
+
+      <div class="classes">
+
+        <label>分类:</label>
+
+         <!-------------------一级分类开始---------------------->
+        <div id="more-trd-cates_catid" class="the-more-btn" style="width: 30px; float: right;">更多</div>
+          <ul class="classes_list search_list" id="cat_list" style="width: 856px; float:left;overflow:hidden;height:30px;">
+          {php $sub = get_maincat(0, 16, 1);}
+           {loop $sub $j $s}
+           <li><a href="?catid={$s[catid]}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order={$order}" {if $s[catid]==$catid ||$s[catid]==$jibie||$s[catid]==$erji} class="on"{/if} >{$s[catname]}</a></li>
+           {/loop}
+
+        </ul>
+         <!-------------------一级分类结束---------------------->
+
+      </div>
+
+      <div style="clear:both"></div>
+
+       <!-------------------二级分类开始---------------------->
+
+      <div class="sec-classfy">
+
+                <ul class="classes_list search_list">
+
+                  {loop $maincat2 $j $s}
+
+                 
+
+                      <li><a href="?catid={$s[catid]}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order={$order}" {if $s[catid]==$catid ||$s[catid]==$jibie} class="on"{/if} >{$s[catname]}</a></li>
+
+                 
+
+                   {/loop}
+
+             </ul>
+
+      </div>
+
+      <!-------------------二级分类结束---------------------->
+
+     {if $maincat3}
+
+      <!-------------------三级分类开始---------------------->
+
+      <div class="thir-classfy">
+
+        <ul class="classes_list search_list" style="width:940px;">
+
+         <li id="more-trd-cates" class="the-more-btn" style="width: 30px; background: url({DT_SKIN}image/icon_arr_down.jpg) 37px center no-repeat;">更多</li>
+
+          <li id="trd-cates" style="width: 870px; height: 30px;">
+
+          <ul class="trval">
+
+            {loop $maincat3 $k $v} 
+
+            <li>
+
+            <a href="?catid={$v[catid]}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order={$order}" {if $catid==$v[catid]}class="on"{/if}>{set_style($v[catname],$v[style])}</a>
+
+            </li>
+
+            {/loop}
+
+          </ul>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+     {/if} 
+
+      <!-------------------三级分类结束---------------------->
+
+      <div style="clear:both"></div>
+
+      {if $aaa}
+
+      <div class="area">
+
+        <label>地区:</label>
+
+      <div id="more-trd-cates_area" class="the-more-btn" style="width: 30px; float: right;">更多</div>
+
+        <ul class="area_list search_list" id="area_list" style="width: 856px; float: left; overflow: hidden; height: 30px;">
+
+           <li> <a {if !$areaid}class="on"{/if} href="?catid={$catid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order={$order}"> 全部地区</a> </li>
+
+          {php $mainarea = get_mainarea(0)}
+
+          {loop $mainarea $k $v}
+
+          {if in_array($v[areaid], $aaa)}
+
+           <!--{php $diqusum=tag("moduleid=$moduleid&condition=".$condition." and areaid=".$v[areaid]."&pagesize=100000&fields=itemid&template=null")}-->
+
+          <li><a href="?catid={$catid}&areaid={$v[areaid]}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order={$order}" rel="nofollow" {if $areaid==$v[areaid]}class="on"{/if}>{$v[areaname]}<em>({count($diqusum)})</em></a></li>
+
+          {/if}
+
+          {/loop}
+
+        </ul>
+
+      </div>
+
+      {/if}
+
+      <div style="clear:both"></div>
+
+       {if $bbb}
+
+      <div class="plants_age">
+
+        <label>高度:</label>
+
+        <ul class="age_list search_list control_width">
+
+         <li> <a {if !$gaodu}class="on"{/if} href="?catid={$catid}&areaid={$areaid}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order={$order}"> 全部高度</a> </li>
+
+          {php $range_gaodu=getbox_name('gaodu','mall')}
+
+          {loop $range_gaodu $key $v}
+
+          {if in_array($key, $bbb)}
+
+          <!--{php $gaodusum=tag("moduleid=$moduleid&condition=".$condition." and gaodu=".$key."&pagesize=100000&fields=itemid&template=null")}-->
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$key}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order={$order}" rel="nofollow" {if $gaodu==$key}class="on"{/if}>{$v}<em>({count($gaodusum)})</em></a> </li>
+
+         {/if}
+
+          {/loop}
+
+        </ul>
+
+      </div>
+
+      {/if}
+
+       {if $ccc}
+
+      <div class="plants_age">
+
+        <label>米径:</label>
+
+        <ul class="age_list search_list control_width">
+
+         <li> <a {if !$mijing}class="on"{/if} href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order={$order}"> 全部米径</a> </li>
+
+          {php $range_mijing=getbox_name('mijing','mall')}
+
+          {loop $range_mijing $key $v}
+
+          {if in_array($key, $ccc)}
+
+            <!--{php $mijingsum=tag("moduleid=$moduleid&condition=".$condition." and mijing=".$key."&pagesize=100000&fields=itemid&template=null")}-->
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$key}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order={$order}" rel="nofollow" {if $mijing==$key}class="on"{/if}>{$v}<em>({count($mijingsum)})</em></a> </li>
+
+          {/if}
+
+          {/loop}
+
+        </ul>
+
+      </div>
+
+      {/if}
+
+       {if $ddd}
+
+      <div class="plants_age">
+
+        <label>地径:</label>
+
+        <ul class="age_list search_list control_width">
+
+         <li> <a {if !$dijing}class="on"{/if} href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order={$order}"> 全部地径</a> </li>
+
+          {php $range_dijing=getbox_name('dijing','mall')}
+
+          {loop $range_dijing $key $v}
+
+          {if in_array($key, $ddd)}
+
+           <!--{php $dijingsum=tag("moduleid=$moduleid&condition=".$condition." and dijing=".$key."&pagesize=100000&fields=itemid&template=null")}-->
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$key}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order={$order}" rel="nofollow" {if $dijing==$key}class="on"{/if}>{$v}<em>({count($dijingsum)})</em></a> </li>
+
+          {/if}
+
+          {/loop}
+
+        </ul>
+
+      </div>
+
+      {/if}
+
+       {if $eee}
+
+      <div class="plants_age">
+
+        <label>冠幅:</label>
+
+        <ul class="age_list search_list control_width">
+
+         <li> <a {if !$guanfu}class="on"{/if} href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&shuxing={$shuxing}&jiage={$jiage}&order={$order}"> 全部冠幅</a> </li>
+
+          {php $range_guanfu=getbox_name('guanfu','mall')}
+
+          {loop $range_guanfu $key $v}
+
+          {if in_array($key, $eee)}
+
+          <!--{php $guanfusum=tag("moduleid=$moduleid&condition=".$condition." and guanfu=".$key."&pagesize=100000&fields=itemid&template=null")}-->
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$key}&shuxing={$shuxing}&jiage={$jiage}&order={$order}" rel="nofollow" {if $guanfu==$key}class="on"{/if}>{$v}<em>({count($guanfusum)})</em></a></li>
+
+          {/if}
+
+         {/loop}
+
+        </ul>
+
+      </div>
+
+      {/if}
+
+       {if $fff}
+
+      <div class="plants_age">
+
+        <label>树形:</label>
+
+        <ul class="age_list search_list control_width">
+
+        <li> <a {if !$shuxing}class="on"{/if} href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&jiage={$jiage}&order={$order}"> 全部树形</a> </li>
+
+          {php $range_shuxing=getbox_name('shuxing','mall')}
+
+          {loop $range_shuxing $key $v}
+
+          {if in_array($key, $fff)}
+
+           <!--{php $sxsum=tag("moduleid=$moduleid&condition=".$condition." and shuxing=".$key."&pagesize=100000&fields=itemid&template=null")}-->
+
+          <li><a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$key}&jiage={$jiage}&order={$order}" rel="nofollow" {if $shuxing==$key}class="on"{/if}>{$v}<em>({count($sxsum)})</em></a> </li>
+
+          {/if}
+
+          {/loop}
+
+        </ul>
+
+      </div>
+
+      {/if}
+
+      <div style="clear:both"></div>
+
+      {if $jjj}
+
+      <div class="plants_price">
+
+        <label>价格:</label>
+
+         <ul class="age_list search_list control_width">
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&order={$order}" {if !$jiage}class="on"{/if} > 全部价格</a> </li>
+
+          <!--{php $price1=tag("moduleid=$moduleid&condition=".$condition." and price>0 and price<10&pagesize=100000&fields=itemid&template=null&debug=0")}-->
+
+          {if count($price1)>0}
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage=1&order={$order}"  rel="nofollow" {if $jiage==1}class="on"{/if}> 0~10<em>({count($price1)})</em></a> </li>
+
+          {/if}
+
+           <!--{php $price2=tag("moduleid=$moduleid&condition=".$condition." and price>=10 and price<100&pagesize=100000&fields=itemid&template=null&debug=0")}-->
+
+          {if count($price2)>0}
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage=2&order={$order}"  rel="nofollow" {if $jiage==2}class="on"{/if}> 10~100<em>({count($price2)})</em></a> </li>
+
+          {/if}
+
+           <!--{php $price3=tag("moduleid=$moduleid&condition=".$condition." and price>=100 and price<500&pagesize=100000&fields=itemid&template=null&debug=0")}-->
+
+          {if count($price3)>0}
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage=3&order={$order}"  rel="nofollow" {if $jiage==3}class="on"{/if}> 100~500<em>({count($price3)})</em></a> </li>
+
+          {/if}
+
+           <!--{php $price4=tag("moduleid=$moduleid&condition=".$condition." and price>=500 and price<1000&pagesize=100000&fields=itemid&template=null&debug=0")}-->
+
+          {if count($price4)>0}
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage=4&order={$order}"  rel="nofollow" {if $jiage==4}class="on"{/if}> 500~1000<em>({count($price4)})</em></a> </li>
+
+          {/if}
+
+          <!--{php $price5=tag("moduleid=$moduleid&condition=".$condition." and price>=1000 and price<10000&pagesize=100000&fields=itemid&template=null&debug=0")}-->
+
+          {if count($price5)>0}
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage=5&order={$order}"  rel="nofollow" {if $jiage==5}class="on"{/if}> 1000~10000<em>({count($price5)})</em></a> </li>
+
+          {/if}
+
+          <!--{php $price6=tag("moduleid=$moduleid&condition=".$condition." and price>=10000 and price<50000&pagesize=100000&fields=itemid&template=null&debug=0")}-->
+
+          {if count($price6)>0}
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage=6&order={$order}"  rel="nofollow" {if $jiage==6}class="on"{/if}> 10000~50000<em>({count($price6)})</em></a> </li>
+
+          {/if}
+
+           <!--{php $price7=tag("moduleid=$moduleid&condition=".$condition." and price>=50000&pagesize=100000&fields=itemid&template=null&debug=0")}-->
+
+          {if count($price7)>0}
+
+          <li> <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage=7&order={$order}"  rel="nofollow" {if $jiage==7}class="on"{/if}> 50000以上<em>({count($price7)})</em></a> </li>
+
+          {/if}
+
+        </ul>
+
+      </div>
+
+    {/if}  
+
+      <div style="clear:both"></div>
+
+    </form>
+
+  </div>
+
+  <div class="c2_right_view gleft">
+
+    <div class="shop_con_list">
+
+      <ul class="factor-list">
+
+        <li class="order-by only-down-icon" data-type="goods~grade" data-order="asc"> 
+
+         <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=0">默认排序</a>
+
+        </li>
+
+        <li class="order-by only-down-icon" data-type="sales" data-order="asc"> 
+
+        {if $order!=1&& $order!=2}
+
+         <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=2" style="background: url({DT_SKIN}image/icon-arr.png) 38px 4px no-repeat;">销量</a>
+
+        {/if}
+
+        {if $order==1}
+
+        <!--升序-->
+
+        <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=2" style="background: url({DT_SKIN}image/icon-arr.png) 38px -106px no-repeat;">销量</a>
+
+        {/if}
+
+        {if $order==2}
+
+        <!--降序-->
+
+        <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=1" style="background: url({DT_SKIN}image/icon-arr.png) 38px -54px no-repeat;">销量</a>
+
+        {/if}
+
+        </li>
+
+        <li class="order-by only-down-icon" data-type="price" data-order="desc">
+
+        {if $order!=3&&$order!=4}
+
+        <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=4" style="background: url({DT_SKIN}image/icon-arr.png) 38px 4px no-repeat;">价格</a>
+
+        {/if}
+
+        {if $order==3}
+
+        <!--升序-->
+
+        <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=4" style="background: url({DT_SKIN}image/icon-arr.png) 38px -106px no-repeat;">价格</a>
+
+        {/if}
+
+        {if $order==4}
+
+        <!--降序-->
+
+        <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=3" style="background: url({DT_SKIN}image/icon-arr.png) 38px -54px no-repeat;">价格</a>
+
+        {/if}
+
+        </li>
+
+        <li class="order-by only-down-icon" data-type="price" data-order="desc">
+
+        {if $order!=5&&$order!=6}
+
+        <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=6" style="background: url({DT_SKIN}image/icon-arr.png) 38px 4px no-repeat;">人气</a>
+
+        {/if}
+
+        {if $order==5}
+
+        <!--升序-->
+
+        <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=6" style="background: url({DT_SKIN}image/icon-arr.png) 38px -106px no-repeat;">人气</a>
+
+        {/if}
+
+        {if $order==6}
+
+        <!--降序-->
+
+        <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=5" style="background: url({DT_SKIN}image/icon-arr.png) 38px -54px no-repeat;">人气</a>
+
+        {/if}
+
+        </li>
+
+        <li class="order-by only-down-icon" data-type="price" data-order="asc">
+
+        {if $order!=7&&$order!=8}
+
+        <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=8" style="background: url({DT_SKIN}image/icon-arr.png) 38px 4px no-repeat;">时间</a>
+
+        {/if}
+
+        {if $order==7}
+
+        <!--升序-->
+
+        <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=8" style="background: url({DT_SKIN}image/icon-arr.png) 38px -106px no-repeat;">时间</a>
+
+        {/if}
+
+        {if $order==8}
+
+        <!--降序-->
+
+        <a href="?catid={$catid}&areaid={$areaid}&gaodu={$gaodu}&mijing={$mijing}&dijing={$dijing}&guanfu={$guanfu}&shuxing={$shuxing}&jiage={$jiage}&order=7" style="background: url({DT_SKIN}image/icon-arr.png) 38px -54px no-repeat;">时间</a>
+
+        {/if}
+
+        </li>
+
+      </ul>
+
+      <div class="h2_wrap">
+
+        <div class="table_title">
+
+          <ul>
+
+            <li class="dm_squares selected" hmtype="display_mode" hmvalue="squares"><i></i>
+
+            <a href="javascript:void(0)" onclick="showfg(1)">方格显示</a>
+
+            </li>
+
+            <li class="dm_list" hmtype="display_mode" hmvalue="list"><i></i>
+
+             <a href="javascript:void(0)" onclick="showfg(2)">列表显示</a>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div style="clear:both;"></div>
+
+      <div class="squares" hmtype="current_display_mode" id="yangshi">
+
+        <ul class="list_pic" style="border: 1px solid #bae1b2;">
+
+          {if $tags}
+
+          {loop $tags $i $t}
+
+          <li lat="34.1608" lon="118.7572" sg="8">
+
+            <p> <a href="{$t[linkurl]}" target="_blank"> <img src="{$t[thumb]}" alt="{$t[title]}"> </a> </p>
+
+            <h3> <span class="text_link"> <span class="depict"> <a href="{$t[linkurl]}" target="_blank">{$t[title]}</a> </span> <span class="info" style="background:none;"> <a href="http://suqian.huamu.com/" title="{$t[company]}" rel="nofollow">{$t[company]}</a> </span> </span> <span class="price">¥{$t[price]}</span> </h3>
+
+          </li>
+
+          {/loop}
+
+          {if $showpage && $pages}
+
+          <div class="pages">{$pages}</div>
+
+          {/if}
+
+          {/if}
+
+        </ul>
+
+        </div>
+
+        <script type="text/javascript">
+
+			function showfg(i){
+
+				if(i==1){
+
+				var cc = document.getElementById('yangshi'); 
+
+                   cc.setAttribute("class", "squares"); 	
+
+				}
+
+				if(i==2){
+
+					var cc = document.getElementById('yangshi'); 
+
+                   cc.setAttribute("class", "list"); 	
+
+				}
+
+			}
+
+		</script>
+
+        <script type="text/javascript">
+
+        $(function () {
+
+			if (parseInt($('#trd-cates').height()) >30) {
+
+                $('#more-trd-cates').show();
+
+                $('#trd-cates').height('60px');
+
+            }
+
+			$('#more-trd-cates').click(function(){
+
+                if (parseInt($('#trd-cates').height()) >30) {
+
+                    $(this).css({
+
+                        background: 'url({DT_SKIN}image/icon_arr_down.jpg) 37px center no-repeat'
+
+                    });
+
+                    $('#trd-cates').height('30px');
+
+                } else {
+
+                    $(this).css({
+
+                     background: 'url({DT_SKIN}image/icon_arr_up.jpg) 37px center no-repeat'
+
+					  });
+
+                    $('#trd-cates').height('auto');
+
+                }
+
+            });
 
 
-			<form method="post" class="malllist">
-				<div class="sell_tip" id="sell_tip" style="display:none;" title="双击关闭" ondblclick="Dh(this.id);">
-					<div>
-						<p>您可以</p>
-						<input type="submit" value="对比选中" onclick="this.form.action='{$MOD[linkurl]}compare.php';" class="btn_1" onmouseover="this.className='btn_2'" onmouseout="this.className='btn_1'"/> 或
-						<input type="submit" value="批量购买" onclick="this.form.action='{$MOD[linkurl]}cart.php';" class="btn_1" onmouseover="this.className='btn_2'" onmouseout="this.className='btn_1'"/>
-					</div>
-				</div>
-				<div class="img_tip" id="img_tip" style="display:none;">&nbsp;</div>
-				<div class="tool">
-					<table>
-						<tr height="30">
-							<td width="25" align="center"><input type="checkbox" onclick="checkall(this.form);"/></td>
-							<td>
-								<input type="submit" value="对比选中" onclick="this.form.action='{$MOD[linkurl]}compare.php';" class="btn_1" onmouseover="this.className='btn_2'" onmouseout="this.className='btn_1'"/>&nbsp;
-								<input type="submit" value="批量购买" onclick="this.form.action='{$MOD[linkurl]}cart.php';" class="btn_1" onmouseover="this.className='btn_2'" onmouseout="this.className='btn_1'"/>
-							</td>
-							<td align="right">
-								<script type="text/javascript">var sh = '{$MOD[linkurl]}search.php?catid={$catid}';</script>
-								<input type="checkbox" onclick="Go(sh+'&vip=1');"/>{VIP}&nbsp;
-								<select onchange="Go(sh+'&day='+this.value)">
-									<option value="0">更新时间</option>
-									<option value="1">1天内</option>
-									<option value="3">3天内</option>
-									<option value="7">7天内</option>
-									<option value="15">15天内</option>
-									<option value="30">30天内</option>
-								</select>&nbsp;
-								<select onchange="Go(sh+'&order='+this.value)">
-									<option value="0">显示顺序</option>
-									<option value="2">价格由高到低</option>
-									<option value="3">价格由低到高</option>
-									<option value="4">{VIP}级别由高到低</option>
-									<option value="5">{VIP}级别由低到高</option>
-									<option value="6">供货量由高到低</option>
-									<option value="7">供货量由低到高</option>
-									<option value="8">起订量由高到低</option>
-									<option value="9">起订量由低到高</option>
-								</select>&nbsp;
-							</td>
-						</tr>
-					</table>
-				</div>
-				{if $page == 1}{ad($moduleid,$catid,$kw,6)}{/if}
-				{if $tags}{template 'list-'.$module, 'tag'}{/if}
 
-			</form>
-			<br/>
-		</div>
-	</div>
-	<div class="m_n f_l">&nbsp;</div>
-	<div class="m_r_1 f_l">
-		<div class="sponsor">{ad($moduleid,$catid,$kw,7)}</div>
-		<div class="box_head"><div><strong>本周搜索排行</strong></div></div>
-		<div class="box_body">
-			<div class="rank_list">
-				<!--{tag("moduleid=$moduleid&table=keyword&condition=moduleid=$moduleid and status=3 and updatetime>$today_endtime-86400*7&areaid=$cityid&pagesize=10&order=week_search desc&key=week_search&template=list-search_rank")}-->
-			</div>
-		</div>
-		<div class="b10">&nbsp;</div>
-		<div class="box_head"><div><strong>按地区浏览</strong></div></div>
-		<div class="box_body">
-			<table width="100%" cellpadding="3">
-				{php $mainarea = get_mainarea(0)}
-				{loop $mainarea $k $v}
-				{if $k%2==0}<tr>{/if}
-				<td><a href="{$MOD[linkurl]}search.php?areaid={$v[areaid]}&catid={$catid}" rel="nofollow">{$v[areaname]}</a></td>
-				{if $k%2==1}</tr>{/if}
-				{/loop}
-			</table>
-		</div>
-	</div>
+		    if (parseInt($('#area_list').height()) > 30) {
+
+				$('#more-trd-cates_area').show();
+
+                $('#area_list').height('26px');
+
+            }
+
+			
+
+			$('#more-trd-cates_area').click(function(){
+
+            if (parseInt($('#area_list').height()) > 30) {
+
+                $(this).css({
+
+                    background: 'url({DT_SKIN}image/icon_arr_down.jpg) 37px center no-repeat'
+
+                });
+
+                $('#area_list').height('30px');
+
+            } else {
+
+                $(this).css({
+
+                    background: 'url({DT_SKIN}image/icon_arr_up.jpg) 37px center no-repeat'
+
+                });
+
+                $('#area_list').height('auto');
+
+            }
+
+			})
+
+			
+
+       });
+$("#more-trd-cates_catid").click(function () {
+		if ($(this).text() == "更多") {
+            $("#cat_list").height("auto");
+            $(this).text("收起");
+        }
+        else if ($(this).text() == "收起") {
+            $("#cat_list ").height(30);
+            $(this).text("更多");
+
+        }
+    });
+</script>
+
+
+
+    </div>
+
+  </div>
+
 </div>
+
 {template 'footer'}

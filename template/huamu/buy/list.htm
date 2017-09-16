@@ -1,72 +1,284 @@
 {template 'header'}
-<script type="text/javascript">var sh = '{$MOD[linkurl]}search.php?catid={$catid}';</script>
-<div class="m">
-<div class="m_l_1 f_l">
-	<div class="left_box">		
-		<div class="pos">当前位置: <a href="{$MODULE[1][linkurl]}">首页</a> &raquo; <a href="{$MOD[linkurl]}">{$MOD[name]}</a> &raquo; {cat_pos($CAT, ' &raquo; ')}</div>
-		<div class="category">
-			<p><img src="{DT_SKIN}image/arrow.gif" width="17" height="12" alt=""/> <strong>按行业浏览</strong></p>
-			<div>
-			<table width="100%" cellpadding="3">
-			{loop $maincat $k $v}
-			{if $k%$MOD[page_subcat]==0}<tr>{/if}
-			<td{if $v[catid]==$catid} class="f_b"{/if}><a href="{$MOD[linkurl]}{$v[linkurl]}">{set_style($v[catname],$v[style])}</a>{if !$cityid} <span class="f_gray px10">({$v[item]})</span>{/if}</td>
-			{if $k%$MOD[page_subcat]==($MOD[page_subcat]-1)}</tr>{/if}
-			{/loop}
-			</table>
-			</div>
-		</div>
-		{if $CP}
-		{loop $PPT $p}
-		<div class="ppt">
-			<table cellpadding="0" cellspacing="0" width="100%">
-			<tr>
-			<td class="ppt_l" valign="top">按{$p[name]}</td>
-			<td class="ppt_r" valign="top">
-			{loop $p[options] $o}
-			<a href="###" onclick="Go(sh+'&ppt_{$p[oid]}={urlencode($o)}');">{$o}</a>&nbsp;|&nbsp;
-			{/loop}
-			</td>
-			</tr>
-			</table>
-		</div>
-		{/loop}
-		{/if}
-		<div class="b10">&nbsp;</div>
-		<div class="type">
-		<a href="{$MOD[linkurl]}{$linkurl}" class="type_1">全部</a>
-		{loop $TYPE $k $v}
-		<a href="javascript:Go('{$MOD[linkurl]}{rewrite('index.php?typeid='.$k.'&catid='.$catid)}');" class="type_2">{$v}</a>
-		{/loop}
-		</div>
-		<div class="b10 c_b">&nbsp;</div>
-		<div class="img_tip" id="img_tip" style="display:none;">&nbsp;</div>
-		{if $page == 1}{ad($moduleid,$catid,$kw,6)}{/if}
-		{if $tags}{template 'list-'.$module, 'tag'}{/if}
-		<br/>
-	</div>
+<div id="wrapper" style="margin-top: 10px;">
+  <div class="subnav">
+    <div class="keyword1"></div>
+    <div class="keyword2"></div>
+    当前位置:<a href="{$MODULE[1][linkurl]}">花木首页</a> &gt;  <a href="{$MOD[linkurl]}">{$MOD[name]}</a> &gt; {cat_pos($CAT, ' &raquo; ')}</div>
+  <div class="module_filter white_bg">
+    <form class="choice-items">
+      <div class="classes">
+        <label>分类:</label>
+       <div id="more-trd-cates_catid" class="the-more-btn" style="width: 30px; float: right;">更多</div>
+        <ul class="area_list search_list wid" id="cat_list" style="width: 856px; float:left;overflow:hidden;height:30px;">
+       <li {if !$catid}class="on"{/if}><a href="{$MOD[linkurl]}?areaid={$areaid}&kw={$kw}&order={$order}"> 全部分类 </a> </li>
+          {php $sub = get_maincat(0, $moduleid, 1);}
+           {loop $sub $j $s}
+             <li  {if $s[catid]==$catid ||$s[catid]==$jibie||$s[catid]==$erji} class="on"{/if}>
+             <a href="?catid={$s[catid]}&areaid={$areaid}&kw={$kw}&order={$order}">{$s[catname]}</a></li>
+           {/loop}
+        </ul>
+      </div>
+      <div style="clear:both"></div>
+      {if $maincat2}
+       <div class="classes">
+        <label>&nbsp;</label>
+       <div id="more-trd-cates_catid1" class="the-more-btn" style="width: 30px; float: right;"></div>
+        <ul class="area_list search_list wid" id="cat_list1" style="width: 856px; float:left;overflow:hidden;height:30px;">
+           {loop $maincat2 $j $s}
+              <li {if $s[catid]==$catid ||$s[catid]==$jibie} class="on"{/if} ><a href="?catid={$s[catid]}&areaid={$areaid}&kw={$kw}&order={$order}">{$s[catname]}</a></li>
+           {/loop}
+       </ul>
+      </div>
+      {/if}
+      <div style="clear:both"></div>
+       {if $maincat3}
+       <div class="classes">
+        <label>&nbsp;</label>
+       <div id="more-trd-cates_catid1" class="the-more-btn" style="width: 30px; float: right;"></div>
+        <ul class="area_list search_list wid" id="cat_list1" style="width: 856px; float:left;overflow:hidden;height:30px;">
+           {loop $maincat3 $j $s}
+              <li {if $catid==$s[catid]}class="on"{/if}><a href="?catid={$s[catid]}&areaid={$areaid}&kw={$kw}&order={$order}">{$s[catname]}</a></li>
+           {/loop}
+       </ul>
+      </div>
+      {/if}
+      <div style="clear:both"></div>
+      <div class="area">
+        <label>地区:</label>
+        <div id="more-trd-cates_area" class="the-more-btn" style="width: 30px; float: right;">更多</div>
+        <ul class="area_list search_list wid" id="area_list" style="width: 856px; float:left;overflow:hidden;height:60px;">
+          <li {if !$areaid}class="on"{/if}> <a href="?catid={$catid}&kw={$kw}&order={$order}"> 全部地区 </a> </li>
+          {php $mainarea = get_mainarea(0)}
+          {loop $mainarea $k $v}
+          <li {if $areaid==$v[areaid]} class="on"{/if}> <a href="?catid={$catid}&areaid={$v[areaid]}&kw={$kw}&order={$order}" rel="nofollow">{$v[areaname]}</a> </li>
+          {/loop}
+        </ul>
+      </div>
+      <div style="clear:both"></div>
+    </form>
+  </div>
+  <div class="nav_area">
+    <form action="?" method="get" >
+      <div class="srcate_filter search_box">
+        <h3 style="line-height:30px;width:78px;">关键词搜索:</h3>
+        <div class="gleft" style="margin-right:15px;">
+          <input style="height:29px;" type="text" id="gjc" name="kw" value="{$kw}" class="text">
+          <input type="hidden" id="catid" name="catid" value="{$catid}">
+          <input type="hidden" id="areaid" name="areaid" value="{$areaid}">
+           <input type="hidden" id="order" name="order" value="{$order}">
+          <input type="button" id="btn_search" name="submit" value="搜索" class="go_submit">
+        </div>
+        <div style="line-height:30px;margin-left:10px;">
+        <a href="?catid={$catid}&areaid={$areaid}&kw=五角枫&order={$order}">五角枫</a>&nbsp;&nbsp;
+        <a href="?catid={$catid}&areaid={$areaid}&kw=朴树&order={$order}">朴树</a> &nbsp;&nbsp;
+        <a href="?catid={$catid}&areaid={$areaid}&kw=紫丁香&order={$order}">紫丁香</a>&nbsp;&nbsp; 
+        <a href="?catid={$catid}&areaid={$areaid}&kw=核桃&order={$order}">核桃</a>&nbsp;&nbsp;
+        <a href="?catid={$catid}&areaid={$areaid}&kw=巨紫荆&order={$order}">巨紫荆</a>&nbsp;&nbsp; 
+        <a href="?catid={$catid}&areaid={$areaid}&kw=广玉兰&order={$order}">广玉兰</a> 
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="c2_right_view gleft">
+    <div class="shop_con_list">
+      <div class="public_qiugou_btn gleft" onclick="javascript:window.location.assign('{$CFG[url]}member/my.php?mid={$moduleid}&action=add');"> + 发布求购信息 </div>
+      <ul class="factor-list">
+        
+        <li class="order-by only-down-icon " data-type="add~time" data-order="desc"> 
+       {if $order!=1&& $order!=2}
+
+         <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=2" style="background: url({DT_SKIN}image/icon-arr.png) 65px 4px no-repeat;">发布时间</a>
+
+        {/if}
+
+        {if $order==1}
+
+        <!--升序-->
+
+        <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=2" style="background: url({DT_SKIN}image/icon-arr.png) 65px -106px no-repeat;">发布时间</a>
+
+        {/if}
+
+        {if $order==2}
+
+        <!--降序-->
+
+        <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=1" style="background: url({DT_SKIN}image/icon-arr.png) 65px -54px no-repeat;">发布时间</a>
+
+        {/if}
+        </li>
+        <li class="order-by only-down-icon " data-type="expire" data-order="desc" style="border-right: 1px solid #bae1b2;"> 
+         {if $order!=3&&$order!=4}
+
+        <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=4" style="background: url({DT_SKIN}image/icon-arr.png) 65px 4px no-repeat;">过期时间</a>
+
+        {/if}
+
+        {if $order==3}
+           <!--升序-->
+         <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=4" style="background: url({DT_SKIN}image/icon-arr.png) 65px -106px no-repeat;">过期时间</a>
+         {/if}
+         {if $order==4}
+         <!--降序-->
+           <a href="?catid={$catid}&areaid={$areaid}&kw={$kw}&order=3" style="background: url({DT_SKIN}image/icon-arr.png) 65px -54px no-repeat;">过期时间</a>
+        {/if}
+        </li>
+        </ul>
+      <div style="clear:both;"></div>
+    </div>
+    <div class="squares" hmtype="current_display_mode">
+      <table class="requirement_info_tab">
+        <thead>
+          <tr style="background: rgb(249, 249, 249);">
+            <td>产品名称</td>
+            <td>规格</td>
+            <td>采购量</td>
+            <td>报价数</td>
+            <td>需求地</td>
+            <td>联系方式</td>
+            <td>结束时间</td>
+            <td>报价</td>
+          </tr>
+        </thead>
+        <tbody>
+        <!--{php $qiugou=tag("moduleid=$moduleid&condition=".$condition."$dtype&pagesize=".$MOD[pagesize]."&page=$page&showpage=1&datetype=5&order=".$px."&lazy=$lazy&template=null&debug=0")}-->
+          {loop $qiugou $a $b}
+          <tr {if $a%2==0} style="background: rgb(249, 249, 249);"{/if}> 
+            <!-- 若要同一条求购只显示一个标题：去掉if的 1|| ,data-rowspan改为rowspan -->
+            <td title="{$b[title]}" data-rowspan="1" style="cursor:pointer;">
+            <a href="{$b[linkurl]}">{$b[title]}</a></td>
+            <td> 
+                 {if $b[gaodu]}
+                   {php $range_gaodu=getbox_name('gaodu','buy_6')}
+                     {loop $range_gaodu $key $v}
+                         {if $key==$b[gaodu]}
+                         高度:{$v}
+                         {/if}
+                     {/loop}
+                 {/if}    
+                 {if $b[mijing]}  &nbsp;
+                   {php $range_mijing=getbox_name('mijing','buy_6')}
+                     {loop $range_mijing $key $v}
+                         {if $key==$b[mijing]}
+                        米颈:{$v}
+                         {/if}
+                     {/loop}
+                 {/if}
+                <!-- {if $b[dijing]}  &nbsp;
+                  {php $range_dijing=getbox_name('dijing','buy_6')}
+                     {loop $range_dijing $key $v}
+                         {if $key==$b[dijing]}
+                         地颈:{$v}
+                         {/if}
+                     {/loop}
+                {/if}
+                 {if $b[guanfu]}  &nbsp;
+                  {php $range_guanfu=getbox_name('guanfu','buy_6')}
+                     {loop $range_guanfu $key $v}
+                         {if $key==$b[guanfu]}
+                       冠幅:{$v}
+                         {/if}
+                     {/loop}
+                {/if}
+                {if $b[shuxing]}&nbsp;
+                   {php $range_shuxing=getbox_name('shuxing','mall')}
+                     {loop $range_shuxing $key $v}
+                         {if $key==$b[shuxing]}
+                        树形:{$v}
+                         {/if}
+                     {/loop}
+               {/if}-->
+            
+            <td><b class="grn">{$b[amount]}</b> 棵</td>
+            <td><b class="grn"> 0 </b> 条 </td>
+            <td>{area_pos($b[areaid], '')}</td>
+            <td>{php echo substr_replace($b[mobile],'****',3,4);}</td>
+            {if $b[totime]}
+            {if $b[totime]<time()}
+            <td class="guoqi">已过期</td>
+            {else}
+            <td class="expire">
+               <span class="record_time day">{php echo ceil(($b[totime]-time())/(24*60*60))-1;}</span>天
+            </td>
+            {/if}
+            {else}
+            <td class="guoqi" style="color:#0aad1c; font-weight:bolder">长期有效</td>
+            {/if}
+           <td> 
+           {if $b[totime]>time()||!$b[totime]}
+           <button class="sub_baojia" data-id="11347" data-spec-id="7102"> 报价 </button>
+           {/if}
+           </td>
+          </tr>
+          {/loop}
+      </tbody>
+      </table>
+    </div>
+    <div class="page">{$pages}</div>
+  </div>
 </div>
-<div class="m_n f_l">&nbsp;</div>
-<div class="m_r_1 f_l">
-	<div class="sponsor">{ad($moduleid,$catid,$kw,7)}</div>
-	<div class="box_head"><div><strong>本周搜索排行</strong></div></div>
-	<div class="box_body">
-		<div class="rank_list">
-			<!--{tag("moduleid=$moduleid&table=keyword&condition=moduleid=$moduleid and status=3 and updatetime>$today_endtime-86400*7&pagesize=10&order=week_search desc&key=week_search&template=list-search_rank")}-->
-		</div>		
-	</div>
-	<div class="b10">&nbsp;</div>
-	<div class="box_head"><div><strong>按地区浏览</strong></div></div>
-	<div class="box_body">
-		<table width="100%" cellpadding="3">
-		{php $mainarea = get_mainarea(0)}
-		{loop $mainarea $k $v}
-		{if $k%2==0}<tr>{/if}
-		<td><a href="{$MOD[linkurl]}search.php?areaid={$v[areaid]}&catid={$catid}" rel="nofollow">{$v[areaname]}</a></td>
-		{if $k%2==1}</tr>{/if}
-		{/loop}
-		</table>
-	</div>
-</div>
-</div>
+<div class="b10"></div>
+
+<script type="text/javascript">
+    $(function () {
+		 
+        $('.close_btn_req').click(function () {
+            $('.requirement_info_pop').hide();
+            $('.requirement_info_pop .cofirm_sub_block').hide();
+        });
+
+        $('.factor-list>li').each(function () {
+            if ($(this).hasClass('chosed')) {
+                $(this).prev('li').find('a').css({
+                    border: '0'
+                });
+            }
+        });
+
+    });
+
+   
+    //隔行变色
+
+   // $(".requirement_info_tab tr").each(//隔行加背景色
+//            function () {
+//                if ($(".requirement_info_tab tr").index(this) % 2 == 0) {
+//                    $(this).css("background", "#f9f9f9");
+//
+//                }
+//            }
+//    );
+//
+//    $(".search_list li>a").on("click", function () {
+//        $(this).parent("li").siblings('li').removeClass("on");
+//        $(this).parent("li").addClass("on");
+////              return false;
+//    });
+     $("#more-trd-cates_area").click(function () {
+		if ($(this).text() == "更多") {
+            $("#area_list ").height("auto");
+            $(this).text("收起");
+        }
+        else if ($(this).text() == "收起") {
+            $("#area_list ").height(60);
+            $(this).text("更多");
+
+        }
+    });
+    $("#more-trd-cates_catid").click(function () {
+		if ($(this).text() == "更多") {
+            $("#cat_list").height("auto");
+            $(this).text("收起");
+        }
+        else if ($(this).text() == "收起") {
+            $("#cat_list ").height(30);
+            $(this).text("更多");
+
+        }
+    });
+
+
+</script>
+
+
 {template 'footer'}

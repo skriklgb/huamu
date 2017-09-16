@@ -17,6 +17,53 @@ extract($CAT);
 $maincat = get_maincat($child ? $catid : $parentid, $moduleid);
 $condition = 'status=3';
 $condition .= ($CAT['child']) ? " AND catid IN (".$CAT['arrchildid'].")" : " AND catid=$catid";
+//地区
+if($areaid){
+	$ARE = $AREA[$areaid];
+	$condition .= $ARE['child'] ? " AND areaid IN (".$ARE['arrchildid'].")" : " AND areaid=$areaid";
+	}
+//高度
+if($gaodu){
+	$condition.=" AND gaodu=$gaodu ";
+}
+//米径
+if($mijing){
+	$condition.=" AND mijing=$mijing ";
+}
+//地径
+if($dijing){
+	$condition.=" AND dijing=$dijing ";
+}
+//冠幅
+if($guanfu){
+	$condition.=" AND guanfu=$guanfu ";
+}
+//树形
+if($shuxing){
+	$condition.=" AND shuxing=$shuxing ";
+}
+//价格
+if($jiage==1){
+	$condition.=" AND price>=0 and price<10 ";
+}
+if($jiage==2){
+	$condition.=" AND price>=10 and price<100 ";
+}
+if($jiage==3){
+	$condition.=" AND price>=100 and price<500 ";
+}
+if($jiage==4){
+	$condition.=" AND price>=500 and price<1000 ";
+}
+if($jiage==5){
+	$condition.=" AND price>=1000 and price<10000 ";
+}
+if($jiage==6){
+	$condition.=" AND price>=10000 and price<50000 ";
+}
+if($jiage==7){
+	$condition.=" AND price>=50000 ";
+}
 if($cityid) {
 	$areaid = $cityid;
 	$ARE = $AREA[$cityid];
@@ -37,8 +84,34 @@ $pagesize = $MOD['pagesize'];
 $offset = ($page-1)*$pagesize;
 $pages = listpages($CAT, $items, $page, $pagesize);
 $tags = array();
+$px=$MOD['order'];
+if($order==1){
+$px="orders asc";	
+}
+if($order==2){
+$px="orders desc";	
+}
+if($order==3){
+$px="price asc";	
+}
+if($order==4){
+$px="price desc";	
+}
+if($order==5){
+$px="hits asc";	
+}
+if($order==6){
+$px="hits desc";	
+}
+if($order==7){
+$px="addtime asc";	
+}
+if($order==8){
+$px="addtime desc";	
+}
+
 if($items) {
-	$result = $db->query("SELECT ".$MOD['fields']." FROM {$table} WHERE {$condition} ORDER BY ".$MOD['order']." LIMIT {$offset},{$pagesize}", ($CFG['db_expires'] && $page == 1) ? 'CACHE' : '', $CFG['db_expires']);
+	$result = $db->query("SELECT * FROM {$table} WHERE {$condition} ORDER BY ".$px." LIMIT {$offset},{$pagesize}", ($CFG['db_expires'] && $page == 1) ? 'CACHE' : '', $CFG['db_expires']);
 	while($r = $db->fetch_array($result)) {
 		$r['adddate'] = timetodate($r['addtime'], 5);
 		$r['editdate'] = timetodate($r['edittime'], 5);
@@ -50,6 +123,80 @@ if($items) {
 	}
 	$db->free_result($result);
 }
+$diqu="";
+$czgd="";
+if($tags){
+	foreach($tags as $a=>$b){
+			if($b['areaid']){
+			$diqu.=$b['areaid'].",";
+			}
+			if($b['gaodu']){
+			$czgd.=$b['gaodu'].",";
+			}
+			if($b['mijing']){
+			$czmijing.=$b['mijing'].",";
+			}
+			if($b['dijing']){
+			$czdijing.=$b['dijing'].",";
+			}
+			if($b['guanfu']){
+			$czguanfu.=$b['guanfu'].",";
+			}
+			if($b['shuxing']){
+			$czshuxing.=$b['shuxing'].",";
+			}
+			if($b['price']){
+			$czprice.=$b['price'].",";
+			}
+		
+	 }
+	
+	$diqua=rtrim($diqu,",");
+	if($diqua){$aaa=array_unique(explode(",",$diqua));}
+	//高度
+	$czgda=rtrim($czgd,",");
+	if($czgda){$bbb=array_unique(explode(",",$czgda));}
+	//米径
+	$czmijinga=rtrim($czmijing,",");
+	if($czmijinga){$ccc=array_unique(explode(",",$czmijinga));}
+	//地径
+	$czdijinga=rtrim($czdijing,",");
+	if($czdijinga){$ddd=array_unique(explode(",",$czdijinga));}
+	//地径
+	$czguanfua=rtrim($czguanfu,",");
+	if($czguanfua){$eee=array_unique(explode(",",$czguanfua));}
+	//树形
+	$czshuxinga=rtrim($czshuxing,",");
+	if($czshuxinga){$fff=array_unique(explode(",",$czshuxinga));}
+	//价格
+	$czpricea=rtrim($czprice,",");
+	if($czpricea){$jjj=array_unique(explode(",",$czpricea));}
+}
+
+
+ $result1 = $db->query("SELECT parentid FROM {$db->pre}category WHERE catid=".$catid);
+ $r1 = $db->fetch_array($result1);
+ $jibie=$r1['parentid'];	
+ if($jibie){
+	
+	//如果选择2或3级
+	 $result2= $db->query("SELECT parentid FROM {$db->pre}category WHERE catid=".$jibie);
+     $r2 = $db->fetch_array($result2);
+		 if($r2['parentid']){//选择到了3级
+		    $erji=$r2['parentid'];
+		    $maincat2 = get_maincat_all($erji, $moduleid);
+			$maincat3 = get_maincat($child ? $catid : $parentid, $moduleid); 
+		 }else{//选择到二级
+		    $maincat2 = get_maincat_all($jibie, $moduleid);
+			$maincat3 = get_maincat_all($catid, $moduleid);
+		}
+	}else{
+	$maincat2 = get_maincat_all($catid,$moduleid);
+	$yiji=1;
+	
+	}
+
+
 $showpage = 1;
 $datetype = 5;
 $seo_file = 'list';

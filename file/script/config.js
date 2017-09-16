@@ -1,1 +1,1 @@
-var DTPath = "http://localhost/huamu/";var SKPath = "http://localhost/huamu/skin/default/";var MEPath = "http://localhost/huamu/member/";var DTEditor = "fckeditor";var CKDomain = "";var CKPath = "/";var CKPrex = "c7z_";
+var DTPath = "http://lgb.skrik.cn/";var SKPath = "http://lgb.skrik.cn/skin/default/";var MEPath = "http://lgb.skrik.cn/member/";var DTEditor = "fckeditor";var CKDomain = "";var CKPath = "/";var CKPrex = "c5s_";

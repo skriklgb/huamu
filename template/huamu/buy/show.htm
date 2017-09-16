@@ -1,138 +1,348 @@
-{template 'header'}
-<script type="text/javascript">var module_id= {$moduleid},item_id={$itemid},content_id='content',img_max_width={$MOD[max_width]};</script>
-<div class="m">
-<div class="left_box">		
-		<div class="pos"><span class="f_r"><a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&action=add&catid={$catid}" rel="nofollow"><img src="{DT_SKIN}image/btn_add.gif" width="81" height="20" alt="发布信息" style="margin-top:6px;"/></a></span>当前位置: <a href="{$MODULE[1][linkurl]}">首页</a> &raquo; <a href="{$MOD[linkurl]}">{$MOD[name]}</a> &raquo; {cat_pos($CAT, ' &raquo; ')} &raquo;</div>
-		<div class="b10 c_b"></div>
-		<table width="100%">
-		<tr>
-		<td width="10"> </td>
-		<td>
-			<table width="100%">
-			<tr>
-			<td colspan="3"><h1 class="title_trade" id="title">{$title}</h1></td>
-			</tr>
-			<tr>
-			<td width="250" valign="top">
-				<div id="mid_pos"></div>
-				<div id="mid_div" onmouseover="SAlbum();" onmouseout="HAlbum();" onclick="PAlbum(Dd('mid_pic'));">
-				<img src="{$albums[0]}" width="240" height="180" id="mid_pic"/><span id="zoomer"></span>
-				</div>
-				<div class="b5"></div>
-				<div>
-				{loop $thumbs $k $v}<img src="{$v}" width="60" height="60" onmouseover="if(this.src.indexOf('nopic60.gif')==-1)Album({$k}, '{$albums[$k]}');" class="{if $k}ab_im{else}ab_on{/if}" id="t_{$k}"/>{/loop}
-				</div>
-				<div class="b5"></div>
-				<div onclick="PAlbum(Dd('mid_pic'));" class="c_b t_c c_p"><img src="{DT_SKIN}image/ico_zoom.gif" width="16" height="16" align="absmiddle"/> 点击图片查看原图</div>
-			</td>
-			<td width="15"> </td>
-			<td valign="top">
-				<div id="big_div" style="display:none;"><img src="" id="big_pic"/></div>		
-				<table width="100%" cellpadding="5" cellspacing="5">
-				{if $n1 && $v1}
-				<tr>
-				<td class="f_dblue">{$n1}：</td>
-				<td>{$v1}</td>
-				</tr>
-				{/if}
-				{if $n2 && $v2}
-				<tr>
-				<td class="f_dblue">{$n2}：</td>
-				<td>{$v2}</td>
-				</tr>
-				{/if}
-				{if $n3 && $v3}
-				<tr>
-				<td class="f_dblue">{$n3}：</td>
-				<td>{$v3}</td>
-				</tr>
-				{/if}
-				<tr>
-				<td class="f_dblue">需求数量：</td>
-				<td>{$amount}</td>
-				</tr>
-				<tr>
-				<td class="f_dblue">价格要求：</td>
-				<td class="f_b f_orange">{$price}</td>
-				</tr>
-				<tr>
-				<td class="f_dblue">包装要求：</td>
-				<td>{$pack}</td>
-				</tr>
-				<tr>
-				<td class="f_dblue">所在地：</td>
-				<td>{area_pos($areaid, '')}</td>
-				</tr>
-				<tr>
-				<td class="f_dblue">有效期至：</td>
-				<td>{if $todate}{$todate}{else}长期有效{/if}{if $expired} <span class="f_red">[已过期]</span>{/if}</td>
-				</tr>
-				<tr>
-				<td class="f_dblue">最后更新：</td>
-				<td>{$editdate}</td>
-				</tr>
-				<tr>
-				<td width="80" class="f_dblue">浏览次数：</td>
-				<td><span id="hits">{$hits}</span></td>
-				</tr>
-				{if $username && !$expired}
-				<tr>
-				<td colspan="2"><img src="{DT_SKIN}image/btn_price.gif" alt="报价" class="c_p" onclick="Go('{$MOD[linkurl]}{rewrite('price.php?itemid='.$itemid)}');"/></td>
-				</tr>
-				{/if}
-				</table>
-			</td>
-			</tr>
-		</table>
-		</td>
-		<td width="10"> </td>
-		<td width="300" valign="top">		
-			<div class="contact_head">公司基本资料信息</div>
-			<div class="contact_body" id="contact">{template 'contact', 'chip'}</div>
-			{if !$username}
-			<br/>
-			&nbsp;<strong class="f_red">注意</strong>:发布人未在本站注册，建议优先选择<a href="{$MODULE[2][linkurl]}grade.php"><strong>{VIP}会员</strong></a>
-			{/if}
-		</td>
-		<td width="10"> </td>
-		</tr>
-		</table>
-		<div class="b10">&nbsp;</div>
-</div>
-</div>
+{template 'header'} 
+<script type="text/javascript">
+$(function(){
+	$('.shortcut_menu li').hover(function(){
+    	$(this).children('ul').removeClass("hide");
+    },function(){
+    	$(this).children('ul').addClass("hide");
+    });
+});
+</script>
+<div class="subnav">
+  <div class="keyword1"></div>
+  <div class="keyword2"></div>
+  当前位置: <a href="http://www.huamu.com/">花木首页</a> &gt; <a href="qiugou/">求购信息</a> &gt; <a href="qiugou/fenlei_1.html">绿化苗木</a> &gt; <a href="qiugou/fenlei_9.html">常绿乔木</a> &gt; <a href="qiugou/fenlei_10679.html">油松</a> &gt;
+  内容 </div>
+  <link href="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/css/article.css" rel="stylesheet" type="text/css" />
 
-<div class="m">
-	<div class="b10">&nbsp;</div>
-	<div class="box_head">
-	<strong>详细说明</strong>
-	</div>
-	<div class="box_body" style="padding:0;">
-	{if $CP}{template 'property', 'chip'}{/if}
-	<div class="content c_b" id="content">{$content}</div>
-	{template 'comment', 'chip'}
-	</div>
-</div>
+<link href="{DT_SKIN}bjxq.css" type="text/css" rel="stylesheet">
+<style>
+    ul.submenu{
+        display: block;
+    }
 
-<div class="m">
-	<div class="b10">&nbsp;</div>
-	<div class="box_head"><div><span class="f_r"><a href="{$MOD[linkurl]}{$CAT[linkurl]}">更多&raquo;</a></span><strong>同类{$MOD[name]}</strong></div></div>
-	<div class="box_body">
-	<div class="thumb" style="padding:10px;"><!--{tag("moduleid=$moduleid&length=20&condition=status=3 and thumb<>''&catid=$catid&areaid=$cityid&pagesize=8&order=edittime desc&width=80&height=80&cols=8&template=thumb-table", -2)}-->
-	</div>
-	</div>
-</div>
-<div class="m">
-	<br/>
-	<center>
-	[ <a href="{$MOD[linkurl]}search.php" rel="nofollow">{$MOD[name]}搜索</a> ]&nbsp;
-	[ <a href="javascript:SendFav();">加入收藏</a> ]&nbsp;
-	[ <a href="javascript:SendPage();">告诉好友</a> ]&nbsp;
-	[ <a href="javascript:Print();">打印本文</a> ]&nbsp;
-	[ <a href="javascript:SendReport();">违规举报</a> ]&nbsp;
-	[ <a href="javascript:window.close()">关闭窗口</a> ]
-	</center>
-	<br/>
-</div>
-<script type="text/javascript" src="{DT_STATIC}file/script/album.js"></script>
-{if $content}<script type="text/javascript" src="{DT_STATIC}file/script/content.js"></script>{/if}
+    .info_summary li{
+        height:30px;
+    }
+	
+	.gsr_recom_hot {
+		overflow: hidden;
+		margin-bottom: 10px;
+	}
+	.gsr_recom_hot .txt{
+		padding: 10px 16px;
+		box-sizing: border-box;
+		line-height: 24px;
+		font-size: 12px;
+	}
+	.gsr_recom_hot .txt span{margin-right: 4px;}
+    
+/*    .info_summary_tit{font-size: 18px;}*/
+    
+</style>
+<form id="quote_form" action="http://www.huamu.com/index.php?app=requirement&act=save_quote" method="post">
+  <input name="r_id" value="12362" type="hidden" />
+  <input name="rs_id" value="8781" type="hidden" />
+  <div class="content">
+    <div class="info_list_common w720 gleft">
+      <div class="info_summary">
+        <div class="info_summary_left gleft">
+          <div class="info_summary_tit">
+            <h1 class="span_tit">三米五油松&nbsp;&nbsp;</h1>
+          </div>
+          <div class="info_summary_cnt">
+            <ul>
+              <li style="height:auto;"> <span>规格 :</span> <span class="guige_list"> 高度:350厘米,
+                采购量: 300 棵 </span> </li>
+              <li><span>分类 : </span> 油松</li>
+              <li><span>地区 :</span> 陕西</li>
+              <li><span>联系 : </span>王杨峰</li>
+              <!--<li><span>Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q  :</span>1729289456</li>-->
+              <li><span>发布时间 :</span> 2017-09-14</li>
+              <li><span>苗源 :</span> 甘肃 兰州</li>
+              <li style="height:auto;"> <span>备注：</span>
+                <div style="width:360px;">
+                <div> 3.5米以上，拖腿 50公分！货源陕西、甘肃、河北、榆林 </div>
+              </li>
+              <li class="info_summary_bj" style="height:33px;">报价还剩<span class="increat_time">2</span>天</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info_summary_right gright"> <a href="http://img.huamu.com/data/upload/requirement/201709/14/38/201709140003581662.jpg?x-oss-process=image/resize,w_2000,/watermark,image_ZGF0YS91cGxvYWQvY29tbW9uL3dhdGVybWFyay93bV9jb2xvci5wbmc_eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsUF8zMA==" title="点击看大图" target="_blank"><img src="http://img.huamu.com/data/upload/requirement/201709/14/38/201709140003581662.jpg?x-oss-process=image/resize,m_fill,h_160,w_200" style="width:200px; height:160px;" alt='' /></a>
+          <p>共被查看：294次</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="quote">
+        <div class="quote_tit">
+          <h3> 报价 <span class="spa"> <em class="red">*</em> 为必填项 </span> </h3>
+        </div>
+        <div class="price_car">
+          <p>您的报价均为上车价</p>
+        </div>
+        <div class="quote_cnt">
+          <dl class="clearfix">
+            <dt class="gleft"> 单价<em class="red">*</em> </dt>
+            <dd class="gleft"> <span class="down_menu ">
+              <input type="text" name="price" />
+              </span> 元 </dd>
+            <div class="clear"></div>
+          </dl>
+          <dl class="clearfix">
+            <dt class="gleft"> 可供量<em class="red">*</em> </dt>
+            <dd class="gleft"> <span class="down_menu ">
+              <input type="text" name="num" />
+              </span> 棵 </dd>
+            <div class="clear"></div>
+          </dl>
+          <dl class="clearfix">
+            <dt class="gleft"> 备货时间<em class="red">*</em> </dt>
+            <dd class="gleft"> <span class="down_menu ">
+              <input type="text" name="stock_up_time" />
+              </span> 天 </dd>
+            <div class="clear"></div>
+          </dl>
+          <dl class="clearfix">
+            <dt class="gleft">可提供发票类型</dt>
+            <dd class="gleft radio">
+              <label>
+                <input type="radio" name="invoice_type" value="1" checked="checked"/>
+                &nbsp;普通发票</label>
+            </dd>
+            <dd class="gleft radio">
+              <label>
+                <input type="radio" name="invoice_type" value="2"/>
+                &nbsp;增值税发票</label>
+            </dd>
+            <dd class="gleft radio">
+              <label>
+                <input type="radio" name="invoice_type" value="0"/>
+                &nbsp;不能提供发票</label>
+            </dd>
+            <div class="clear"></div>
+          </dl>
+          <dl class="clearfix">
+            <dt class="gleft">补充说明</dt>
+            <dd class="gleft">
+              <textarea class="text_box" name="description" rows="5" cols="30"></textarea>
+            </dd>
+            <div class="clear"></div>
+          </dl>
+        </div>
+      </div>
+      <div class="form_bt">
+        <input type="submit" value="提交报价"  class="buy_btn" />
+      </div>
+      <div class="clear"></div>
+      <div class="more_items">
+        <h3 class="gleft"> <span>上一条:</span> <a href="http://www.huamu.com/index.php?app=requirement&act=view&pts=20170913&require_id=12361">精品关山樱</a> </h3>
+        <h3 class="gright"> <span>下一条:</span> <a href="http://www.huamu.com/index.php?app=requirement&act=view&pts=20170913&require_id=12363">三米五油松</a> </h3>
+      </div>
+    </div>
+    <div class="w265" style="float:right;">
+      <div class="paihang">
+        <div class="Store_info">
+          <p>采购商信息</p>
+        </div>
+        <div class="store_info_cnt">
+          <ul>
+            <li>等级：普通会员</li>
+            <li>
+              <p>信用：</p>
+              <img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/heart_1.png" alt="0" title="0" />
+              <div style="clear:both"></div>
+            </li>
+            <li>地区：</li>
+            <li>
+              <p>认证：</p>
+              <a rel="nofollow" href="http://www.huamu.com/aboutus/custom_cert.html" target="_blank" title="通过手机真实性验证">
+              <div class="cert_item cert_item_mobile"></div>
+              </a> <a rel="nofollow" href="http://www.huamu.com/aboutus/custom_cert.html" target="_blank" title="支持花木网担保交易
+">
+              <div class="cert_item cert_item_assure"></div>
+              </a>
+              <div style="clear:both"></div>
+            </li>
+            <li><span class="ing_2">升级<a class="ing_3" href="http://www.huamu.com/index.php?app=apply&act=upgrade" style="color:#fff;">金牌会员</a>直接查看电话联系采购商</span></li>
+          </ul>
+        </div>
+        <div class="approve"> <img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/Store_info.png" /> </div>
+      </div>
+      <div class="gsr_recom_hot">
+        <h2><a>相关求购信息</a></h2>
+        <ul class="txt">
+          <li><span>2017-09-14</span><a href="http://www.huamu.com/index.php?app=requirement&act=view&pts=20170914&require_id=12362" target="_blank" >三米五油松</a></li>
+          <li><span>2017-09-14</span><a href="http://www.huamu.com/index.php?app=requirement&act=view&pts=20170914&require_id=12363" target="_blank" >三米五油松</a></li>
+          <li><span>2017-09-02</span><a href="http://www.huamu.com/index.php?app=requirement&act=view&pts=20170902&require_id=12192" target="_blank" >油松</a></li>
+          <li><span>2017-08-31</span><a href="http://www.huamu.com/index.php?app=requirement&act=view&pts=20170831&require_id=12149" target="_blank" >求购杜松杯苗</a></li>
+          <li><span>2017-08-08</span><a href="http://www.huamu.com/index.php?app=requirement&act=view&pts=20170808&require_id=11964" target="_blank" >求购油松</a></li>
+          <li><span>2017-07-28</span><a href="http://www.huamu.com/index.php?app=requirement&act=view&pts=20170728&require_id=11905" target="_blank" >油松杯苗</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</form>
+<script type="text/javascript">
+    $(function(){
+        $('#quote_form').validate({
+//        debug:true,
+            ignore:'',
+            onkeyup : false,
+            onclick : false,
+            onfocus : false,
+            showErrors:function(errorMap,errorList) {
+                var key;
+                var str='';
+                for(key in errorMap){
+                    str+=errorMap[key];
+                    break;
+                }
+                if(str!=''){
+                    alert(str);
+                }
+            },
+            rules : {
+                r_id : {
+                    required:true,
+                    min:1
+                },
+                price :{
+                    required:true,
+                    number:true,
+                    min:0.01
+                },
+                num :{
+                    required:true,
+                    number:true
+                }
+            },
+            messages : {
+                r_id : {
+                    required:true,
+                    min:1
+                },
+                price :{
+                    required:'请填写单价',
+                    number:'单价必须是数字',
+                    min:'单价至少0.01'
+                },
+                num :{
+                    required:'请填写供应量',
+                    number:'供应量必须是数字'
+                }
+            },
+            submitHandler:function(form){
+                if('0'!='0'){
+                    form.submit();
+                }else{
+                    window.location.assign('http://www.huamu.com/index.php?app=member&act=login&ret_url='+encodeURIComponent(window.location.href));
+                }
+            }
+        });
+    });
+</script>
+<div class="pp-footer">
+<ul id="hm_backtop" class="backtopbox">
+  <li id="app_qrcode"> <a href="javascript:void(0);" target="_blank" rel="nofollow" class="backlink app_qrcode"><s class="alpha"></s></a>
+    <div class="backbox" style="display: none;">
+      <div class="bk qrcode">
+        <p><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/appxz_s1.png" alt='APP下载'/></p>
+      </div>
+    </div>
+  </li>
+  <li id="weixin_qrcode"> <a href="javascript:void(0);" target="_blank" rel="nofollow" class="backlink weixin_qrcode"><s class="alpha"></s></a>
+    <div class="backbox" style="display:none;">
+      <div class="bk service">
+        <div class="bktext kefu_tit">
+          <div class="icon-rightkefu  pingtai"></div>
+          平台客服</div>
+        <ul style="background:#fff">
+          <li> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182250&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网小马　17603855718</a> </li>
+          <li> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182251&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网小冬　17603855710</a> </li>
+          <li> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182253&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网朵朵　17603855716</a> </li>
+          <li> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182254&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网小王　17603855712</a> </li>
+          <li> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182256&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网小孙　17603855713</a> </li>
+          <li> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182255&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网小田　17603855717</a> </li>
+        </ul>
+        
+        <!--      <div class="bktext kefu_tit">
+                       <div class="icon-rightkefu  jiaoyi"></div>
+                        交易客服</div>
+                    <ul style="background:#fff">
+                        <li>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182258&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网小董  18530836291</a>
+                        </li>
+                       <li>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182257&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网小敏  18530836331</a>
+                        </li>
+               </ul>-->
+        <div class="bktext kefu_tit">
+          <div class="icon-rightkefu  caiwu"></div>
+          财务查账</div>
+        <ul style="background:#fff">
+          <li> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182252&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网财务 </a> </li>
+        </ul>
+        <div class="bktext kefu_tit" style="border:none;background:#fff;">
+          <div class="icon-rightkefu  zongji"></div>
+          总机:4000-000-844 </div>
+      </div>
+    </div>
+  </li>
+  <li id="contactlink"> <a href="javascript:void(0);" target="_blank" rel="nofollow" class="backlink contact_tel"><s class="alpha"></s></a>
+    <div class="backbox" style="display: none;">
+      <div class="bk contact_tel">
+        <div class="bktext kefu_tit" style="background-color:#fff;">
+          <div class="icon-rightkefu  daishou"></div>
+          代购代售</div>
+        <ul style="background:#fff">
+          <li> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182258&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网小董  18530836291</a> </li>
+          <li> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182257&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网小赵  18530836331</a> </li>
+        </ul>
+      </div>
+    </div>
+  </li>
+  <li> <a href="javascript:void(0);" class="backlink sideservice" rel="nofollow"><s class="alpha"></s></a>
+    <div class="backbox" style="display: none;">
+      <div class="bk qrcode" style="padding:0 10px;">
+        <div class="bktext kefu_tit" style="background-color:#fff;">
+          <div class="icon-rightkefu  daili"></div>
+          加盟代理商</div>
+        <ul style="background:#fff">
+          <li> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182258&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网渠道 18530836291</a> </li>
+          <li> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2850182257&site=qq&menu=yes"><img src="http://img1.huamu.com/themes/pc/mall/huamu/styles/default/images/icon-qq.png" />花木网渠道 18530836331</a> </li>
+        </ul>
+      </div>
+    </div>
+  </li>
+  <li id="goto-top"> <a href="javascript:void(0);" class="backlink backtop" rel="nofollow" target="_self"><s class="alpha"></s><span></span></a> </li>
+</ul>
+<script type="text/javascript">
+    
+    $(function(){
+        $('#hm_backtop li').hover(
+            function(){
+                $(this).find('div.backbox').show();
+                $(this).find('s').removeClass("alpha");
+            },
+            function(){
+                $(this).find('div.backbox').hide();
+                $(this).find('s').addClass("alpha");
+            }
+        );
+        goto_top();
+
+    });
+        (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+        </script> 
 {template 'footer'}
